@@ -1,0 +1,83 @@
+Classes: 
+
+  Pet 
+    
+    Attributes: 
+    
+      Age (int) 
+      
+      Health (int) 
+      
+      Hunger (int) 
+      
+      Happiness (int) 
+      
+      Energy (int) 
+      
+      Thirst (int) 
+
+ 
+
+Subclasses: 
+
+  Cat 
+  
+  Dog 
+  
+  Housed Animals: 
+
+    Hamster  
+
+Methods: 
+  
+  Feed 
+  
+    (decrease hunger + increase energy) 
+  
+  Train 
+  
+    (decreases energy + increase happiness) 
+  
+  Outing 
+  
+    (increases happiness + change location) 
+  
+  Play  
+  
+    (decreases energy + increase happiness) 
+  
+  Bored 
+  
+    (decrease health, decrease energy) 
+  
+  Sleep 
+  
+    (slowly increase boredom and increase energy) 
+  
+  Checkup (Vet appointment) 
+  
+    (increase health, decrease energy, decrease happiness) 
+  
+  Notify 
+
+    (if stat falls below certain threshold)
+
+Enums 
+
+  Environment 
+  
+    House, 
+    
+    Park, 
+    
+    Sidewalk, 
+    
+    Vet 
+  
+  Foods 
+  
+    Meat, 
+    
+    Veg, 
+    
+    Normal 
