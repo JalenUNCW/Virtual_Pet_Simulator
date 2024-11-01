@@ -1,20 +1,25 @@
 Classes: 
 
+  Player
+
+    -Money (double) 0-inf
+
+    -Points (int) 0-inf
+    
+
   Pet 
-    
-    Attributes: 
-    
-      Age (int) 
+        
+      -Age (int) 0-100
       
-      Health (int) 
+      -Health (int) 0-100
       
-      Hunger (int) 
+      -Hunger (int) 0-100
       
-      Happiness (int) 
+      -Happiness (int) 0-100
       
-      Energy (int) 
+      -Energy (int) 0-100
       
-      Thirst (int) 
+      -Thirst (int) 0-100
 
  
 
