@@ -1,36 +1,64 @@
 public class Pet {
     private int age;
+    private int petWeight;
     private int health;
     private int hunger;
-    private int thirst;
     private int happiness;
     private int energy;
-    private Location location;
-
-    public enum Location{
-        House,
-        Park,
-        SideWalk,
-        Vet;
-    }
 
     // accessors
     public int getAge() { return this.age; }
+    public int getPetWeight() { return petWeight; }
     public int getHealth() { return this.health; }
     public int getHunger() { return this.hunger; }
-    public int getThirst() { return this.thirst; }
     public int getEnergy() { return energy; }
     public int getHappiness() { return happiness; }
-    public Location getLocation() { return location; }
+
 
     //mutators
     public void setAge(int age) { this.age = age; }
+    public void setPetWeight(int petWeight) { this.petWeight = petWeight; }
     public void setHealth(int health) { this.health = health; }
     public void setHunger(int hunger) { this.hunger = hunger; }
-    public void setThirst(int thirst) { this.thirst = thirst; }
     public void setEnergy(int energy) { this.energy = energy; }
     public void setHappiness(int happiness) { this.happiness = happiness; }
-    public void setLocation(Location location) { this.location = location; }
 
+    // the following methods are just a rough outline we can continue tweaking
+    public void feed(FoodQuality foodQuality) {
 
+        switch (foodQuality) {
+            case FoodQuality.Low:
+                this.hunger += 20;
+                this.happiness -= 20;
+                break;
+
+            case FoodQuality.Medium:
+                this.hunger += 40;
+                break;
+
+            case FoodQuality.High:
+                this.hunger += 40;
+                this.happiness += 20;
+        }
+    }
+
+    public void train() {
+        this.energy -= 20;
+        this.happiness += 20;
+    }
+
+    public void outing() {
+        this.happiness += 20;
+        this.energy -= 30;
+    }
+
+    public void play() {
+        this.energy -= 20;
+        this.happiness += 40;
+    }
+
+    public void checkup() {
+        this.health += 50;
+        this.happiness -= 20;
+    }
 }
