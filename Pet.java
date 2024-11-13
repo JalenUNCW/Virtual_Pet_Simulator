@@ -24,22 +24,9 @@ public class Pet {
     public void setHappiness(int happiness) { this.happiness = happiness; }
 
     // the following methods are just a rough outline we can continue tweaking
-    public void feed(FoodQuality foodQuality) {
-
-        switch (foodQuality) {
-            case FoodQuality.Low:
-                this.hunger += 20;
-                this.happiness -= 20;
-                break;
-
-            case FoodQuality.Medium:
-                this.hunger += 40;
-                break;
-
-            case FoodQuality.High:
-                this.hunger += 40;
-                this.happiness += 20;
-        }
+    public void feed() {
+        this.hunger = 100;
+        this.happiness += 20;
     }
 
     public void train() {
