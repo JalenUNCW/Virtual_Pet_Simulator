@@ -1,5 +1,4 @@
 public class Player {
-    private double money;
     private int points;
     private Achievements[] achievements;
 
@@ -10,10 +9,8 @@ public class Player {
         Unhealthy //.....
 
     }
-    public double getMoney() { return money; }
     public int getPoints() { return points; }
 
-    public void setMoney(double money) { this.money = money; }
     public void setPoints(int points) { this.points = points; }
 
 
