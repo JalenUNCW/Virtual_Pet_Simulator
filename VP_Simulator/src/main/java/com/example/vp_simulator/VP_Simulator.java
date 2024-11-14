@@ -6,6 +6,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.awt.*;
+
 public class VP_Simulator extends Application {
 
     
@@ -28,7 +30,7 @@ public class VP_Simulator extends Application {
         // Optional: disable resizing
         primaryStage.setResizable(false);
 
-        primaryStage.setTitle("Main Menu");
+        primaryStage.setTitle("Virtual Pet Simulator");
         primaryStage.show();
     }
 
