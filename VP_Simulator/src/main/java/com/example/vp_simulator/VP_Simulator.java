@@ -17,11 +17,13 @@ public class VP_Simulator extends Application {
         controller.setStage(primaryStage);  // Passing stage to controller
 
         // Set the preferred window size
-        Scene scene = new Scene(root, 600, 400);
+        // root.setId("pane");
+        Scene scene = new Scene(root); //600, 400
         primaryStage.setScene(scene);
+        //scene.getStylesheets().add(getClass().getResource("styles/styles.css").toExternalForm());
 
         // Optional: disable resizing
-        primaryStage.setResizable(false);
+        // primaryStage.setResizable(false);
 
         primaryStage.setTitle("Main Menu");
         primaryStage.show();

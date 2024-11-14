@@ -14,21 +14,22 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0"
             xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.vp_simulator.MainMenuController">
    <children>
-      <AnchorPane AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
          <children>
             <ImageView fitHeight="400.0" fitWidth="600.0" nodeOrientation="INHERIT">
                <image>
-                  <Image url="@../../Pictures/petsimvisuals/mainmenu-backgroundimage.jpg" />
+                  <Image url="@images/mainmenu-backgroundimage.jpg"/>
                </image>
             </ImageView>
          </children>
       </AnchorPane>
-      <VBox alignment="CENTER" focusTraversable="true" layoutX="150.0" pickOnBounds="false" prefHeight="400.0" prefWidth="305.0" spacing="10.0">
+      <VBox alignment="CENTER" focusTraversable="true" layoutX="150.0" pickOnBounds="false" prefHeight="400.0" prefWidth="305.0" spacing="10.0"
+            AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="50.0" AnchorPane.bottomAnchor="50.0">
          <children>
             <Button fx:id="playButton" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="100.0" layoutY="50.0" lineSpacing="2.0"
                     maxHeight="76.0" maxWidth="206.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="80.0" prefWidth="205.0"
                     style="-fx-background-color: lightblue;" text="PLAY" textAlignment="CENTER" textOverrun="CLIP" wrapText="true"
-                    onAction="#handlePlayButtonAction">
+                    onAction="#handlePlayButtonAction" AnchorPane.topAnchor="100.0" AnchorPane.leftAnchor="50.0">
                <VBox.margin>
                   <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                </VBox.margin>
@@ -102,5 +103,6 @@
       </VBox>
    </children>
 </AnchorPane>
+
 
 
