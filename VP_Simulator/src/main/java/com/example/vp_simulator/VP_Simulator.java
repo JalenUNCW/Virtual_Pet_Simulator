@@ -13,6 +13,9 @@ public class VP_Simulator extends Application {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("main-menu.fxml"));
         Parent root = loader.load();
 
+        MainMenuController controller = loader.getController();
+        controller.setStage(primaryStage);  // Passing stage to controller
+
         // Set the preferred window size
         Scene scene = new Scene(root, 600, 400);
         primaryStage.setScene(scene);

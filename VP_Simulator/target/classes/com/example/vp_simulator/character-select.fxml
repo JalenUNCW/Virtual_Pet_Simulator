@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.vp_simulator.CharacterSelectController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="606.0" layoutX="-3.0">
+         <image>
+            <Image url="@../Pictures/petsimvisuals/characterselect-background.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="dogButton" layoutX="57.0" layoutY="289.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="159.0" text="DOG" onAction="#handleDogButtonAction"/>
+      <Button fx:id="catButton" layoutX="377.0" layoutY="289.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="159.0" text="CAT" onAction="#handleCatButtonAction"/>
+      <AnchorPane layoutX="357.0" layoutY="28.0" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <ImageView fx:id="catImageView" fitHeight="200.0" fitWidth="200.0" layoutX="1.0">
+               <image>
+                  <Image url="@../Pictures/petsimvisuals/cutecat.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="43.0" layoutY="28.0" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <ImageView fx:id="dogImageView" fitHeight="200.0" fitWidth="200.0" layoutY="2.0">
+               <image>
+                  <Image url="@../Pictures/petsimvisuals/cutedog.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
