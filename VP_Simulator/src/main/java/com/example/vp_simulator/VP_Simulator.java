@@ -8,6 +8,11 @@ import javafx.stage.Stage;
 
 public class VP_Simulator extends Application {
 
+    
+    Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+    double SCREEN_WIDTH = screenSize.getWidth();
+    double SCREEN_HEIGHT = screenSize.getHeight();
+    
     @Override
     public void start(Stage primaryStage) throws Exception {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("main-menu.fxml"));
@@ -17,7 +22,7 @@ public class VP_Simulator extends Application {
         controller.setStage(primaryStage);  // Passing stage to controller
 
         // Set the preferred window size
-        Scene scene = new Scene(root, 600, 400);
+        Scene scene = new Scene(root, SCREEN_WIDTH, SCREEN_HEIGHT);
         primaryStage.setScene(scene);
 
         // Optional: disable resizing
