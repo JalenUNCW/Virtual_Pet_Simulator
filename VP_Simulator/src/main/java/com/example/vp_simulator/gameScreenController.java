@@ -2,11 +2,17 @@ package com.example.vp_simulator;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class gameScreenController {
 
@@ -68,6 +74,28 @@ public class gameScreenController {
         }
     }
 
+    // Handle Menu button press (Go back to Main Menu)
+    @FXML
+    void menuPressed(ActionEvent event) throws IOException {
+        // Load the main menu scene
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("main-menu.fxml"));
+        Parent root = loader.load();
+
+        // Get the controller for the MainMenuController
+        MainMenuController mainMenuController = loader.getController();
+
+        // Pass the current stage to the MainMenuController
+        Stage stage = (Stage) menuButton.getScene().getWindow();
+        mainMenuController.setStage(stage);
+
+        // Set the new scene
+        Scene mainMenuScene = new Scene(root, 600, 400); // Set the size of the main menu scene
+        stage.setScene(mainMenuScene);
+        stage.setTitle("Main Menu");
+        stage.show();  // Show the main menu scene
+    }
+
+    // Handle other button presses (achievements, feed, play, etc.)
     @FXML
     void achievementPressed(ActionEvent event) {
         // Handle achievement button press
@@ -76,11 +104,6 @@ public class gameScreenController {
     @FXML
     void feedPressed(ActionEvent event) {
         // Handle feed button press
-    }
-
-    @FXML
-    void menuPressed(ActionEvent event) {
-        // Handle menu button press
     }
 
     @FXML
@@ -103,4 +126,5 @@ public class gameScreenController {
         // Handle walk button press
     }
 }
+
 
