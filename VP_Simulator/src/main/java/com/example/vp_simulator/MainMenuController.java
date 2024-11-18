@@ -1,12 +1,10 @@
 package com.example.vp_simulator;
 
-
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.control.Button;
 import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
+import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -15,6 +13,7 @@ public class MainMenuController {
 
     private Stage stage;
 
+    // Method to set the stage for the controller
     public void setStage(Stage stage) {
         this.stage = stage;
     }
@@ -28,22 +27,26 @@ public class MainMenuController {
     @FXML
     private Button quitButton;
 
-
-
     // Method to handle the Play button action
     @FXML
     private void handlePlayButtonAction() throws IOException {
-        // Code to navigate to the game scene
-        System.out.println("Play button clicked");
+        try {
+            // Load the character selection screen
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("character-select.fxml"));
+            Parent root = loader.load();
 
-        // Load the character select scene (FXML)
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("character-select.fxml"));  // Adjust path as needed
-        Parent root = loader.load();  // Load the FXML file
-        Scene scene = new Scene(root);  // Create a new scene with the loaded FXML
+            // Get the controller for character selection
+            CharacterSelectController controller = loader.getController();
+            controller.setStage(stage);  // Pass the stage to the new controller
 
-        // Set the new scene on the current stage
-        stage.setScene(scene);  // Replace the current scene with the character select scene
-        stage.show();  // Ensure the stage is shown with the new scene
+            // Switch to the character selection scene
+            Scene characterSelectScene = new Scene(root, 600, 400);
+            stage.setScene(characterSelectScene);
+            stage.setTitle("Character Select");
+            stage.show();
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        }
     }
 
     // Method to handle the Settings button action
@@ -56,10 +59,9 @@ public class MainMenuController {
     // Method to handle the Quit button action
     @FXML
     private void handleQuitButtonAction() {
+        // Close the application window
         Stage stage = (Stage) quitButton.getScene().getWindow();
         stage.close();
     }
-
-
 }
 

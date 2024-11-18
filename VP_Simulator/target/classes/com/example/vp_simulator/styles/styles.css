@@ -1,1 +1,13 @@
+.characterselect {
+    -fx-background-image: url("file:images/characterselect2-background.jpg"); /* Update path */
+    -fx-background-size: cover;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+}
 
+.mainmenu {
+    -fx-background-image: url("file:images/mainmenu-backgroundimage.jpg"); /* Update path */
+    -fx-background-size: cover;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+}

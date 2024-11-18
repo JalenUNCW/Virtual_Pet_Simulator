@@ -5,29 +5,30 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.vp_simulator.CharacterSelectController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0"
+            xmlns="http://javafx.com/javafx/22.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.vp_simulator.CharacterSelectController" styleClass="styles.css">
    <children>
       <ImageView fitHeight="400.0" fitWidth="606.0" layoutX="-3.0">
          <image>
-            <Image url="@../Pictures/petsimvisuals/characterselect-background.jpg" />
+            <Image url="@images/characterselect2-background.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="dogButton" layoutX="57.0" layoutY="289.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="159.0" text="DOG" onAction="#handleDogButtonAction"/>
-      <Button fx:id="catButton" layoutX="377.0" layoutY="289.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="159.0" text="CAT" onAction="#handleCatButtonAction"/>
+      <Button fx:id="dogButton" onAction="#handleDogButtonAction" layoutX="57.0" layoutY="289.0" mnemonicParsing="false"  prefHeight="61.0" prefWidth="159.0" text="DOG" />
+      <Button fx:id="catButton" onAction="#handleCatButtonAction" layoutX="377.0" layoutY="289.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="159.0" text="CAT" />
       <AnchorPane layoutX="357.0" layoutY="28.0" prefHeight="200.0" prefWidth="200.0">
          <children>
-            <ImageView fx:id="catImageView" fitHeight="200.0" fitWidth="200.0" layoutX="1.0">
+            <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="1.0">
                <image>
-                  <Image url="@../Pictures/petsimvisuals/cutecat.png" />
+                  <Image url="@images/cutecat.png" />
                </image>
             </ImageView>
          </children>
       </AnchorPane>
       <AnchorPane layoutX="43.0" layoutY="28.0" prefHeight="200.0" prefWidth="200.0">
          <children>
-            <ImageView fx:id="dogImageView" fitHeight="200.0" fitWidth="200.0" layoutY="2.0">
+            <ImageView fitHeight="200.0" fitWidth="200.0" layoutY="2.0">
                <image>
-                  <Image url="@../Pictures/petsimvisuals/cutedog.jpg" />
+                  <Image url="@images/cutedog.jpg" />
                </image>
             </ImageView>
          </children>

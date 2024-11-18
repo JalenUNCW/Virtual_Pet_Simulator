@@ -11,25 +11,21 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0"
-            xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.vp_simulator.MainMenuController">
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity"
+            xmlns="http://javafx.com/javafx/22.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.vp_simulator.MainMenuController" styleClass="mainmenu">
    <children>
-      <AnchorPane AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
+      <AnchorPane focusTraversable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="600.0" style="-fx-background-size: cover; -fx-background-image: images\mainmenu-backgroundimage.jpg;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <ImageView fitHeight="400.0" fitWidth="600.0" nodeOrientation="INHERIT">
+            <ImageView depthTest="DISABLE" fitHeight="400.0" fitWidth="600.0" nodeOrientation="INHERIT" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <image>
-                  <Image url="@images/mainmenu-backgroundimage.jpg"/>
+                  <Image url="@images/mainmenu-backgroundimage.jpg" />
                </image>
             </ImageView>
          </children>
       </AnchorPane>
-      <VBox alignment="CENTER" focusTraversable="true" layoutX="150.0" pickOnBounds="false" prefHeight="400.0" prefWidth="305.0" spacing="10.0"
-            AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="50.0" AnchorPane.bottomAnchor="50.0">
+      <VBox alignment="CENTER" focusTraversable="true" layoutX="150.0" pickOnBounds="false" prefHeight="400.0" prefWidth="600.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Button fx:id="playButton" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="100.0" layoutY="50.0" lineSpacing="2.0"
-                    maxHeight="76.0" maxWidth="206.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="80.0" prefWidth="205.0"
-                    style="-fx-background-color: lightblue;" text="PLAY" textAlignment="CENTER" textOverrun="CLIP" wrapText="true"
-                    onAction="#handlePlayButtonAction" AnchorPane.topAnchor="100.0" AnchorPane.leftAnchor="50.0">
+            <Button fx:id="playButton" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" lineSpacing="2.0" mnemonicParsing="false" onAction="#handlePlayButtonAction" prefHeight="80.0" prefWidth="205.0" snapToPixel="false" style="-fx-background-color: lightblue;" text="PLAY" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="100.0" VBox.vgrow="ALWAYS">
                <VBox.margin>
                   <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                </VBox.margin>
@@ -53,9 +49,7 @@
                   <Font name="Berlin Sans FB" size="36.0" />
                </font>
             </Button>
-            <Button fx:id="settingsButton" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="100.0" layoutY="100.0" lineSpacing="2.0"
-                    maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="80.0" prefWidth="205.0" style="-fx-background-color: lightblue;"
-                    text="SETTINGS" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" onAction="#handleSettingsButtonAction">
+            <Button fx:id="settingsButton" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" lineSpacing="2.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#handleSettingsButtonAction" prefHeight="80.0" prefWidth="205.0" style="-fx-background-color: lightblue;" text="SETTINGS" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" VBox.vgrow="ALWAYS">
                <VBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </VBox.margin>
@@ -73,9 +67,7 @@
                   </DropShadow>
                </effect>
             </Button>
-            <Button fx:id="quitButton" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" lineSpacing="2.0" maxHeight="-Infinity" maxWidth="-Infinity"
-                    mnemonicParsing="false" prefHeight="80.0" prefWidth="205.0" style="-fx-background-color: lightblue;" text="QUIT" textAlignment="CENTER"
-                    textOverrun="CLIP" wrapText="true" onAction="#handleQuitButtonAction">
+            <Button fx:id="quitButton" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" lineSpacing="2.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#handleQuitButtonAction" prefHeight="80.0" prefWidth="205.0" style="-fx-background-color: lightblue;" text="QUIT" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" VBox.vgrow="ALWAYS">
                <VBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </VBox.margin>
@@ -103,6 +95,3 @@
       </VBox>
    </children>
 </AnchorPane>
-
-
-
