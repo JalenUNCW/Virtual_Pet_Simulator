@@ -11,6 +11,7 @@ module com.example.vp_simulator {
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
     requires java.desktop;
+    requires javafx.media;
 
     opens com.example.vp_simulator to javafx.fxml;
     exports com.example.vp_simulator;
