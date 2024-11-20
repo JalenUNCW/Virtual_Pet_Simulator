@@ -32,3 +32,5 @@ The pet has various status indicators (e.g., hunger, happiness, energy) that dec
   - When a status indicator is low, notify the user of the low status bar
 #### Achievements ####
   - Ability to unlock a variety of achievements in the game
+#### Background Music ####
+ - Implemented some background gaming, playful, pixalated music!
