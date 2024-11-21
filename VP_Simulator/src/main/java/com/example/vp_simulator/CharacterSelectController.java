@@ -23,6 +23,9 @@ public class CharacterSelectController {
     public StackPane catPane;
     public VBox vbox;
     public HBox imageHBox;
+    private VP_Simulator vpSimulator;
+
+    public void setVpSimulator(VP_Simulator vpSimulator) { this.vpSimulator = vpSimulator; }
     // Declare UI elements
     @FXML
     private Button dogButton;
@@ -133,6 +136,8 @@ public class CharacterSelectController {
 
         System.out.println("Scene switched to game screen with Cat selected");
     }
+
+
 }
 
 

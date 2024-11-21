@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* General Styles */
+* {
+    -fx-font-family: "Press Start 2P", sans-serif; /* Pixel-like font for retro look */
+    -fx-font-size: 16px; /* Set base font size */
+}
+
+/* Background */
+.root {
+    -fx-background-color: #3E2B2B; /* Dark brown background */
+}
+
+/* Label Styles */
+.label {
+    -fx-text-fill: white; /* Yellowish text color for contrast */
+    -fx-font-weight: bold;
+    -fx-font-size: 32px; /* Slightly larger text for labels */
+}
+
+/* Slider Styles */
+.slider {
+    -fx-background-color: #5D3F30; /* Dark brown background for sliders */
+    -fx-control-inner-background: #A52A2A; /* Lighter brown for the slider track */
+    -fx-background-insets: 0;
+    -fx-border-color: #F5D300; /* Yellow border for contrast */
+    -fx-border-width: 2px;
+    -fx-border-radius: 5px;
+    -fx-pref-width: 250px;
+}
+
+.slider .thumb {
+    -fx-background-color: #FFD700; /* Gold thumb for a pixelated, retro feel */
+    -fx-background-insets: 0;
+    -fx-border-radius: 50%;
+}
+
+/* Button Styles */
+.button {
+    -fx-background-color: #6A4E23; /* Darker brown background for buttons */
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+    -fx-padding: 10px;
+    -fx-border-color: #F5D300; /* Yellow border to match the labels */
+    -fx-border-width: 2px;
+    -fx-border-radius: 10px;
+    -fx-effect: innershadow(gaussian, rgba(0, 0, 0, 0.6), 4, 0.5, 1, 1);
+}
+
+/* Button Hover Styles */
+.button:hover {
+    -fx-background-color: #8B5A2B; /* Lighter brown on hover */
+    -fx-border-color: #FFD700; /* Yellow border on hover */
+}
+
+/* ToggleButton Styles */
+.toggle-button {
+    -fx-background-color: #5D3F30; /* Same dark brown as slider for consistency */
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+    -fx-padding: 10px;
+    -fx-border-color: #F5D300;
+    -fx-border-width: 2px;
+    -fx-border-radius: 10px;
+}
+
+.toggle-button:selected {
+    -fx-background-color: #FFD700; /* Gold color when selected */
+    -fx-text-fill: black;
+}
+
+/* Grid Pane Styling */
+.grid-pane {
+    -fx-hgap: 20px; /* Horizontal gap between elements */
+    -fx-vgap: 20px; /* Vertical gap between elements */
+}
+
+/* Main Menu Background */
+.main-menu {
+    -fx-background-color: #3E2B2B; /* Brown background for the main menu */
+    -fx-padding: 20px; /* Padding around the edges */
+    -fx-alignment: center;
+}
+
+/* Slider Text Style */
+.slider .value {
+    -fx-text-fill: #F5D300; /* Yellowish color for the slider value */
+}
+
+/* Scene Background */
+.scene {
+    -fx-background-color: #3E2B2B; /* Dark brown for the overall scene background */
+}
