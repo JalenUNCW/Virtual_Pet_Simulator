@@ -76,7 +76,7 @@ public class gameScreenController {
 
     // Handle Menu button press (Go back to Main Menu)
     @FXML
-    void menuPressed(ActionEvent event) throws IOException {
+    void menuPressed() throws IOException {
         // Load the main menu scene
         FXMLLoader loader = new FXMLLoader(getClass().getResource("main-menu.fxml"));
         Parent root = loader.load();

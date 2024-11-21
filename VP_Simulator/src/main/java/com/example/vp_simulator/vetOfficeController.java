@@ -48,7 +48,7 @@ public class vetOfficeController {
 
 
     @FXML
-    Image vet = new Image(Objects.requireNonNull(getClass().getResourceAsStream("pixil-frame-0.png")));
+    Image vet = new Image(Objects.requireNonNull(getClass().getResourceAsStream("images/pixil-frame-0.png")));
 
     @FXML
     public void vetEnters() {
