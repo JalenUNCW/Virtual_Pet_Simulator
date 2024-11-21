@@ -10,6 +10,7 @@ import javafx.scene.control.ProgressBar;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -47,10 +48,17 @@ public class gameScreenController {
     private ToggleButton playToggle;
 
     @FXML
+    private AnchorPane imageAnchor;
+
+
+    @FXML
     private Button trainButton;
 
     @FXML
     private Button vetButton;
+
+    @FXML
+    private ImageView backgroundImage;
 
     @FXML
     private ToggleButton walkToggle;
@@ -143,6 +151,16 @@ public class gameScreenController {
     @FXML
     void walkPressed(ActionEvent event) {
         // Handle walk button press
+    }
+
+    @FXML
+    public void initialize() {
+
+        backgroundImage.fitWidthProperty().bind(imageAnchor.widthProperty());
+        backgroundImage.fitHeightProperty().bind(imageAnchor.heightProperty());
+
+        // Start the background music when the main menu is initialized
+        //MediaManager.playMusic("audio/pixel-dreams-259187.wav");
     }
 
 }
