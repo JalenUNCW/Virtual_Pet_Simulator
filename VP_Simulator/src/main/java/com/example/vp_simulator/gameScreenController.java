@@ -127,6 +127,7 @@ public class gameScreenController {
     void walkPressed(ActionEvent event) {
         // Handle walk button press
     }
+
 }
 
 
