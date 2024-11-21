@@ -41,7 +41,7 @@ public class gameScreenController {
     private Button menuButton;
 
     @FXML
-    private ImageView petImageDisplay;
+    private ImageView petImage;
 
     @FXML
     private ToggleButton playToggle;
@@ -67,10 +67,10 @@ public class gameScreenController {
     private void updatePetDetails() {
         if (selectedPet.equals("Dog")) {
             Image dogImage = new Image("file:images/cutedog.jpg");  // Adjust path as needed
-            petImageDisplay.setImage(dogImage);
+            petImage.setImage(dogImage);
         } else if (selectedPet.equals("Cat")) {
             Image catImage = new Image("file:images/cutecat.png");  // Adjust path as needed
-            petImageDisplay.setImage(catImage);
+            petImage.setImage(catImage);
         }
     }
 
