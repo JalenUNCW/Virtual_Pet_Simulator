@@ -51,10 +51,10 @@ public class SettingsController {
     @FXML
     private void handleToggleMusic() {
         if (isTrack1Playing) {
-            MediaManager.playMusic("audio/intense-battle-scene-115478.wav"); // Track 2
+            MediaManager.playMusic("audio/05. BFG Division 2020.wav"); // Track 2
             hardcoreModeToggle.setText("HARDCORE ON");
         } else {
-            MediaManager.playMusic("audio/pixel-dreams-259187.wav"); // Track 1
+            MediaManager.playMusic("audio/gentle-fields-194622.wav"); // Track 1
             hardcoreModeToggle.setText("HARDCORE OFF");
         }
         isTrack1Playing = !isTrack1Playing;
