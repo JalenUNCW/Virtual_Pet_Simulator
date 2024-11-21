@@ -89,8 +89,10 @@ public class gameScreenController {
         mainMenuController.setStage(stage);
 
         // Set the new scene
-        Scene mainMenuScene = new Scene(root, 600, 400); // Set the size of the main menu scene
+        Scene mainMenuScene = new Scene(root, 1200, 800); // Set the size of the main menu scene
+
         stage.setScene(mainMenuScene);
+        stage.setFullScreen(true);
         stage.setTitle("Main Menu");
         stage.show();  // Show the main menu scene
     }

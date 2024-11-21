@@ -1,37 +1,61 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.StackPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0"
-            xmlns="http://javafx.com/javafx/22.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.vp_simulator.CharacterSelectController" styleClass="styles.css">
+<?import java.net.URL?>
+<AnchorPane xmlns="http://javafx.com/javafx/22.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.vp_simulator.CharacterSelectController" fx:id="anchorPane" stylesheets="@styles/styles.css">
+
    <children>
-      <ImageView fitHeight="400.0" fitWidth="606.0" layoutX="-3.0">
+      <!-- Background -->
+      <ImageView fx:id="characterselectimage" styleClass="characterselect" fitHeight="400.0" fitWidth="600.0" preserveRatio="false">
          <image>
             <Image url="@images/characterselect2-background.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="dogButton" onAction="#handleDogButtonAction" layoutX="57.0" layoutY="289.0" mnemonicParsing="false"  prefHeight="61.0" prefWidth="159.0" text="DOG" />
-      <Button fx:id="catButton" onAction="#handleCatButtonAction" layoutX="377.0" layoutY="289.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="159.0" text="CAT" />
-      <AnchorPane layoutX="357.0" layoutY="28.0" prefHeight="200.0" prefWidth="200.0">
-         <children>
-            <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="1.0">
-               <image>
-                  <Image url="@images/cutecat.png" />
-               </image>
-            </ImageView>
-         </children>
-      </AnchorPane>
-      <AnchorPane layoutX="43.0" layoutY="28.0" prefHeight="200.0" prefWidth="200.0">
-         <children>
-            <ImageView fitHeight="200.0" fitWidth="200.0" layoutY="2.0">
-               <image>
-                  <Image url="@images/cutedog.jpg" />
-               </image>
-            </ImageView>
-         </children>
-      </AnchorPane>
+
+      <!-- Character Selection VBox for centering the content -->
+      <VBox fx:id="vbox" styleClass="vbox" alignment="CENTER" spacing="200">
+         <!-- HBox to align images side by side -->
+         <HBox fx:id="imageHBox" alignment="CENTER" spacing="200">
+            <!-- Dog Image and Button -->
+            <StackPane fx:id="dogPane" styleClass="dogPane" alignment="CENTER">
+               <children>
+                  <!-- VBox to align Image and Button vertically -->
+                  <VBox alignment="CENTER" spacing="100">
+                     <ImageView fx:id="dogImageView" fitHeight="400.0" fitWidth="400.0">
+                        <image>
+                           <Image url="@images/cutedog.jpg" />
+                        </image>
+                     </ImageView>
+                     <Button fx:id="dogButton" onAction="#handleDogButtonAction" text="DOG" stylesheets="@styles/styles.css" styleClass="dogButton" />
+                  </VBox>
+               </children>
+            </StackPane>
+
+            <!-- Cat Image and Button -->
+            <StackPane fx:id="catPane" styleClass="catPane" alignment="CENTER">
+               <children>
+                  <!-- VBox to align Image and Button vertically -->
+                  <VBox alignment="CENTER" spacing="100">
+                     <ImageView fx:id="catImageView" fitHeight="400.0" fitWidth="400.0">
+                        <image>
+                           <Image url="@images/cutecat.png" />
+                        </image>
+                     </ImageView>
+                     <Button fx:id="catButton" onAction="#handleCatButtonAction" text="CAT" stylesheets="@styles/styles.css" styleClass="catButton" />
+                  </VBox>
+               </children>
+            </StackPane>
+         </HBox>
+      </VBox>
    </children>
 </AnchorPane>
+
+
+
+
+

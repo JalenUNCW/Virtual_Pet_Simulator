@@ -41,7 +41,7 @@ public class VP_Simulator extends Application {
         primaryStage.setScene(scene);
 
         // Optional: disable resizing
-        primaryStage.setResizable(false);
+        //primaryStage.setResizable(false);
         primaryStage.setFullScreen(true);
 
 

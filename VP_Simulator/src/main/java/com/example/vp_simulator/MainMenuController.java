@@ -48,10 +48,9 @@ public class MainMenuController {
 
     @FXML
     public void initialize() {
-
-
         mainmenuImage.fitWidthProperty().bind(anchorPane.widthProperty());
         mainmenuImage.fitHeightProperty().bind(anchorPane.heightProperty());
+
     }
 
 
@@ -65,25 +64,25 @@ public class MainMenuController {
     // Method to handle the Play button action
     @FXML
     private void handlePlayButtonAction() throws IOException {
-        try {
-            // Load the character selection screen
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("character-select.fxml"));
-            Parent root = loader.load();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("character-select.fxml"));
+        Parent root = loader.load();
+        CharacterSelectController controller = loader.getController();
+        controller.setStage(stage);  // Passing stage to controller
 
-            // Get the controller for character selection
-            CharacterSelectController controller = loader.getController();
-            controller.setStage(stage);  // Pass the stage to the new controller
 
-            // Switch to the character selection scene
-            Scene characterSelectScene = new Scene(root, 1200, 800);
-            characterSelectScene.getStylesheets().add(getClass().getResource("/com/example/vp_simulator/styles/styles.css").toExternalForm());
-            stage.setScene(characterSelectScene);
-            stage.setTitle("Character Select");
-            stage.show();
-            stage.setFullScreen(true);
-        } catch (Exception e) {
-            System.out.println("Error: " + e.getMessage());
-        }
+
+        // Set the preferred window size
+        Scene scene = new Scene(root, 1200, 800);
+        scene.getStylesheets().add(getClass().getResource("/com/example/vp_simulator/styles/styles.css").toExternalForm());
+        stage.setScene(scene);
+
+        // Optional: disable resizing
+        //primaryStage.setResizable(false);
+        stage.setFullScreen(true);
+
+
+        stage.setTitle("Character Select Screen");
+        stage.show();
     }
 
     // Method to handle the Settings button action
@@ -102,7 +101,7 @@ public class MainMenuController {
             controller.setStage(stage);  // Pass the stage to the new controller
 
             // Switch to the character selection scene
-            Scene characterSelectScene = new Scene(root, 600, 400);
+            Scene characterSelectScene = new Scene(root, 1200, 800);
             characterSelectScene.getStylesheets().add(getClass().getResource("/com/example/vp_simulator/styles/styles.css").toExternalForm());
             stage.setScene(characterSelectScene);
             stage.setTitle("Character Select");

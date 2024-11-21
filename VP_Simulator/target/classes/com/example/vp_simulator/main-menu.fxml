@@ -15,9 +15,9 @@
       </ImageView>
 
       <!-- Main Menu Buttons in a VBox (Centered) -->
-      <VBox fx:id="mainVBox" styleClass="vbox" stylesheets="@styles/styles.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <VBox fx:id="mainVBox" styleClass="mainVbox" stylesheets="@styles/styles.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" spacing="50">
          <children>
-            <Button fx:id="playButton" onAction="#handlePlayButtonAction" styleClass="playButton" stylesheets="@styles/styles.css" text="PLAY" />
+            <Button fx:id="playButton" onAction="#handlePlayButtonAction" styleClass="playButton" stylesheets="@styles/styles.css" text="PLAY"/>
             <Button fx:id="settingsButton" onAction="#handleSettingsButtonAction" styleClass="settingsButton" stylesheets="@styles/styles.css" text="SETTINGS" />
             <Button fx:id="quitButton" onAction="#handleQuitButtonAction" styleClass="quitButton" stylesheets="@styles/styles.css" text="QUIT" />
          </children>
