@@ -119,8 +119,25 @@ public class gameScreenController {
     }
 
     @FXML
-    void vetPressed(ActionEvent event) {
-        // Handle vet button press
+    void vetPressed(ActionEvent event) throws IOException {
+        // Load the vet office scene
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("vetOffice.fxml"));
+        Parent root = loader.load();
+
+        // Get the controller for the vetOfficeController
+        vetOfficeController vetController = loader.getController();
+
+        // Pass the current stage to the vetController
+        Stage stage = (Stage) vetButton.getScene().getWindow();
+        vetController.setStage(stage);
+
+        // Set the new scene
+        Scene vetOfficeScene = new Scene(root, 1200, 800); // Set the size of the scene
+
+        stage.setScene(vetOfficeScene);
+        stage.setFullScreen(true);
+        stage.setTitle("Vet Office");
+        stage.show();  // Show the vet office scene
     }
 
     @FXML
