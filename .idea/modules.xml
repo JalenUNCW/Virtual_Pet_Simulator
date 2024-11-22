@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/VP_Simulator/VP_Simulator.iml" filepath="$PROJECT_DIR$/VP_Simulator/VP_Simulator.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Virtual_Pet_Simulator.iml" filepath="$PROJECT_DIR$/.idea/Virtual_Pet_Simulator.iml" />
     </modules>
   </component>
