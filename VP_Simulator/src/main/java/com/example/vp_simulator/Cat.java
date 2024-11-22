@@ -2,8 +2,18 @@ package com.example.vp_simulator;
 
 public class Cat extends Pet{
 
+    private CatBreed breed;
+
+    public enum CatBreed {
+        Tabby,
+        Calico,
+        Orange,
+        Black;
+    }
+
     public Cat() {
         super();
+        // add random breed here
     }
 
     @Override

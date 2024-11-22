@@ -1,6 +1,7 @@
 package com.example.vp_simulator;
 
 public class Pet {
+    private String name;
     private int health;
     private int hunger;
     private int happiness;
