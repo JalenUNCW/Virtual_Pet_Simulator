@@ -70,6 +70,16 @@ public class gameScreenController {
         updatePetDetails();
     }
 
+    @FXML
+    public void initialize() {
+
+        backgroundImage.fitWidthProperty().bind(imageAnchor.widthProperty());
+        backgroundImage.fitHeightProperty().bind(imageAnchor.heightProperty());
+
+        // Start the background music when the main menu is initialized
+        //MediaManager.playMusic("audio/pixel-dreams-259187.wav");
+    }
+
     // Update the pet image and related UI elements based on the selected pet
     private void updatePetDetails() {
         if (selectedPet.equals("Dog")) {
@@ -172,15 +182,7 @@ public class gameScreenController {
         // Handle walk button press
     }
 
-    @FXML
-    public void initialize() {
 
-        backgroundImage.fitWidthProperty().bind(imageAnchor.widthProperty());
-        backgroundImage.fitHeightProperty().bind(imageAnchor.heightProperty());
-
-        // Start the background music when the main menu is initialized
-        //MediaManager.playMusic("audio/pixel-dreams-259187.wav");
-    }
 
 }
 
