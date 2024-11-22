@@ -128,19 +128,6 @@ public class gameScreenController {
         stage.setTitle("Achievements");
         stage.show();
 
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("game-screen.fxml"));
-            Parent root = loader.load();
-            gameScreenController controller = loader.getController();
-            controller.setSelectedPet("Dog");
-            Scene gameScene = new Scene(root, 1200, 800);
-            stage.setScene(gameScene);
-            stage.setFullScreen(true);
-            stage.setTitle("Game Screen - Dog Selected ");
-        } catch (IOException e) {
-            e.printStackTrace();
-            System.err.println("Error loading the game screen.");
-        }
     }
 
     @FXML
