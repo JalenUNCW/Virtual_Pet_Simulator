@@ -1,95 +1,110 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-/* General Styles */
-* {
-    -fx-font-family: "Press Start 2P", sans-serif; /* Pixel-like font for retro look */
-    -fx-font-size: 16px; /* Set base font size */
-}
-
-/* Background */
+/* General Scene Setup */
 .root {
-    -fx-background-color: #3E2B2B; /* Dark brown background */
+    -fx-background-color: #3E2723; /* Dark brown background for fallback */
+    -fx-background-image: url("/com/example/vp_simulator/images/mountainbackground.png"); /* Pixelated background */
+    -fx-background-size: cover;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
 }
 
-/* Label Styles */
+/* Label Styling */
 .label {
-    -fx-text-fill: white; /* Yellowish text color for contrast */
-    -fx-font-weight: bold;
-    -fx-font-size: 32px; /* Slightly larger text for labels */
-}
-
-/* Slider Styles */
-.slider {
-    -fx-background-color: #5D3F30; /* Dark brown background for sliders */
-    -fx-control-inner-background: #A52A2A; /* Lighter brown for the slider track */
-    -fx-background-insets: 0;
-    -fx-border-color: #F5D300; /* Yellow border for contrast */
-    -fx-border-width: 2px;
-    -fx-border-radius: 5px;
-    -fx-pref-width: 250px;
-}
-
-.slider .thumb {
-    -fx-background-color: #FFD700; /* Gold thumb for a pixelated, retro feel */
-    -fx-background-insets: 0;
-    -fx-border-radius: 50%;
-}
-
-/* Button Styles */
-.button {
-    -fx-background-color: #6A4E23; /* Darker brown background for buttons */
-    -fx-text-fill: white;
-    -fx-font-weight: bold;
-    -fx-font-size: 16px;
-    -fx-padding: 10px;
-    -fx-border-color: #F5D300; /* Yellow border to match the labels */
-    -fx-border-width: 2px;
-    -fx-border-radius: 10px;
-    -fx-effect: innershadow(gaussian, rgba(0, 0, 0, 0.6), 4, 0.5, 1, 1);
-}
-
-/* Button Hover Styles */
-.button:hover {
-    -fx-background-color: #8B5A2B; /* Lighter brown on hover */
-    -fx-border-color: #FFD700; /* Yellow border on hover */
-}
-
-/* ToggleButton Styles */
-.toggle-button {
-    -fx-background-color: #5D3F30; /* Same dark brown as slider for consistency */
-    -fx-text-fill: white;
-    -fx-font-weight: bold;
-    -fx-font-size: 16px;
-    -fx-padding: 10px;
-    -fx-border-color: #F5D300;
-    -fx-border-width: 2px;
-    -fx-border-radius: 10px;
-}
-
-.toggle-button:selected {
-    -fx-background-color: #FFD700; /* Gold color when selected */
-    -fx-text-fill: black;
-}
-
-/* Grid Pane Styling */
-.grid-pane {
-    -fx-hgap: 20px; /* Horizontal gap between elements */
-    -fx-vgap: 20px; /* Vertical gap between elements */
-}
-
-/* Main Menu Background */
-.main-menu {
-    -fx-background-color: #3E2B2B; /* Brown background for the main menu */
-    -fx-padding: 20px; /* Padding around the edges */
+    -fx-font-family: "Press Start 2P", sans-serif; /* Pixelated font */
+    -fx-font-size: 14px;
+    -fx-text-fill: white; /* White font color */
+    -fx-effect: dropshadow(gaussian, #000000, 5, 0.5, 0, 0); /* Subtle shadow for depth */
     -fx-alignment: center;
 }
 
-/* Slider Text Style */
-.slider .value {
-    -fx-text-fill: #F5D300; /* Yellowish color for the slider value */
+/* Base slider styling */
+.slider {
+    -fx-padding: 10;
 }
 
-/* Scene Background */
-.scene {
-    -fx-background-color: #3E2B2B; /* Dark brown for the overall scene background */
+/* Thumb (the part you drag) */
+.slider .thumb {
+    -fx-background-color: #FF5722;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 5, 0.5, 0, 1);
+    -fx-padding: 10;
 }
+
+/* Track */
+.slider .track {
+    -fx-background-color: #8D6E63;
+    -fx-pref-height: 10px;
+}
+
+/* Axis (the line where tick marks appear) */
+.slider .axis {
+    -fx-tick-label-fill: white;
+    -fx-tick-label-font-family: "Press Start 2P";
+    -fx-tick-label-font-size: 14px;
+}
+
+/* Individual tick marks */
+.slider .axis .tick-mark {
+    -fx-stroke: white;
+    -fx-stroke-width: 3;
+}
+
+/* Tick labels */
+.slider .axis .tick-label {
+    -fx-text-fill: white;
+}
+
+
+/* Toggle Button Styling */
+.toggle-button {
+    -fx-font-family: "Press Start 2P", sans-serif;
+    -fx-font-size: 18px;
+    -fx-background-color: #6D4C41; /* Medium brown */
+    -fx-text-fill: white; /* White text */
+    -fx-border-radius: 5; /* Rounded corners */
+    -fx-border-color: #4E342E; /* Darker brown border */
+    -fx-border-width: 3;
+    -fx-cursor: hand;
+    -fx-padding: 10 20;
+}
+
+.toggle-button:hover {
+    -fx-background-color: #8D6E63; /* Lighter brown on hover */
+}
+
+.toggle-button:pressed {
+    -fx-background-color: #5D4037; /* Darker brown on press */
+}
+
+/* Button Styling */
+.button {
+    -fx-font-size: 18px; /* Match toggle button font size */
+    -fx-pref-width: 300px; /* Set width */
+    -fx-pref-height: 50px; /* Set height */
+    -fx-background-color: #6D4C41; /* Medium brown */
+    -fx-text-fill: white; /* White text */
+    -fx-font-family: "Press Start 2P", sans-serif; /* Pixelated font */
+    -fx-border-radius: 10; /* Rounded corners */
+    -fx-border-color: #4E342E; /* Dark brown border */
+    -fx-border-width: 3;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #8D6E63; /* Lighter brown on hover */
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+.button:pressed {
+    -fx-background-color: #5D4037; /* Dark brown on press */
+}
+
+/* GridPane Styling */
+.grid-pane {
+    -fx-padding: 20;
+    -fx-hgap: 20;
+    -fx-vgap: 15;
+    -fx-alignment: center;
+}
+

@@ -83,7 +83,7 @@ public class MainMenuController {
 
             // Set scene and stage details
             Scene scene = new Scene(root, 1200, 800);
-            scene.getStylesheets().add(getClass().getResource("/com/example/vp_simulator/styles/styles.css").toExternalForm());
+            scene.getStylesheets().add(getClass().getResource("/com/example/vp_simulator/styles/settingsStyle.css").toExternalForm());
             stage.setScene(scene);
             stage.setFullScreen(true);
             stage.setTitle("Settings Menu");
