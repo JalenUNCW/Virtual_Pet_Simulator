@@ -1,0 +1,25 @@
+.gslabel {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 10px;
+}
+
+.button {
+    -fx-background-color: #6ca6cd;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.progress-bar {
+    -fx-accent: #5cb85c;
+}
+
+.image-anchor {
+    -fx-padding: 20px;
+}
+
+#petImage {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0, 4, 4);
+    -fx-border-color: #333;
+    -fx-border-width: 2;
+}

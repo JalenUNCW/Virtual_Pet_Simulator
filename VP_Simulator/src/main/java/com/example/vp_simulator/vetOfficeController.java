@@ -20,6 +20,8 @@ import java.util.ResourceBundle;
 
 public class vetOfficeController {
 
+    @FXML
+    private ImageView petImageView;
 
     @FXML
     private ResourceBundle resources;
@@ -42,8 +44,6 @@ public class vetOfficeController {
     @FXML
     private Button groomButton;
 
-
-
     private Stage stage;
 
     @FXML
@@ -61,6 +61,9 @@ public class vetOfficeController {
     // The image of the vet to be displayed when "Vet Enters"
     private Image vetImage = new Image(getClass().getResourceAsStream("images/pixil-frame-0.png"));
 
+    // image of the selected pet will go here
+    private Image petImage = new Image(getClass().getResourceAsStream("images/cutedog.jpg"));
+
     @FXML
     public void initialize() {
         // Bind background image to resize with the window
@@ -77,7 +80,17 @@ public class vetOfficeController {
 
         // Optional: Set an initial state for the vet image to be hidden or not visible at first
         vetImageView.setVisible(false);
+
+        // add a way to set the pet image in the initializer so it will load with the selected pet
+        petImageView.setImage(petImage);
+        petImageView.setVisible(true);
+
     }
+
+//    public Image getPetImage(){
+//        Image petImage =
+//        return petImage;
+//    }
 
     @FXML
     public void vetEnters() {
