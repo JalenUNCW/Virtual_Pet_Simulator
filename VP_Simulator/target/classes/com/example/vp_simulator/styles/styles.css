@@ -71,7 +71,7 @@
 /* Title Styling */
 .title {
     -fx-font-family: "Press Start 2P", sans-serif; /* Pixelated font */
-    -fx-font-size: 80px; /* Large font size */
+    -fx-font-size: 88px; /* Large font size */
     -fx-text-fill: linear-gradient(to bottom, #FFD700, #FFA500); /* Gradient gold to orange */
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.8), 15, 0.5, 2, 2),
                  dropshadow(gaussian, rgba(255, 255, 255, 0.6), 10, 0.3, -2, -2);
