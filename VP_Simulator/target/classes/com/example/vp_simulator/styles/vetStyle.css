@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* Layout Containers for Vet Screen */
+.vbox {
+    -fx-alignment: center;
+    -fx-spacing: 20; /* Space between the buttons */
+    -fx-padding: 20; /* Padding on all sides */
+    -fx-pref-width: 100%;
+    -fx-pref-height: 100%;
+}
+
+/* Button Styling */
+.button {
+    -fx-background-color: #6D4C41;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-family: "Press Start 2P", sans-serif;
+    -fx-padding: 10 20;
+    -fx-effect: dropshadow(gaussian, #000000, 10, 0.5, 0, 0);
+    -fx-border-radius: 10;
+    -fx-border-color: #4E342E;
+    -fx-border-width: 3;
+    -fx-cursor: hand;
+}
+
+/* Specific Button Effects for Vet Screen */
+.button:pressed {
+    -fx-background-color: #5D4037;
+}
+
+.checkupButton, .groomButton, .mainMenuButton, .achievementsButton {
+    -fx-font-size: 32px;
+    -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.8), 30, 0.5, 0, 0);
+    -fx-pref-height: 120px;
+    -fx-pref-width: 350px;
+    -fx-padding: 10 20;
+    -fx-margin: 10;
+}
+
+/* Background Image for Vet Screen */
+.vetScreen {
+    -fx-background-image: url("/com/example/vp_simulator/images/vet-background.jpg");
+    -fx-background-size: cover;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+}
+
