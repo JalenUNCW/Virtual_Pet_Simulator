@@ -27,6 +27,7 @@ public class VP_Simulator extends Application {
         scene.getStylesheets().add(
                 getClass().getResource("/com/example/vp_simulator/styles/styles.css").toExternalForm()
         );
+
         primaryStage.setScene(scene);
         primaryStage.setFullScreen(true); // Optional: start in fullscreen
         primaryStage.setTitle("Main Menu");
