@@ -52,7 +52,7 @@ public class vetOfficeController {
     @FXML
     private ImageView backgroundImageView; // Background image
     @FXML
-    private StackPane rootPane;  // Root layout
+    private AnchorPane rootPane;  // Root layout
     @FXML
     private ImageView vetImageView;
     @FXML
