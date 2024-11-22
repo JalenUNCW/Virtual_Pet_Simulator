@@ -94,7 +94,7 @@ public class CharacterSelectController {
             Parent root = loader.load();
             gameScreenController controller = loader.getController();
             controller.setSelectedPet("Dog");
-            Scene gameScene = new Scene(root, 1200, 800);
+            Scene gameScene = new Scene(root, 2000, 1200);
             stage.setScene(gameScene);
             stage.setFullScreen(true);
             stage.setTitle("Game Screen - Dog Selected ");

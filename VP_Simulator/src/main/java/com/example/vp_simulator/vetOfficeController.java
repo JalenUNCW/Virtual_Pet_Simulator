@@ -120,6 +120,7 @@ public class vetOfficeController {
 
         Scene mainMenuScene = new Scene(root, 1200, 800);
         stage.setScene(mainMenuScene);
+        stage.setFullScreen(true);
         stage.setTitle("Main Menu");
         stage.show();
     }
@@ -135,6 +136,7 @@ public class vetOfficeController {
 
         Scene achievementsScene = new Scene(root,1200,800);
         stage.setScene(achievementsScene);
+        stage.setFullScreen(true);
         stage.setTitle("Achievements");
         stage.show();
     }

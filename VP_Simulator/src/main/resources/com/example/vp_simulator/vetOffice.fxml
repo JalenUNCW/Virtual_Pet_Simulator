@@ -10,7 +10,7 @@
 
 <?import javafx.scene.layout.AnchorPane?>
 <AnchorPane fx:id="rootPane" xmlns="http://javafx.com/javafx/22.0.1" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.example.vp_simulator.vetOfficeController">
+            fx:controller="com.example.vp_simulator.vetOfficeController" stylesheets="@styles/vetStyle.css">
     <!-- Background Image -->
     <ImageView fx:id="backgroundImageView" fitHeight="400.0" fitWidth="600.0" preserveRatio="false" pickOnBounds="true">
         <image>
@@ -22,7 +22,7 @@
         <AnchorPane.rightAnchor>0.0</AnchorPane.rightAnchor>
     </ImageView>
 
-    <GridPane fx:id="gridPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
+    <GridPane fx:id="gridPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.5" minWidth="10.0" prefWidth="112.0" />
             <ColumnConstraints halignment="RIGHT" hgrow="ALWAYS" maxWidth="493.0" minWidth="10.0" prefWidth="488.0" />
@@ -74,7 +74,7 @@
             <!-- Vet Image -->
             <ImageView fx:id="vetImageView" fitHeight="300.0" fitWidth="300.0" pickOnBounds="true" GridPane.columnIndex="1" GridPane.rowIndex="0">
                 <GridPane.margin>
-                    <Insets top="10.0" right="10.0" />
+                    <Insets top="10.0" right="-1000.00" />
                 </GridPane.margin>
             </ImageView>
         </children>

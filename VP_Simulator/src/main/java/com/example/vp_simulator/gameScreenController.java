@@ -122,7 +122,7 @@ public class gameScreenController {
         Stage stage = (Stage) achievementButton.getScene().getWindow();
         achievementController.setStage(stage);
 
-        Scene achievementScene = new Scene(root, 1200, 800);
+        Scene achievementScene = new Scene(root, 2000, 1200);
         stage.setScene(achievementScene);
         stage.setFullScreen(true);
         stage.setTitle("Achievements");
@@ -159,12 +159,10 @@ public class gameScreenController {
         vetController.setStage(stage);
 
         // Set the new scene
-        Scene vetOfficeScene = new Scene(root, 1200, 800); // Set the size of the scene
+        Scene vetOfficeScene = new Scene(root, 2000, 1200); // Set the size of the scene
 
         stage.setScene(vetOfficeScene);
         stage.setFullScreen(true);
-        stage.getScene().getRoot().applyCss(); // Force a CSS update
-        stage.getScene().getRoot().requestLayout();
         stage.setTitle("Vet Office");
         stage.show();  // Show the vet office scene
     }

@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 public class VP_Simulator extends Application {
@@ -23,14 +24,21 @@ public class VP_Simulator extends Application {
         controller.setStage(primaryStage);
 
         // Set up the scene and stage
-        Scene scene = new Scene(root, 1200, 800);
+        Scene scene = new Scene(root, 2000, 1200);
         scene.getStylesheets().add(
                 getClass().getResource("/com/example/vp_simulator/styles/styles.css").toExternalForm()
         );
 
         primaryStage.setScene(scene);
+        primaryStage.setWidth(Screen.getPrimary().getBounds().getWidth()); // Match screen width
+        primaryStage.setHeight(Screen.getPrimary().getBounds().getHeight()); // Match screen height
         primaryStage.setFullScreen(true); // Optional: start in fullscreen
+        primaryStage.setResizable(false);
         primaryStage.setTitle("Main Menu");
+
+        // Disable exit full screen (optional)
+        primaryStage.setFullScreenExitHint("");
+        primaryStage.setFullScreenExitKeyCombination(null);
         primaryStage.show();
     }
 
