@@ -22,6 +22,8 @@ public class Pet {
     public int getEnergy() { return energy; }
     public int getHappiness() { return happiness; }
 
+    public String breedToString() { return "Breed"; }
+
 
     //mutators
     public void setHealth(int health) { this.health = health; }

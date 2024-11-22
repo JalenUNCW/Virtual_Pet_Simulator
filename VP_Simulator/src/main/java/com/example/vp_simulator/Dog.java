@@ -25,6 +25,22 @@ public class Dog extends Pet{
     }
 
     @Override
+    public String breedToString() {
+        switch (breed) {
+            case Pug:
+                return "Pug";
+            case Poodle:
+                return "Poodle";
+            case Lab:
+                return "Lab";
+            case Shepherd:
+                return "Shepherd";
+            default:
+                return "Unknown Breed";
+        }
+    }
+
+    @Override
     public void feed() {
         setHunger(100);
         setEnergy(100);
