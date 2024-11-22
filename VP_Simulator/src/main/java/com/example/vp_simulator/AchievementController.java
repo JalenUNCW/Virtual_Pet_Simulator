@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import org.w3c.dom.Node;
@@ -18,10 +19,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AchievementController extends VP_Simulator {
+    public void setStage(Stage stage) {}
     enum isUnlocked {Locked, Unlocked};
 
     public void start(Stage stage) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("Achievements.fxml"));
+        achievementGridPane.prefWidthProperty().bind(hbox.widthProperty());
+        achievementGridPane.prefHeightProperty().bind(hbox.heightProperty());
+
+        headerGridPane.prefHeightProperty().bind(hbox.heightProperty());
+        headerGridPane.prefWidthProperty().bind(hbox.widthProperty());
+
+        achievementLabel.prefHeightProperty().bind(hbox.heightProperty());
+        achievementLabel.prefWidthProperty().bind(hbox.widthProperty());
+
+        Parent root = FXMLLoader.load(getClass().getResource("finalAchievements.fxml"));
 
         ScrollPane scrollpane = new ScrollPane();
         scrollpane.setContent(root);
@@ -29,6 +40,15 @@ public class AchievementController extends VP_Simulator {
         scrollpane.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
         scrollpane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
 
+        int targetRow = achievementGridPane.getRowCount();
+        achievementGridPane.getChildren().forEach(node -> {
+            Integer rowIndex = GridPane.getRowIndex(node);
+
+            if (rowIndex == null) rowIndex = 0;
+            if (rowIndex == targetRow){
+                unlockAchivement(isUnlocked.Unlocked);
+            }
+        });
 
 
         Scene scene = new Scene(root);
@@ -47,58 +67,28 @@ public class AchievementController extends VP_Simulator {
     private Button allButton;
 
     @FXML
-    private Label bathroomLabel;
+    private Label achievementLabel;
 
     @FXML
-    private TextArea bathroomTextArea;
-
-    @FXML
-    private Label bdayLabel;
-
-    @FXML
-    private TextArea bdayTextArea;
+    private TextArea achievementTextArea;
 
     @FXML
     private Button bmmButton;
 
     @FXML
-    private Label firstwalkLabel;
+    private GridPane headerGridPane;
 
     @FXML
-    private TextArea firstwalkTextArea;
-
-    @FXML
-    private Label hungerLabel;
-
-    @FXML
-    private TextArea hungerTextArea;
+    private HBox hbox;
 
     @FXML
     private Button miscButtons;
 
     @FXML
-    private TextArea nightTextArea;
-
-    @FXML
     private Button petfeatsButton;
 
     @FXML
-    private ScrollBar scrollBar;
-
-    @FXML
-    private Label sleepLabel;
-
-    @FXML
-    private Label tdLabel;
-
-    @FXML
-    private TextArea trainingdayTextArea;
-
-    @FXML
-    private Label vvLabel;
-
-    @FXML
-    private TextArea vvTextArea;
+    private ScrollPane scrollPane;
 
     private Stage stage;
 

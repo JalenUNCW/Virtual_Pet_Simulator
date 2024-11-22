@@ -99,8 +99,21 @@ public class gameScreenController {
 
     // Handle other button presses (achievements, feed, play, etc.)
     @FXML
-    void achievementPressed(ActionEvent event) {
+    void achievementPressed(ActionEvent event) throws IOException {
         // Handle achievement button press
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("finalAchievements.fxml"));
+        Parent root = loader.load();
+
+        AchievementController achievementController = loader.getController();
+
+        Stage stage = (Stage) achievementButton.getScene().getWindow();
+        achievementController.setStage(stage);
+
+        Scene achievementScene = new Scene(root, 1200, 800);
+        stage.setScene(achievementScene);
+        stage.setFullScreen(true);
+        stage.setTitle("Achievements");
+        stage.show();
     }
 
     @FXML
