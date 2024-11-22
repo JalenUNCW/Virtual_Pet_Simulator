@@ -12,7 +12,7 @@ public class VP_Simulator extends Application {
     public void start(Stage primaryStage) throws Exception {
 
         // Initialize the MediaManager and play background music
-        MediaManager.initialize("audio/pixel-dreams-259187.wav");
+        MediaManager.initialize("audio/gentle-fields-194622.wav");
 
         // Load the FXML for the main menu
         FXMLLoader loader = new FXMLLoader(getClass().getResource("main-menu.fxml"));
@@ -27,6 +27,7 @@ public class VP_Simulator extends Application {
         scene.getStylesheets().add(
                 getClass().getResource("/com/example/vp_simulator/styles/styles.css").toExternalForm()
         );
+
         primaryStage.setScene(scene);
         primaryStage.setFullScreen(true); // Optional: start in fullscreen
         primaryStage.setTitle("Main Menu");
