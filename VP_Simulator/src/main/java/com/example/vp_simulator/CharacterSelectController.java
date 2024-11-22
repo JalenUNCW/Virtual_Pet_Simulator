@@ -46,6 +46,16 @@ public class CharacterSelectController {
 
     public AnchorPane anchorPane;
 
+    public Pet pet;
+
+    public void setPet(Pet pet) {
+        this.pet = pet;
+    }
+
+    public static Pet getPet() {
+        return pet;
+    }
+
     // Setter method to pass the stage to the controller
     public void setStage(Stage stage) {
         this.stage = stage;
@@ -104,6 +114,8 @@ public class CharacterSelectController {
         }
 
         System.out.println("Scene switched to game screen with Dog selected");
+
+
     }
 
     // Handle Cat button action

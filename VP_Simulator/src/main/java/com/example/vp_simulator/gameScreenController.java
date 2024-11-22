@@ -1,6 +1,7 @@
 package com.example.vp_simulator;
 
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -64,6 +65,8 @@ public class gameScreenController {
 
     private Stage stage;
 
+    private Pet pet;
+
     // Method to set the selected pet (called from CharacterSelectController)
     public void setSelectedPet(String pet) {
         this.selectedPet = pet;
@@ -79,6 +82,11 @@ public class gameScreenController {
             Image catImage = new Image("file:images/cutecat.png");  // Adjust path as needed
             petImage.setImage(catImage);
         }
+    }
+
+    @FXML
+    public void decrementProgress(Pet pet) {
+
     }
 
     // Handle Menu button press (Go back to Main Menu)
@@ -132,7 +140,9 @@ public class gameScreenController {
 
     @FXML
     void feedPressed(ActionEvent event) {
-        // Handle feed button press
+        Pet pet = CharacterSelectController.getPet();
+        pet.feed();
+
     }
 
     @FXML
@@ -175,11 +185,23 @@ public class gameScreenController {
     @FXML
     public void initialize() {
 
+        pet = CharacterSelectController.getPet();
+
         backgroundImage.fitWidthProperty().bind(imageAnchor.widthProperty());
         backgroundImage.fitHeightProperty().bind(imageAnchor.heightProperty());
 
         // Start the background music when the main menu is initialized
         //MediaManager.playMusic("audio/pixel-dreams-259187.wav");
+    }
+
+    public void handleProgressEvent(ActionEvent event) {
+
+        Pet pet = CharacterSelectController.getPet();
+
+        healthBar.setProgress((double) pet.getHealth() /100);
+        hungerBar.setProgress((double) pet.getHunger() /100);
+        happinessBar.setProgress((double) pet.getHappiness() /100);
+        energyBar.setProgress((double) pet.getEnergy() /100);
     }
 
 }
