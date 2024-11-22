@@ -33,7 +33,7 @@ public class VP_Simulator extends Application {
         primaryStage.setWidth(Screen.getPrimary().getBounds().getWidth()); // Match screen width
         primaryStage.setHeight(Screen.getPrimary().getBounds().getHeight()); // Match screen height
         primaryStage.setFullScreen(true); // Optional: start in fullscreen
-        primaryStage.setResizable(false);
+        //primaryStage.setResizable(false);
         primaryStage.setTitle("Main Menu");
 
         // Disable exit full screen (optional)

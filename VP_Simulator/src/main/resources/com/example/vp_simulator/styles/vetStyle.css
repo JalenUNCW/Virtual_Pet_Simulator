@@ -9,11 +9,11 @@
     -fx-pref-height: 100%;
 }
 
-/* Button Styling */
+/* Button Styles */
 .button {
     -fx-background-color: #6D4C41;
     -fx-text-fill: white;
-    -fx-font-size: 14px;
+    -fx-font-size: 24px;
     -fx-font-family: "Press Start 2P", sans-serif;
     -fx-padding: 10 20;
     -fx-effect: dropshadow(gaussian, #000000, 10, 0.5, 0, 0);
@@ -24,11 +24,17 @@
 }
 
 /* Specific Button Effects for Vet Screen */
+.button:hover {
+    -fx-background-color: #8D6E63;
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
 .button:pressed {
     -fx-background-color: #5D4037;
 }
 
-.checkupButton, .groomButton, .mainMenuButton, .achievementsButton {
+.checkupButton, .groomButton, .mainMenuButton, .achievementsButton .goBackButton{
     -fx-font-size: 32px;
     -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.8), 30, 0.5, 0, 0);
     -fx-pref-height: 120px;

@@ -123,9 +123,9 @@
 /* Centering Content and Ensuring Equal Spacing */
 .stack-pane {
     -fx-alignment: center;
-    -fx-padding: 5;
-    -fx-max-width: 80%;
-    -fx-max-height: 80%;
+    -fx-padding: 10;
+    -fx-max-width: 50%;
+    -fx-max-height: 50%;
 }
 
 /* Label Styling */
