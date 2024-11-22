@@ -6,21 +6,35 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane fx:id="anchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" styleClass="anchor-pane" stylesheets="@styles/styles.css" xmlns="http://javafx.com/javafx/22.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.vp_simulator.MainMenuController">
+<?import javafx.scene.control.Label?>
+<AnchorPane fx:id="anchorPane"
+            maxHeight="1.7976931348623157E308"
+            maxWidth="1.7976931348623157E308"
+            minHeight="-Infinity"
+            minWidth="-Infinity"
+            styleClass="anchor-pane"
+            stylesheets="@styles/styles.css"
+            xmlns="http://javafx.com/javafx/22.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.vp_simulator.MainMenuController">
    <children>
-      <ImageView fx:id="mainmenuImage" fitHeight="400.0" fitWidth="600.0" styleClass="mainmenu" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <ImageView fx:id="mainmenuImage" fitHeight="400.0" fitWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <image>
             <Image url="@images/mainmenu-backgroundimage.jpg" />
          </image>
       </ImageView>
 
+      <!-- Title -->
+      <Label fx:id="titleLabel" text="Virtual Pet Simulator" styleClass="title" AnchorPane.topAnchor="150.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+
       <!-- Main Menu Buttons in a VBox (Centered) -->
-      <VBox fx:id="mainVBox" styleClass="mainVbox" stylesheets="@styles/styles.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" spacing="50">
+      <VBox fx:id="mainVBox" styleClass="mainVbox" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" spacing="50">
          <children>
-            <Button fx:id="playButton" onAction="#handlePlayButtonAction" styleClass="playButton" stylesheets="@styles/styles.css" text="PLAY"/>
-            <Button fx:id="settingsButton" onAction="#handleSettingsButtonAction" styleClass="settingsButton" stylesheets="@styles/styles.css" text="SETTINGS" />
-            <Button fx:id="quitButton" onAction="#handleQuitButtonAction" styleClass="quitButton" stylesheets="@styles/styles.css" text="QUIT" />
+            <Button fx:id="playButton" onAction="#handlePlayButtonAction" styleClass="playButton" text="PLAY"/>
+            <Button fx:id="settingsButton" onAction="#handleSettingsButtonAction" styleClass="settingsButton" text="SETTINGS" />
+            <Button fx:id="quitButton" onAction="#handleQuitButtonAction" styleClass="quitButton" text="QUIT" />
          </children>
       </VBox>
    </children>
 </AnchorPane>
+

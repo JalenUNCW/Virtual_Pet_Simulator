@@ -34,10 +34,10 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label styleClass="label" text="Health" />
-            <Label text="Hunger" styleClass="label" GridPane.rowIndex="1" />
-            <Label text="Energy" styleClass="label" GridPane.rowIndex="2" />
-            <Label text="Happiness" styleClass="label" GridPane.rowIndex="3" />
+            <Label styleClass="gslabel" text="Health"/>
+            <Label text="Hunger" styleClass="gslabel" GridPane.rowIndex="1" />
+            <Label text="Energy" styleClass="gslabel" GridPane.rowIndex="2" />
+            <Label text="Happiness" styleClass="gslabel" GridPane.rowIndex="3" />
             <ProgressBar fx:id="energyBar" maxWidth="1.7976931348623157E308" prefWidth="200.0" progress="1.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <ProgressBar fx:id="healthBar" maxWidth="1.7976931348623157E308" progress="1.0" GridPane.columnIndex="1" />
             <ProgressBar fx:id="hungerBar" maxWidth="1.7976931348623157E308" prefWidth="200.0" progress="1.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />

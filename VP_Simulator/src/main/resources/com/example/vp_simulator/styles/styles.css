@@ -38,6 +38,19 @@
     -fx-max-height: 30%; /* Limit max height to 30% */
 }
 
+/* Title Styling */
+.title {
+    -fx-font-family: "Press Start 2P", sans-serif; /* Pixelated font */
+    -fx-font-size: 80px; /* Large font size */
+    -fx-text-fill: linear-gradient(to bottom, #FFD700, #FFA500); /* Gradient gold to orange */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.8), 15, 0.5, 2, 2),
+                 dropshadow(gaussian, rgba(255, 255, 255, 0.6), 10, 0.3, -2, -2);
+    -fx-alignment: center;
+    -fx-padding: 5;
+    letter-spacing: 150px;
+}
+
+
 /* Button Styles */
 .button {
     -fx-background-color: #6D4C41;
@@ -92,10 +105,8 @@
 
 .mainVbox{
     -fx-alignment: center;
-    -fx-spacing: 50;
-    -fx-padding: 15;
-    -fx-pref-width: 650px;
-    -fx-pref-height: 500px;
+    -fx-spacing: 30;
+    -fx-padding: 10;
 }
 /* Layout Containers */
 .vbox {
@@ -129,7 +140,7 @@
 }
 
 /* Label Styling */
-.label {
+.gslabel {
     -fx-font-family: "Press Start 2P", sans-serif;
     -fx-font-size: 14px;
     -fx-text-fill: white;
