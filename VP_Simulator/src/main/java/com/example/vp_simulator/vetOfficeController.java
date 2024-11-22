@@ -70,26 +70,55 @@ public class vetOfficeController {
 
     @FXML
     public void handleBackButtonPressed() throws IOException {
-        // Load the main menu scene
+        // Load the game screen scene
         FXMLLoader loader = new FXMLLoader(getClass().getResource("game-screen.fxml"));
         Parent root = loader.load();
 
-        // Get the controller for the MainMenuController
+        // Get the controller for the gameScreenController
+        gameScreenController gameScreenController = loader.getController();
+
+        // Pass the current stage to the gameScreenController
+        Stage stage = (Stage) goBackButton.getScene().getWindow();
+        gameScreenController.setStage(stage);
+
+        // Set the new scene
+        Scene gameScreen = new Scene(root, 1200, 800); // Set the size of the game scene
+
+        stage.setScene(gameScreen);
+        stage.setFullScreen(true);
+        stage.setTitle("Main Menu");
+        stage.show();  // Show the game scene
+
+    }
+    @FXML
+    public void handleMainMenuButtonPressed() throws IOException{
+        FXMLLoader Loader = new FXMLLoader(getClass().getResource("main-menu.fxml"));
+        Parent root = loader.load();
+
         MainMenuController mainMenuController = loader.getController();
 
-        // Pass the current stage to the MainMenuController
         Stage stage = (Stage) mainMenuButton.getScene().getWindow();
         mainMenuController.setStage(stage);
 
-        // Set the new scene
-        Scene mainMenuScene = new Scene(root, 1200, 800); // Set the size of the main menu scene
-
+        Scene mainMenuScene = new Scene(root, 1200, 800);
         stage.setScene(mainMenuScene);
-        stage.setFullScreen(true);
         stage.setTitle("Main Menu");
-        stage.show();  // Show the main menu scene
-
+        stage.show();
     }
+    @FXML
+    public void handleAchievementsButtonPressed() throws IOException{
+        FXMLLoader Loader = new FXMLLoader(getClass().getResource("finalAchievements.fxml"));
+        Parent root = loader.load();
 
+        AchievementController achievementController = loader.getController();
+
+        Stage stage = (Stage) achievementsButton.getScene().getWindow();
+        achievementController.setStage(stage);
+
+        Scene achievementsScene = new Scene(root,1200,800);
+        stage.setScene(achievementsScene);
+        stage.setTitle("Achievements");
+        stage.show();
+    }
 
 }

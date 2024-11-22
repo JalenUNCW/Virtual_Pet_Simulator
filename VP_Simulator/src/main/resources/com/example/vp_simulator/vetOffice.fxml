@@ -42,17 +42,17 @@
                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 </rowConstraints>
                 <children>
-                    <Button fx:id="mainMenuButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-background-color: lightblue;" text="Main Menu">
+                    <Button fx:id="mainMenuButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="handleMainMenuButtonPressed" style="-fx-background-color: lightblue;" text="Main Menu">
                         <GridPane.margin>
                             <Insets bottom="2.0" top="2.0" />
                         </GridPane.margin>
                     </Button>
-                    <Button fx:id="achievementsButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-background-color: lightblue;" text="Achievements" GridPane.rowIndex="1">
+                    <Button fx:id="achievementsButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="handleAchievementsButtonPressed" style="-fx-background-color: lightblue;" text="Achievements" GridPane.rowIndex="1">
                         <GridPane.margin>
                             <Insets bottom="2.0" top="2.0" />
                         </GridPane.margin>
                     </Button>
-                    <Button fx:id="goBackButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-background-color: lightblue;" text="Go Back" GridPane.rowIndex="2">
+                    <Button fx:id="goBackButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="handleBackButtonPressed" style="-fx-background-color: lightblue;" text="Go Back" GridPane.rowIndex="2">
                         <GridPane.margin>
                             <Insets top="2.0" />
                         </GridPane.margin>
