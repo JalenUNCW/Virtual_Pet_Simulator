@@ -20,6 +20,13 @@
     -fx-background-repeat: no-repeat;
 }
 
+.gridpane {
+    -fx-background-image: url("/com/example/vp_simulator/images/mainmenu-background.jpg");
+    -fx-background-size: cover;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+}
+
 /* Panes for character images */
 .catPane, .dogPane {
     -fx-background-radius: 5px;

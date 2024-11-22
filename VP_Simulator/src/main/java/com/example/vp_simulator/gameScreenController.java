@@ -21,9 +21,6 @@ public class gameScreenController {
     private Button achievementButton;
 
     @FXML
-    private ImageView backgroundImageDisplay;
-
-    @FXML
     private ProgressBar energyBar;
 
     @FXML
@@ -65,6 +62,8 @@ public class gameScreenController {
 
     private String selectedPet;
 
+    private Stage stage;
+
     // Method to set the selected pet (called from CharacterSelectController)
     public void setSelectedPet(String pet) {
         this.selectedPet = pet;
@@ -105,10 +104,43 @@ public class gameScreenController {
         stage.show();  // Show the main menu scene
     }
 
+    public void setStage(Stage stage) {
+        this.stage = stage;
+
+    }
+
     // Handle other button presses (achievements, feed, play, etc.)
     @FXML
-    void achievementPressed(ActionEvent event) {
+    void achievementPressed(ActionEvent event) throws IOException {
         // Handle achievement button press
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("finalAchievements.fxml"));
+        Parent root = loader.load();
+
+        AchievementController achievementController = loader.getController();
+
+        Stage stage = (Stage) achievementButton.getScene().getWindow();
+        achievementController.setStage(stage);
+
+        Scene achievementScene = new Scene(root, 1200, 800);
+        stage.setScene(achievementScene);
+        stage.setFullScreen(true);
+        stage.setTitle("Achievements");
+        stage.show();
+
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("game-screen.fxml"));
+            Parent root = loader.load();
+            gameScreenController controller = loader.getController();
+            controller.setSelectedPet("Dog");
+            Scene gameScene = new Scene(root, 1200, 800);
+            stage.setScene(gameScene);
+            stage.setFullScreen(true);
+            stage.setTitle("Game Screen - Dog Selected ");
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.err.println("Error loading the game screen.");
+        }
     }
 
     @FXML
