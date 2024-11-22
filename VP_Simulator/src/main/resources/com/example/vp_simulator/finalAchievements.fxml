@@ -8,125 +8,77 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<HBox fx:id="hbox" alignment="BOTTOM_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/22.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.vp_simulator.AchievementController">
-   <children>
-      <GridPane prefHeight="400.0" prefWidth="504.0">
-        <columnConstraints>
-          <ColumnConstraints hgrow="ALWAYS" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="-Infinity" percentWidth="0.0" />
-            <ColumnConstraints hgrow="ALWAYS" maxWidth="-Infinity" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints vgrow="SOMETIMES" />
-        </rowConstraints>
-         <children>
-            <GridPane fx:id="achievementGridPane" gridLinesVisible="true" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
-              <columnConstraints>
-                <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="-Infinity" minWidth="10.0" />
-                <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
-              </columnConstraints>
-              <rowConstraints>
-                  <RowConstraints fx:id="rowOne" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints fx:id="rowTwo" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints fx:id="rowThree" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints fx:id="rowFour" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints fx:id="rowFive" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints fx:id="rowSix" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints fx:id="rowSeven" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-               <children>
-                  <Label fx:id="achievementLabelDog" text="Dog Days" textAlignment="CENTER" GridPane.rowIndex="3">
-                     <padding>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </padding>
-                     <GridPane.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </GridPane.margin></Label>
-                  <Label fx:id="achievementLabelTraining" text="Training Day" textAlignment="CENTER" GridPane.rowIndex="4">
-                     <padding>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </padding>
-                     <GridPane.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </GridPane.margin></Label>
-                  <Label fx:id="achievementLabelBreak" text="Bathroom Break" textAlignment="CENTER" GridPane.rowIndex="5">
-                     <padding>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </padding>
-                     <GridPane.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </GridPane.margin></Label>
-                  <Label fx:id="achievementLabelWalk" text="First Walk" textAlignment="CENTER">
-                     <padding>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </padding>
-                     <GridPane.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </GridPane.margin></Label>
-                  <Label fx:id="achievementLabelNight" text="Night Night" textAlignment="CENTER" GridPane.rowIndex="1">
-                     <padding>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </padding>
-                     <GridPane.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </GridPane.margin></Label>
-                  <Label fx:id="achievementLabelHunger" text="Hunger Games" textAlignment="CENTER" GridPane.rowIndex="2">
-                     <padding>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </padding>
-                     <GridPane.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </GridPane.margin></Label>
-                  <TextArea fx:id="achievementTextArea1" editable="false" prefHeight="200.0" prefWidth="200.0" text="You walked your pet for the 1st time " GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                  <TextArea fx:id="achievementTextArea2" editable="false" prefHeight="200.0" prefWidth="200.0" text="Put your pet to sleep for the 1st time " GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <TextArea fx:id="achievementTextArea3" editable="false" prefHeight="200.0" prefWidth="200.0" text="Feed your pet for the 1st time" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <TextArea fx:id="achievementTextArea4" editable="false" prefHeight="200.0" prefWidth="200.0" text="Your pet had their 1st birthday" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                  <TextArea fx:id="achievementTextArea5" editable="false" prefHeight="200.0" prefWidth="200.0" text="1st time training your pet " GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                  <TextArea fx:id="achievementTextArea6" editable="false" prefHeight="200.0" prefWidth="200.0" text="1st time taking your pet out " GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                  <Label fx:id="achievementLabelVet" text="Vet Visit" textAlignment="CENTER" GridPane.rowIndex="6">
-                     <padding>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </padding>
-                     <GridPane.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </GridPane.margin></Label>
-                  <TextArea fx:id="achievementTextArea7" editable="false" prefHeight="200.0" prefWidth="200.0" text="1st time taking your pet to the vet" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                  <Label fx:id="achievementLabel" text="Poor Owner " GridPane.rowIndex="7" />
-                  <TextArea fx:id="achievementTextArea8" editable="false" prefHeight="200.0" prefWidth="200.0" text="Your pet health hit a critical low" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-               </children>
-               <GridPane.margin>
-                  <Insets top="60.0" />
-               </GridPane.margin>
-            </GridPane>
-            <GridPane fx:id="headerGridPane" gridLinesVisible="true" maxHeight="-Infinity" prefHeight="67.0" prefWidth="504.0">
-              <columnConstraints>
-                <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="166.0" minWidth="10.0" prefWidth="127.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="377.5" minWidth="338.5" prefWidth="377.5" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints minHeight="-Infinity" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-               <GridPane.margin>
-                  <Insets top="-350.0" />
-               </GridPane.margin>
-               <children>
-                  <Label contentDisplay="CENTER" maxWidth="-Infinity" minWidth="-Infinity" text="Name">
-                     <GridPane.margin>
-                        <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
-                     </GridPane.margin>
-                  </Label>
-                  <Label minWidth="-Infinity" text="Description" GridPane.columnIndex="1">
-                     <GridPane.margin>
-                        <Insets bottom="150.0" left="150.0" right="150.0" top="150.0" />
-                     </GridPane.margin>
-                  </Label>
-               </children>
-            </GridPane>
-         </children>
-         <HBox.margin>
-            <Insets />
-         </HBox.margin>
-      </GridPane>
-   </children>
+<HBox fx:id="hbox" alignment="TOP_CENTER" xmlns="http://javafx.com/javafx/22.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.vp_simulator.AchievementController" stylesheets="@styles/achievementStyle.css">
+    <children>
+        <GridPane prefHeight="400.0" prefWidth="504.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="ALWAYS" />
+                <ColumnConstraints hgrow="SOMETIMES" />
+                <ColumnConstraints hgrow="ALWAYS" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <!-- Header GridPane -->
+                <GridPane fx:id="headerGridPane" maxHeight="-Infinity" prefHeight="48.0" prefWidth="504.0" GridPane.rowIndex="0">
+                    <columnConstraints>
+                        <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <Label text="Name" GridPane.columnIndex="0">
+                            <GridPane.margin>
+                                <Insets left="10.0" />
+                            </GridPane.margin>
+                        </Label>
+                        <Label text="Description" GridPane.columnIndex="1">
+                            <GridPane.margin>
+                                <Insets left="10.0" />
+                            </GridPane.margin>
+                        </Label>
+                    </children>
+                </GridPane>
+
+                <!-- Achievements GridPane -->
+                <GridPane fx:id="achievementGridPane" GridPane.rowIndex="1" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                    <columnConstraints>
+                        <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <!-- Labels -->
+                        <Label text="Dog Days" GridPane.rowIndex="0" />
+                        <Label text="Training Day" GridPane.rowIndex="1" />
+                        <Label text="Bathroom Break" GridPane.rowIndex="2" />
+                        <Label text="First Walk" GridPane.rowIndex="3" />
+                        <Label text="Night Night" GridPane.rowIndex="4" />
+                        <Label text="Hunger Games" GridPane.rowIndex="5" />
+                        <Label text="Vet Visit" GridPane.rowIndex="6" />
+
+                        <!-- Text Areas -->
+                        <TextArea editable="false" prefHeight="30.0" prefWidth="200.0" text="You walked your pet for the 1st time" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                        <TextArea editable="false" prefHeight="30.0" prefWidth="200.0" text="Put your pet to sleep for the 1st time" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextArea editable="false" prefHeight="30.0" prefWidth="200.0" text="Feed your pet for the 1st time" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextArea editable="false" prefHeight="30.0" prefWidth="200.0" text="Your pet had their 1st birthday" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextArea editable="false" prefHeight="30.0" prefWidth="200.0" text="1st time training your pet" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <TextArea editable="false" prefHeight="30.0" prefWidth="200.0" text="1st time taking your pet out" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <TextArea editable="false" prefHeight="30.0" prefWidth="200.0" text="1st time taking your pet to the vet" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                    </children>
+                </GridPane>
+            </children>
+        </GridPane>
+    </children>
 </HBox>

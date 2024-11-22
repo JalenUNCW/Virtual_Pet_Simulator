@@ -1,0 +1,74 @@
+/* General HBox styling */
+.hbox {
+    -fx-background-color: #3E2723; /* Dark brown background */
+    -fx-padding: 20;
+    -fx-alignment: center;
+}
+
+/* GridPane styling */
+.grid-pane {
+    -fx-background-color: #6D4C41; /* Medium brown for grid sections */
+    -fx-padding: 20;
+    -fx-hgap: 20;
+    -fx-vgap: 20;
+    -fx-background-radius: 5px;
+}
+
+/* Header styling */
+.header-label {
+    -fx-font-family: "Press Start 2P", sans-serif;
+    -fx-font-size: 16px;
+    -fx-text-fill: #FFD54F; /* Gold text for headers */
+    -fx-effect: dropshadow(gaussian, #000000, 5, 0.8, 0, 0);
+}
+
+/* Achievement labels */
+.label {
+    -fx-font-family: "Press Start 2P", sans-serif;
+    -fx-font-size: 14px;
+    -fx-text-fill: #FFFFFF; /* White text for achievements */
+    -fx-effect: dropshadow(gaussian, #000000, 3, 0.5, 0, 0);
+}
+
+/* TextArea styling */
+.text-area {
+    -fx-font-family: "Press Start 2P", sans-serif;
+    -fx-font-size: 12px;
+    -fx-text-fill: #FFFFFF;
+    -fx-control-inner-background: #5D4037; /* Dark brown */
+    -fx-border-color: #8D6E63; /* Lighter brown for borders */
+    -fx-border-width: 2px;
+    -fx-border-radius: 5px;
+    -fx-padding: 10;
+    -fx-effect: dropshadow(gaussian, #000000, 5, 0.5, 0, 0);
+}
+
+/* Styling for TextArea content (read-only mode) */
+.text-area:disabled {
+    -fx-opacity: 1.0;
+}
+
+/* Styling Buttons */
+.button {
+    -fx-background-color: #6D4C41;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 12px;
+    -fx-font-family: "Press Start 2P", sans-serif;
+    -fx-padding: 10 20;
+    -fx-effect: dropshadow(gaussian, #000000, 10, 0.5, 0, 0);
+    -fx-border-radius: 10;
+    -fx-border-color: #4E342E;
+    -fx-border-width: 3;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #8D6E63;
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
+.button:pressed {
+    -fx-background-color: #5D4037;
+}
+
