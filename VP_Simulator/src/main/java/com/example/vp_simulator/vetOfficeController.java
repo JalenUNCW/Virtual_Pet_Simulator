@@ -8,6 +8,8 @@ import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -17,6 +19,7 @@ import java.util.ResourceBundle;
 
 
 public class vetOfficeController {
+
 
     @FXML
     private ResourceBundle resources;
@@ -39,8 +42,7 @@ public class vetOfficeController {
     @FXML
     private Button groomButton;
 
-    @FXML
-    private ImageView vetImageView;
+
 
     private Stage stage;
 
@@ -50,7 +52,11 @@ public class vetOfficeController {
     @FXML
     private ImageView backgroundImageView; // Background image
     @FXML
-    private AnchorPane rootPane;  // Root layout
+    private StackPane rootPane;  // Root layout
+    @FXML
+    private ImageView vetImageView;
+    @FXML
+    public GridPane gridPane;
 
     // The image of the vet to be displayed when "Vet Enters"
     private Image vetImage = new Image(getClass().getResourceAsStream("images/pixil-frame-0.png"));
@@ -60,12 +66,24 @@ public class vetOfficeController {
         // Bind background image to resize with the window
         backgroundImageView.fitWidthProperty().bind(rootPane.widthProperty());
         backgroundImageView.fitHeightProperty().bind(rootPane.heightProperty());
+
+        // Set GridPane to grow with the window
+        gridPane.prefWidthProperty().bind(rootPane.widthProperty());
+        gridPane.prefHeightProperty().bind(rootPane.heightProperty());
+
+        // Bind the vet image to fill the right side of the screen
+        vetImageView.fitWidthProperty().bind(gridPane.widthProperty().multiply(0.5)); // Make the vet image 50% of the screen width
+        vetImageView.fitHeightProperty().bind(gridPane.heightProperty()); // Make the vet image the full height of the GridPane
+
+        // Optional: Set an initial state for the vet image to be hidden or not visible at first
+        vetImageView.setVisible(false);
     }
 
     @FXML
     public void vetEnters() {
         // When the vet button is clicked, display the vet image
         vetImageView.setImage(vetImage);
+        vetImageView.setVisible(true);
     }
 
     @FXML
