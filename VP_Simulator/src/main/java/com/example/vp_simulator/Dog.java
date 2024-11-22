@@ -13,7 +13,7 @@ public class Dog extends Pet{
 
     public Dog() {
         super();
-        // add random breed here
+        this.breed = DogBreed.Pug;
     }
 
     public void setBreed(DogBreed breed) {

@@ -13,7 +13,7 @@ public class Cat extends Pet{
 
     public Cat() {
         super();
-        // add random breed here
+        this.breed = CatBreed.Tabby;
     }
 
     @Override

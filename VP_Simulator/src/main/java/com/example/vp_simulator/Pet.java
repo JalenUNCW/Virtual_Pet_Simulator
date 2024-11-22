@@ -8,6 +8,7 @@ public class Pet {
     private int energy;
 
     Pet() {
+        this.name = "Jimmy";
         this.health = 100;
         this.hunger = 100;
         this.happiness = 100;
@@ -15,6 +16,7 @@ public class Pet {
     }
 
     // accessors
+    public String getName() { return this.name; }
     public int getHealth() { return this.health; }
     public int getHunger() { return this.hunger; }
     public int getEnergy() { return energy; }

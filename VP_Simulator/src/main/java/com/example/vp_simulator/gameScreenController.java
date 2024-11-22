@@ -209,6 +209,8 @@ public class gameScreenController {
 
         pet = CharacterSelectController.getPet();
 
+        System.out.printf ("Here is your pet!:", pet.getName());
+
         backgroundImage.fitWidthProperty().bind(imageAnchor.widthProperty());
         backgroundImage.fitHeightProperty().bind(imageAnchor.heightProperty());
 

@@ -115,6 +115,7 @@ public class CharacterSelectController {
 
         System.out.println("Scene switched to game screen with Dog selected");
 
+        setPet(new Dog());
 
     }
 
@@ -147,6 +148,9 @@ public class CharacterSelectController {
         }
 
         System.out.println("Scene switched to game screen with Cat selected");
+
+        setPet(new Cat());
+
     }
 
 
