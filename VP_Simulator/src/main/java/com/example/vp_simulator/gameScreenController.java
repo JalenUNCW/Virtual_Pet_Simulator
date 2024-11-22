@@ -10,6 +10,7 @@ import javafx.scene.control.ProgressBar;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -41,16 +42,23 @@ public class gameScreenController {
     private Button menuButton;
 
     @FXML
-    private ImageView petImageDisplay;
+    private ImageView petImage;
 
     @FXML
     private ToggleButton playToggle;
+
+    @FXML
+    private AnchorPane imageAnchor;
+
 
     @FXML
     private Button trainButton;
 
     @FXML
     private Button vetButton;
+
+    @FXML
+    private ImageView backgroundImage;
 
     @FXML
     private ToggleButton walkToggle;
@@ -67,16 +75,16 @@ public class gameScreenController {
     private void updatePetDetails() {
         if (selectedPet.equals("Dog")) {
             Image dogImage = new Image("file:images/cutedog.jpg");  // Adjust path as needed
-            petImageDisplay.setImage(dogImage);
+            petImage.setImage(dogImage);
         } else if (selectedPet.equals("Cat")) {
             Image catImage = new Image("file:images/cutecat.png");  // Adjust path as needed
-            petImageDisplay.setImage(catImage);
+            petImage.setImage(catImage);
         }
     }
 
     // Handle Menu button press (Go back to Main Menu)
     @FXML
-    void menuPressed(ActionEvent event) throws IOException {
+    void menuPressed() throws IOException {
         // Load the main menu scene
         FXMLLoader loader = new FXMLLoader(getClass().getResource("main-menu.fxml"));
         Parent root = loader.load();
@@ -143,6 +151,16 @@ public class gameScreenController {
     @FXML
     void walkPressed(ActionEvent event) {
         // Handle walk button press
+    }
+
+    @FXML
+    public void initialize() {
+
+        backgroundImage.fitWidthProperty().bind(imageAnchor.widthProperty());
+        backgroundImage.fitHeightProperty().bind(imageAnchor.heightProperty());
+
+        // Start the background music when the main menu is initialized
+        //MediaManager.playMusic("audio/pixel-dreams-259187.wav");
     }
 
 }
