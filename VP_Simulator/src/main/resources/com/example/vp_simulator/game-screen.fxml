@@ -14,12 +14,12 @@
 
 <GridPane hgap="10.0" stylesheets="@styles/styles.css" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: #d9b99b;" vgap="-100.0" xmlns="http://javafx.com/javafx/22.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.vp_simulator.gameScreenController">
     <columnConstraints>
-        <ColumnConstraints hgrow="SOMETIMES" maxWidth="200" minWidth="10.0" prefWidth="119.33333079020181" />
-        <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="481.0000025431316" />
+        <ColumnConstraints hgrow="ALWAYS" maxWidth="200" minWidth="10.0" prefWidth="119.33333079020181" />
+        <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="481.0000025431316" />
     </columnConstraints>
     <rowConstraints>
-        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-        <RowConstraints maxHeight="100.0" prefHeight="100.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="50.0"  vgrow="ALWAYS" />
+        <RowConstraints maxHeight="100.0" prefHeight="100.0" vgrow="ALWAYS" />
     </rowConstraints>
     <children>
         <!-- AnchorPane with background and pet images -->
@@ -39,27 +39,31 @@
         <!-- UI Elements: ProgressBars and Labels -->
         <GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
             <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="150" minWidth="75.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="418.99999237060547" />
+                <ColumnConstraints minWidth="150" prefWidth="200" hgrow="SOMETIMES" />
+                <ColumnConstraints minWidth="400" prefWidth="600" hgrow="ALWAYS" />
             </columnConstraints>
             <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="ALWAYS" />
-                <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="ALWAYS" />
-                <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="ALWAYS" />
-                <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="ALWAYS" />
+                <RowConstraints minHeight="30.0" prefHeight="50.0" vgrow="ALWAYS" />
+                <RowConstraints minHeight="30.0" prefHeight="50.0" vgrow="ALWAYS" />
+                <RowConstraints minHeight="30.0" prefHeight="50.0" vgrow="ALWAYS" />
+                <RowConstraints minHeight="30.0" prefHeight="50.0" vgrow="ALWAYS" />
             </rowConstraints>
             <children>
-                <Label styleClass="gslabel" text="Health"/>
-                <Label text="Hunger" styleClass="gslabel" GridPane.rowIndex="1" />
-                <Label text="Energy" styleClass="gslabel" GridPane.rowIndex="2" />
-                <Label text="Happiness" styleClass="gslabel" GridPane.rowIndex="3" />
-                <ProgressBar fx:id="energyBar" maxWidth="1.7976931348623157E308" prefWidth="200.0" progress="1.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                <ProgressBar fx:id="healthBar" maxWidth="1.7976931348623157E308" progress="1.0" GridPane.columnIndex="1" />
-                <ProgressBar fx:id="hungerBar" maxWidth="1.7976931348623157E308" prefWidth="200.0" progress="1.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                <ProgressBar fx:id="happinessBar" maxWidth="1.7976931348623157E308" prefWidth="200.0" progress="1.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <!-- Health -->
+                <Label text="Health" styleClass="gslabel" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+                <ProgressBar fx:id="healthBar" maxWidth="1.7976931348623157E308" prefHeight="50.0" progress="1.0" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+                <!-- Hunger -->
+                <Label text="Hunger" styleClass="gslabel" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+                <ProgressBar fx:id="hungerBar" maxWidth="1.7976931348623157E308" prefHeight="50.0" progress="1.0" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+                <!-- Energy -->
+                <Label text="Energy" styleClass="gslabel" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+                <ProgressBar fx:id="energyBar" maxWidth="1.7976931348623157E308" prefHeight="50.0" progress="1.0" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+                <!-- Happiness -->
+                <Label text="Happiness" styleClass="gslabel" GridPane.rowIndex="3" GridPane.columnIndex="0" />
+                <ProgressBar fx:id="happinessBar" maxWidth="1.7976931348623157E308" prefHeight="50.0" progress="1.0" GridPane.rowIndex="3" GridPane.columnIndex="1" />
             </children>
             <GridPane.margin>
-                <Insets bottom="5.0" right="5.0" />
+                <Insets bottom="10.0" right="5.0" />
             </GridPane.margin>
         </GridPane>
 
