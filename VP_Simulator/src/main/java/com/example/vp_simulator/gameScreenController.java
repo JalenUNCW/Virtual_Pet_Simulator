@@ -163,6 +163,8 @@ public class gameScreenController {
 
         stage.setScene(vetOfficeScene);
         stage.setFullScreen(true);
+        stage.getScene().getRoot().applyCss(); // Force a CSS update
+        stage.getScene().getRoot().requestLayout();
         stage.setTitle("Vet Office");
         stage.show();  // Show the vet office scene
     }

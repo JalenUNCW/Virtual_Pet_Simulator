@@ -110,7 +110,7 @@ public class vetOfficeController {
     }
     @FXML
     public void handleMainMenuButtonPressed() throws IOException{
-        FXMLLoader Loader = new FXMLLoader(getClass().getResource("main-menu.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("main-menu.fxml"));
         Parent root = loader.load();
 
         MainMenuController mainMenuController = loader.getController();
@@ -125,7 +125,7 @@ public class vetOfficeController {
     }
     @FXML
     public void handleAchievementsButtonPressed() throws IOException{
-        FXMLLoader Loader = new FXMLLoader(getClass().getResource("finalAchievements.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("finalAchievements.fxml"));
         Parent root = loader.load();
 
         AchievementController achievementController = loader.getController();
