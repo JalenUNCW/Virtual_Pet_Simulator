@@ -46,7 +46,7 @@ public class CharacterSelectController {
 
     public AnchorPane anchorPane;
 
-    public Pet pet;
+    public static Pet pet;
 
     public void setPet(Pet pet) {
         this.pet = pet;
