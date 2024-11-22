@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -46,13 +47,25 @@ public class vetOfficeController {
     @FXML
     public void setStage(Stage stage){ this.stage = stage; }
 
+    @FXML
+    private ImageView backgroundImageView; // Background image
+    @FXML
+    private AnchorPane rootPane;  // Root layout
+
+    // The image of the vet to be displayed when "Vet Enters"
+    private Image vetImage = new Image(getClass().getResourceAsStream("images/pixil-frame-0.png"));
 
     @FXML
-    Image vet = new Image(Objects.requireNonNull(getClass().getResourceAsStream("images/pixil-frame-0.png")));
+    public void initialize() {
+        // Bind background image to resize with the window
+        backgroundImageView.fitWidthProperty().bind(rootPane.widthProperty());
+        backgroundImageView.fitHeightProperty().bind(rootPane.heightProperty());
+    }
 
     @FXML
     public void vetEnters() {
-        vetImageView.setImage(vet);
+        // When the vet button is clicked, display the vet image
+        vetImageView.setImage(vetImage);
     }
 
     @FXML
