@@ -1,5 +1,6 @@
 package com.example.vp_simulator;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -18,8 +19,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AchievementController extends VP_Simulator {
-    public void setStage(Stage stage) {}
+public class AchievementController{
+    private Stage stage;
+    public void setStage(Stage stage){this.stage = stage;};
+
     enum isUnlocked {Locked, Unlocked};
 
     public void start(Stage stage) throws IOException {
@@ -64,16 +67,10 @@ public class AchievementController extends VP_Simulator {
     private GridPane achievementGridPane;
 
     @FXML
-    private Button allButton;
-
-    @FXML
     private Label achievementLabel;
 
     @FXML
     private TextArea achievementTextArea;
-
-    @FXML
-    private Button bmmButton;
 
     @FXML
     private GridPane headerGridPane;
@@ -82,101 +79,57 @@ public class AchievementController extends VP_Simulator {
     private HBox hbox;
 
     @FXML
-    private Button miscButtons;
-
-    @FXML
-    private Button petfeatsButton;
-
-    @FXML
     private ScrollPane scrollPane;
 
-    private Stage stage;
+    @FXML
+    private Button btgButton;
 
     @FXML
-    private void allButtonAction() {
-        System.out.println("All Button Pressed: ");
-        try{
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("allFeats.fxml"));
-            Parent root = loader.load();
+    private Button bmmButton;
 
-            MainMenuController mainMenu = loader.getController();
-            mainMenu.setStage(stage);
+    @FXML
+    private void btgButtonAction() throws IOException{
+        System.out.println("Back to Game: ");
 
-            Scene mainmenuScene = new Scene(root, 1200, 800);
-            mainmenuScene.getStylesheets().add(getClass().getResource("/com/example/vp_simulator/styles/styles.css").toExternalForm());
-            stage.setScene(mainmenuScene);
-            stage.setFullScreen(true);
-            stage.setTitle("Main Menu");
-            stage.show();
-        }catch (IOException e){
-            System.err.println("Failed to load Screen: "+ e.getMessage());
-        }
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("game-screen.fxml"));
+        Parent root = loader.load();
+
+
+        gameScreenController gamescreenController = loader.getController();
+
+        Stage stage = (Stage) btgButton.getScene().getWindow();
+        gamescreenController.setStage(stage);
+
+        Scene gamescreenScene = new Scene(root, 1200, 800);
+
+        stage.setScene(gamescreenScene);
+        stage.setFullScreen(true);
+        stage.setTitle("Game Screen");
+        stage.show();
+
     }
 
     @FXML
-    private void petfeatsButtonAction() {
-        System.out.println("Pet Feats Button Pressed: ");
-
-        try{
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("petFeats.fxml"));
-            Parent root = loader.load();
-
-            MainMenuController mainMenu = loader.getController();
-            mainMenu.setStage(stage);
-
-            Scene mainmenuScene = new Scene(root, 1200, 800);
-            mainmenuScene.getStylesheets().add(getClass().getResource("/com/example/vp_simulator/styles/styles.css").toExternalForm());
-            stage.setScene(mainmenuScene);
-            stage.setFullScreen(true);
-            stage.setTitle("Main Menu");
-            stage.show();
-        }catch (IOException e){
-            System.err.println("Failed to load Screen: "+ e.getMessage());
-        }
-    }
-
-    @FXML
-    private void miscButtonAction() {
-        System.out.println("Miscellaneous Button Pressed: ");
-
-        try{
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("miscFeats.fxml"));
-            Parent root = loader.load();
-
-            MainMenuController mainMenu = loader.getController();
-            mainMenu.setStage(stage);
-
-            Scene mainmenuScene = new Scene(root, 1200, 800);
-            mainmenuScene.getStylesheets().add(getClass().getResource("/com/example/vp_simulator/styles/styles.css").toExternalForm());
-            stage.setScene(mainmenuScene);
-            stage.setFullScreen(true);
-            stage.setTitle("Main Menu");
-            stage.show();
-        }catch (IOException e){
-            System.err.println("Failed to load Screen: "+ e.getMessage());
-        }
-    }
-
-    @FXML
-    private void bmmButtonAction() {
+    private void bmmButtonAction() throws IOException {
         System.out.println("Back to Main Menu Pressed: ");
+        // Load the main menu scene
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("main-menu.fxml"));
+        Parent root = loader.load();
 
-        try{
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("main-menu.fxml"));
-            Parent root = loader.load();
+        // Get the controller for the MainMenuController
+        MainMenuController mainMenuController = loader.getController();
 
-            MainMenuController mainMenu = loader.getController();
-            mainMenu.setStage(stage);
+        // Pass the current stage to the MainMenuController
+        Stage stage = (Stage) bmmButton.getScene().getWindow();
+        mainMenuController.setStage(stage);
 
-            Scene mainmenuScene = new Scene(root, 1200, 800);
-            mainmenuScene.getStylesheets().add(getClass().getResource("/com/example/vp_simulator/styles/styles.css").toExternalForm());
-            stage.setScene(mainmenuScene);
-            stage.setFullScreen(true);
-            stage.setTitle("Main Menu");
-            stage.show();
-        }catch (IOException e){
-            System.err.println("Failed to load Screen: "+ e.getMessage());
-        }
+        // Set the new scene
+        Scene mainMenuScene = new Scene(root, 1200, 800); // Set the size of the main menu scene
+
+        stage.setScene(mainMenuScene);
+        stage.setFullScreen(true);
+        stage.setTitle("Main Menu");
+        stage.show();  // Show the main menu scene
     }
 
     public void unlockAchivement(isUnlocked status) {
