@@ -2,78 +2,78 @@
 
 /* General Scene Setup */
 .root {
-    -fx-background-color: #3E2723; /* Dark brown background for fallback */
-    -fx-background-image: url("/com/example/vp_simulator/images/mountainbackground.png"); /* Pixelated background */
+    -fx-background-color: #3E2723; /* Dark brown background for fallback */ /* Pixelated background */
     -fx-background-size: cover;
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
+    -fx-smooth: true;
 }
 
 /* Label Styling */
 .label {
     -fx-font-family: "Press Start 2P", sans-serif; /* Pixelated font */
     -fx-font-size: 14px;
-    -fx-text-fill: white; /* White font color */
+    -fx-text-fill: gold; /* Gold font color */
     -fx-effect: dropshadow(gaussian, #000000, 5, 0.5, 0, 0); /* Subtle shadow for depth */
     -fx-alignment: center;
 }
 
-/* Base slider styling */
+/* Slider Styling */
 .slider {
-    -fx-padding: 10;
+    -fx-padding: 15;
 }
 
-/* Thumb (the part you drag) */
 .slider .thumb {
-    -fx-background-color: #FF5722;
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 5, 0.5, 0, 1);
-    -fx-padding: 10;
+    -fx-background-color: #FF5722; /* Bright orange thumb */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.8), 10, 0.7, 0, 2); /* Bigger shadow for pop */
+    -fx-pref-width: 25px; /* Larger thumb size */
+    -fx-pref-height: 25px;
+    -fx-shape: "M -10 0 L 10 0 L 0 20 Z"; /* Arrow-shaped thumb */
 }
 
-/* Track */
 .slider .track {
-    -fx-background-color: #8D6E63;
-    -fx-pref-height: 10px;
+    -fx-background-color: #8D6E63; /* Lighter brown track */
+    -fx-pref-height: 15px; /* Thicker track */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 5, 0.5, 0, 1);
 }
 
-/* Axis (the line where tick marks appear) */
 .slider .axis {
     -fx-tick-label-fill: white;
     -fx-tick-label-font-family: "Press Start 2P";
     -fx-tick-label-font-size: 14px;
 }
 
-/* Individual tick marks */
 .slider .axis .tick-mark {
     -fx-stroke: white;
     -fx-stroke-width: 3;
 }
 
-/* Tick labels */
 .slider .axis .tick-label {
     -fx-text-fill: white;
 }
 
-
 /* Toggle Button Styling */
 .toggle-button {
     -fx-font-family: "Press Start 2P", sans-serif;
-    -fx-font-size: 18px;
-    -fx-background-color: #6D4C41; /* Medium brown */
+    -fx-font-size: 22px; /* Larger font */
+    -fx-background-color: linear-gradient(to bottom, #8D6E63, #6D4C41); /* Gradient for depth */
     -fx-text-fill: white; /* White text */
-    -fx-border-radius: 5; /* Rounded corners */
+    -fx-border-radius: 10; /* More rounded corners */
     -fx-border-color: #4E342E; /* Darker brown border */
     -fx-border-width: 3;
     -fx-cursor: hand;
-    -fx-padding: 10 20;
+    -fx-padding: 15 30; /* Bigger padding for a larger feel */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.8), 10, 0.7, 0, 2); /* More prominent shadow */
 }
 
 .toggle-button:hover {
-    -fx-background-color: #8D6E63; /* Lighter brown on hover */
+    -fx-background-color: #A1887F; /* Lighter tone on hover */
 }
 
 .toggle-button:pressed {
-    -fx-background-color: #5D4037; /* Darker brown on press */
+    -fx-background-color: #5D4037; /* Darker tone on press */
+    -fx-scale-x: 0.95;
+    -fx-scale-y: 0.95;
 }
 
 /* Button Styling */
@@ -82,7 +82,7 @@
     -fx-pref-width: 300px; /* Set width */
     -fx-pref-height: 50px; /* Set height */
     -fx-background-color: #6D4C41; /* Medium brown */
-    -fx-text-fill: white; /* White text */
+    -fx-text-fill: gold; /* Gold text */
     -fx-font-family: "Press Start 2P", sans-serif; /* Pixelated font */
     -fx-border-radius: 10; /* Rounded corners */
     -fx-border-color: #4E342E; /* Dark brown border */
@@ -102,9 +102,10 @@
 
 /* GridPane Styling */
 .grid-pane {
-    -fx-padding: 20;
-    -fx-hgap: 20;
-    -fx-vgap: 15;
+    -fx-padding: 30;
+    -fx-hgap: 30;
+    -fx-vgap: 20;
     -fx-alignment: center;
+    -fx-background-color: transparent;
 }
 

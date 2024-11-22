@@ -28,7 +28,7 @@
       <Label fx:id="titleLabel" text="Virtual Pet Simulator" styleClass="title" AnchorPane.topAnchor="150.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
 
       <!-- Main Menu Buttons in a VBox (Centered) -->
-      <VBox fx:id="mainVBox" styleClass="mainVbox" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" spacing="50">
+      <VBox fx:id="mainVBox" styleClass="mainVbox" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="250.0" spacing="50">
          <children>
             <Button fx:id="playButton" onAction="#handlePlayButtonAction" styleClass="playButton" text="PLAY"/>
             <Button fx:id="settingsButton" onAction="#handleSettingsButtonAction" styleClass="settingsButton" text="SETTINGS" />

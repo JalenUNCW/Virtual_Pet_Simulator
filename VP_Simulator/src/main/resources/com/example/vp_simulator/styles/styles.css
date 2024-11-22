@@ -27,15 +27,45 @@
     -fx-background-repeat: no-repeat;
 }
 
-/* Panes for character images */
-.catPane, .dogPane {
-    -fx-background-radius: 5px;
-    -fx-alignment: center; /* Center the image and button inside the pane */
-    -fx-spacing: 35; /* Space between image and button */
-    -fx-pref-width: 650px; /* Fixed width for each character pane */
-    -fx-pref-height: 500px; /* Fixed height for each character pane */
-    -fx-max-width: 30%; /* Limit max width to 30% */
-    -fx-max-height: 30%; /* Limit max height to 30% */
+/* General Button Styling */
+.button {
+    -fx-background-color: #6D4C41; /* Rich brown base */
+    -fx-text-fill: linear-gradient(to bottom, #FFD700, #FFA500); /* Gold gradient text */
+    -fx-font-size: 16px;
+    -fx-font-family: "Press Start 2P", sans-serif; /* Pixelated font */
+    -fx-padding: 10 25;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.8), 15, 0.5, 0, 3); /* Subtle shadow for depth */
+    -fx-border-radius: 15; /* Rounded corners for a polished look */
+    -fx-background-radius: 15; /* Matching the border radius */
+    -fx-border-color: linear-gradient(to bottom, #FFD700, #FFA500); /* Gold gradient border */
+    -fx-border-width: 3;
+    -fx-cursor: hand; /* Hand cursor on hover */
+    -fx-transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+}
+
+.button:hover {
+    -fx-background-color: #8D6E63; /* Light brown hover effect */
+    -fx-scale-x: 1.1; /* Slight zoom on hover */
+    -fx-scale-y: 1.1;
+    -fx-text-fill: linear-gradient(to bottom, #FFA500, #FFD700); /* Reversed gradient */
+}
+
+.button:pressed {
+    -fx-background-color: #5D4037; /* Darker brown for pressed effect */
+    -fx-text-fill: #FFD700; /* Solid gold text when pressed */
+}
+
+/* Specific Button Styles */
+.playButton, .settingsButton, .quitButton {
+    -fx-font-size: 36px; /* Larger text for primary buttons */
+    -fx-pref-height: 150px; /* Tall buttons for emphasis */
+    -fx-pref-width: 400px; /* Wide buttons for better UX */
+}
+
+.catButton, .dogButton {
+    -fx-font-size: 28px; /* Slightly smaller text for secondary buttons */
+    -fx-pref-height: 100px; /* Compact but clear */
+    -fx-pref-width: 300px; /* Proportionate size for layout */
 }
 
 /* Title Styling */
@@ -46,66 +76,24 @@
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.8), 15, 0.5, 2, 2),
                  dropshadow(gaussian, rgba(255, 255, 255, 0.6), 10, 0.3, -2, -2);
     -fx-alignment: center;
-    -fx-padding: 5;
-    letter-spacing: 150px;
+    -fx-padding: 10;
+    letter-spacing: 10px; /* Adjust spacing for readability */
 }
 
-
-/* Button Styles */
-.button {
-    -fx-background-color: #6D4C41;
-    -fx-text-fill: white;
-    -fx-font-size: 12px;
-    -fx-font-family: "Press Start 2P", sans-serif;
-    -fx-padding: 10 20;
-    -fx-effect: dropshadow(gaussian, #000000, 10, 0.5, 0, 0);
-    -fx-border-radius: 10;
-    -fx-border-color: #4E342E;
-    -fx-border-width: 3;
-    -fx-cursor: hand;
-}
-
-.button:hover {
-    -fx-background-color: #8D6E63;
-    -fx-scale-x: 1.1;
-    -fx-scale-y: 1.1;
-}
-
-.button:pressed {
-    -fx-background-color: #5D4037;
-}
-
-/* Specific Button Effects */
-.playButton, .settingsButton, .quitButton {
-    -fx-font-size: 32px;
-    -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.8), 30, 0.5, 0, 0);
-    -fx-pref-height: 150px;
-    -fx-pref-width: 400px;
-    -fx-padding: 10 20;
-    -fx-margin: 20 10;
-}
-
-
-.catButton, .dogButton{
-    -fx-font-size: 32px;
-    -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.8), 30, 0.5, 0, 0);
-    -fx-pref-height: 250px;
-    -fx-pref-width: 400px;
-}
-
-/* Image View Styling */
+/* Adding a Subtle Glow to Image View */
 .imageview {
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0, 0, 0);
-    -fx-border-radius: 5;
-    -fx-background-radius: 5;
+    -fx-effect: dropshadow(gaussian, rgba(255, 215, 0, 0.8), 20, 0.5, 0, 0); /* Gold glow */
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
     -fx-preserve-ratio: true;
-    -fx-fit-height: 200px; /* Set a fixed height for images */
-    -fx-fit-width: 200px;  /* Set a fixed width for images */
+    -fx-fit-height: 200px;
+    -fx-fit-width: 200px;
 }
+
 
 .mainVbox{
     -fx-alignment: center;
-    -fx-spacing: 30;
+    -fx-spacing: 45;
     -fx-padding: 10;
 }
 /* Layout Containers */
