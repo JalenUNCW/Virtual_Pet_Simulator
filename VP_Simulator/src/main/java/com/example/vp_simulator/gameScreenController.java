@@ -17,6 +17,7 @@ import javafx.scene.control.ToggleButton;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -72,7 +73,7 @@ public class gameScreenController {
     private ToggleButton playToggle;
 
     @FXML
-    private AnchorPane imageAnchor;
+    private StackPane imageAnchor;
 
 
     @FXML

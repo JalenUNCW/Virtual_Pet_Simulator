@@ -12,6 +12,8 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
 <GridPane fx:id="mainpane" hgap="10.0" stylesheets="@styles/styles.css" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: #d9b99b;" xmlns="http://javafx.com/javafx/22.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.vp_simulator.gameScreenController">
     <columnConstraints>
         <ColumnConstraints hgrow="ALWAYS" percentWidth="20" minWidth="150" prefWidth="119.33333079020181" />
@@ -32,17 +34,17 @@
         </ImageView>
 
         <!-- AnchorPane with pet images -->
-        <AnchorPane fx:id="imageAnchor" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="1">
+        <StackPane fx:id="imageAnchor" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="1">
             <children>
-                <!-- Pet Image -->
-                <ImageView fx:id="petImage" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                    <AnchorPane.topAnchor>0.0</AnchorPane.topAnchor>
-                    <AnchorPane.bottomAnchor>0.0</AnchorPane.bottomAnchor>
-                    <AnchorPane.leftAnchor>0.0</AnchorPane.leftAnchor>
-                    <AnchorPane.rightAnchor>0.0</AnchorPane.rightAnchor>
-                </ImageView>
+                <!-- VBox to align ImageView at the bottom -->
+                <VBox alignment="BOTTOM_CENTER" maxHeight="Infinity" maxWidth="Infinity">
+                    <children>
+                        <!-- Pet Image -->
+                        <ImageView fx:id="petImage" fitHeight="350.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </VBox>
             </children>
-        </AnchorPane>
+        </StackPane>
 
         <!-- Top Section: Name, Type, Breed Labels -->
         <GridPane alignment="TOP_CENTER" GridPane.rowIndex="0" GridPane.columnIndex="1" vgap="15">

@@ -41,7 +41,6 @@ public class CharacterSelectController {
     public ImageView catImageView2;
     public Button catButton2;
     public TextField petNameTextField;
-    public Button playButton;
     public Label titleText;
     private VP_Simulator vpSimulator;
 
@@ -176,7 +175,6 @@ public class CharacterSelectController {
 
         System.out.println("Scene switched to game screen with Lab selected");
 
-
     }
 
     // Handle Cat button action
@@ -194,7 +192,6 @@ public class CharacterSelectController {
 
         System.out.println("Scene switched to game screen with Ragdoll selected");
 
-
     }
 
     // Handle Cat button action
@@ -210,7 +207,6 @@ public class CharacterSelectController {
         game_screen_setup("Siamese");
 
         System.out.println("Scene switched to game screen with Siamese selected");
-
 
     }
 
