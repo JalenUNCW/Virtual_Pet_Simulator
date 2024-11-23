@@ -12,15 +12,15 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane fx:id="mainpane" hgap="10.0" stylesheets="@styles/styles.css" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: #d9b99b;" vgap="10.0" xmlns="http://javafx.com/javafx/22.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.vp_simulator.gameScreenController">
+<GridPane fx:id="mainpane" hgap="10.0" stylesheets="@styles/styles.css" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: #d9b99b;" xmlns="http://javafx.com/javafx/22.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.vp_simulator.gameScreenController">
     <columnConstraints>
         <ColumnConstraints hgrow="ALWAYS" maxWidth="200" minWidth="150" prefWidth="119.33333079020181" />
         <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="481.0000025431316" />
     </columnConstraints>
     <rowConstraints>
         <RowConstraints percentHeight="15" vgrow="ALWAYS" />
-        <RowConstraints percentHeight="70" vgrow="ALWAYS" />
-        <RowConstraints percentHeight="15" vgrow="ALWAYS" />
+        <RowConstraints percentHeight="65" vgrow="ALWAYS" />
+        <RowConstraints percentHeight="20" vgrow="ALWAYS" />
     </rowConstraints>
     <children>
 
@@ -45,7 +45,11 @@
         </AnchorPane>
 
         <!-- Top Section: Name, Type, Breed Labels -->
-        <GridPane alignment="TOP_CENTER" GridPane.rowIndex="1" GridPane.columnIndex="1" hgap="50.0" vgap="10.0">
+        <GridPane alignment="TOP_CENTER" GridPane.rowIndex="0" GridPane.columnIndex="1" vgap="15">
+            <rowConstraints>
+                <RowConstraints minHeight="20" prefHeight="20" />
+                <RowConstraints vgrow="ALWAYS" />
+            </rowConstraints>
             <columnConstraints>
                 <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" />
                 <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" />
@@ -53,19 +57,25 @@
             </columnConstraints>
             <children>
                 <!-- Static Labels -->
-                <Label text="Name" styleClass="gslabel" GridPane.columnIndex="0" />
-                <Label text="Type" styleClass="gslabel" GridPane.columnIndex="1" />
-                <Label text="Breed" styleClass="gslabel" GridPane.columnIndex="2" />
+                <Label text="Name" styleClass="gstitlelabel" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <Label text="Type" styleClass="gstitlelabel" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Label text="Breed" styleClass="gstitlelabel" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                 <!-- Dynamic Labels -->
+<<<<<<< HEAD
                 <Label fx:id="nameLabel" text="NAME" styleClass="gslabel" GridPane.columnIndex="0" GridPane.rowIndex="1" />
                 <Label fx:id="typeLabel" text="TYPE" styleClass="gslabel" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                 <Label fx:id="breedLabel" text="BREED" styleClass="gslabel" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                 <Label fx:id="unlockedLabel" styleClass="gslabel" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+=======
+                <Label fx:id="nameLabel" text="NAME" styleClass="gslabel" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <Label fx:id="typeLabel" text="TYPE" styleClass="gslabel" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <Label fx:id="breedLabel" text="BREED" styleClass="gslabel" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+>>>>>>> 934100ceaf99709c2a2b56c9716c0be1fd79b90c
             </children>
         </GridPane>
 
         <!-- UI Elements: ProgressBars and Labels -->
-        <GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.valignment="BOTTOM" vgap="10">
+        <GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="2" vgap="10" hgap="20">
             <columnConstraints>
                 <ColumnConstraints minWidth="150" prefWidth="200" hgrow="SOMETIMES" />
                 <ColumnConstraints minWidth="400" prefWidth="600" hgrow="ALWAYS" />
@@ -78,24 +88,24 @@
             </rowConstraints>
             <children>
                 <!-- Health -->
-                <Label text="Health" styleClass="gslabel" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+                <Label text="Health" styleClass="gslabel" GridPane.rowIndex="0" GridPane.columnIndex="0"  GridPane.margin="0 0 0 10"/>
                 <ProgressBar fx:id="healthBar" maxWidth="1.7976931348623157E308" prefHeight="50.0" progress="1.0" GridPane.rowIndex="0" GridPane.columnIndex="1" />
                 <!-- Hunger -->
-                <Label text="Hunger" styleClass="gslabel" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+                <Label text="Hunger" styleClass="gslabel" GridPane.rowIndex="1" GridPane.columnIndex="0"  GridPane.margin="0 0 0 10"/>
                 <ProgressBar fx:id="hungerBar" maxWidth="1.7976931348623157E308" prefHeight="50.0" progress="1.0" GridPane.rowIndex="1" GridPane.columnIndex="1" />
                 <!-- Energy -->
-                <Label text="Energy" styleClass="gslabel" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+                <Label text="Energy" styleClass="gslabel" GridPane.rowIndex="2" GridPane.columnIndex="0"  GridPane.margin="0 0 0 10"/>
                 <ProgressBar fx:id="energyBar" maxWidth="1.7976931348623157E308" prefHeight="50.0" progress="1.0" GridPane.rowIndex="2" GridPane.columnIndex="1" />
                 <!-- Happiness -->
-                <Label text="Happiness" styleClass="gslabel" GridPane.rowIndex="3" GridPane.columnIndex="0" />
+                <Label text="Happiness" styleClass="gslabel" GridPane.rowIndex="3" GridPane.columnIndex="0"  GridPane.margin="0 0 0 10"/>
                 <ProgressBar fx:id="happinessBar" maxWidth="1.7976931348623157E308" prefHeight="50.0" progress="1.0" GridPane.rowIndex="3" GridPane.columnIndex="1" />
             </children>
         </GridPane>
 
         <!-- Buttons -->
-        <GridPane GridPane.valignment="TOP" vgap="20" hgap="10">
+        <GridPane GridPane.valignment="TOP" vgap="20" hgap="10" minWidth="250">
             <columnConstraints>
-                <ColumnConstraints hgrow="ALWAYS" minWidth="120.0" prefWidth="120.0"/>
+                <ColumnConstraints hgrow="ALWAYS" minWidth="250.0" prefWidth="250.0"/>
             </columnConstraints>
             <rowConstraints>
                 <RowConstraints minHeight="100" prefHeight="120.0" vgrow="SOMETIMES" />
@@ -113,9 +123,9 @@
             </children>
         </GridPane>
 
-        <GridPane GridPane.rowIndex="2" GridPane.valignment="BOTTOM" vgap="10" hgap="10">
+        <GridPane GridPane.rowIndex="2" GridPane.valignment="BOTTOM" vgap="10" hgap="10" minWidth="250" >
             <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="75.0" prefWidth="75.0" />
+                <ColumnConstraints  minWidth="250.0" prefWidth="250.0" hgrow="ALWAYS" />
             </columnConstraints>
             <rowConstraints>
                 <RowConstraints minHeight="75.0" prefHeight="75.0" vgrow="ALWAYS" />

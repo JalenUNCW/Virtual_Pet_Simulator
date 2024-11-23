@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
@@ -42,11 +43,32 @@ public class MainMenuController {
     // Bind image dimensions to anchor pane
     @FXML
     public void initialize() {
+        // Bind image dimensions to anchor pane (if applicable)
         mainmenuImage.fitWidthProperty().bind(anchorPane.widthProperty());
         mainmenuImage.fitHeightProperty().bind(anchorPane.heightProperty());
 
-        // Start the background music when the main menu is initialized
-        //MediaManager.playMusic("audio/pixel-dreams-259187.wav");
+        // Listen for changes in Hardcore Mode
+        AppState.hardcoreModeProperty().addListener((observable, oldValue, newValue) -> updateState(newValue));
+        updateState(AppState.isHardcoreMode());
+    }
+
+    public void updateState(boolean isHardcore) {
+        // Check if Hardcore Mode is on and set the background accordingly
+        if (isHardcore) {
+            // Set the hardcore background
+            Image hardcoreBackground = new Image(getClass().getResource("images/hell_intense_landscape.jpg").toExternalForm());
+            mainmenuImage.setImage(hardcoreBackground);
+
+            // Optionally, you could also resume the music here if desired
+            MediaManager.playMusic("audio/05. BFG Division 2020.wav");
+        } else {
+            // Set normal background
+            Image normalBackground = new Image(getClass().getResource("images/mainmenu-backgroundimage.jpg").toExternalForm());
+            mainmenuImage.setImage(normalBackground);
+
+            // Optionally, you could also play normal music here if desired
+            MediaManager.playMusic("audio/gentle-fields-194622.wav");
+        }
     }
 
     // Method to handle the Play button action
