@@ -5,15 +5,13 @@ public class Cat extends Pet{
     private CatBreed breed;
 
     public enum CatBreed {
-        Tabby,
-        Calico,
-        Orange,
-        Black;
+        Siamese,
+        Ragdoll;
     }
 
-    public Cat() {
-        super();
-        this.breed = CatBreed.Tabby;
+    public Cat(String name, CatBreed breed) {
+        super(name);
+        this.breed = breed;
     }
 
     public void setBreed(CatBreed breed) {
@@ -27,14 +25,10 @@ public class Cat extends Pet{
     @Override
     public String breedToString() {
         switch (breed) {
-            case Tabby:
-                return "Tabby";
-            case Calico:
+            case Siamese:
+                return "Siamese";
+            case Ragdoll:
                 return "Calico";
-            case Orange:
-                return "Orange";
-            case Black:
-                return "Black";
             default:
                 return "Unknown Breed";
         }
@@ -46,7 +40,8 @@ public class Cat extends Pet{
         setEnergy(100);
         if (getHappiness() < 80) {
             setHappiness(getHappiness() + 20);
-        } else {
+        }
+        else {
             setHappiness(100);
         }
     }

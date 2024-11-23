@@ -48,6 +48,8 @@ public class CharacterSelectController {
 
     public static Pet pet;
 
+    public String name;
+
     public void setPet(Pet pet) {
         this.pet = pet;
     }
@@ -149,7 +151,7 @@ public class CharacterSelectController {
 
         System.out.println("Scene switched to game screen with Cat selected");
 
-        setPet(new Cat());
+        setPet(new Cat(name, Cat.CatBreed.Ragdoll));
 
     }
 
