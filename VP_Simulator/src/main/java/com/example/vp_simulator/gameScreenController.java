@@ -141,7 +141,16 @@ public class gameScreenController {
 
     public void setStage(Stage stage) {
         this.stage = stage;
+    }
 
+    public void findselected() {
+        if (pet instanceof Cat) {
+            selectedPet = "Cat";
+        } else if (pet instanceof Dog) {
+            selectedPet = "Dog";
+        } else {
+            selectedPet = "Unknown"; // Fallback in case the pet is of an unexpected type
+        }
     }
 
     // Handle other button presses (achievements, feed, play, etc.)
@@ -223,6 +232,12 @@ public class gameScreenController {
 
         System.out.printf("Here is your pet!: %s%n", pet.getName());
 
+        findselected();
+
+        if (selectedPet.equals("Cat")) {
+            walkToggle.setText("Let Out");
+        }
+
         updatePetDetails();
 
         backgroundImage.fitWidthProperty().bind(imageAnchor.widthProperty());
@@ -238,6 +253,7 @@ public class gameScreenController {
     }
 
     public void handleProgressEvent() {
+
 
         healthBar.setProgress((double) pet.getHealth() /100);
         hungerBar.setProgress((double) pet.getHunger() /100);
