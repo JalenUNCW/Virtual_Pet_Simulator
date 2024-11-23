@@ -114,6 +114,20 @@ public class gameScreenController {
             petImage.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("images/siamese_cat_image.png"))));}
     }
 
+    public void setStage(Stage stage) {
+        this.stage = stage;
+    }
+
+    public void findselected() {
+        if (pet instanceof Cat) {
+            setSelectedPet("Cat");
+        } else if (pet instanceof Dog) {
+            setSelectedPet("Dog");
+        } else {
+            setSelectedPet("Unknown");
+        }
+    }
+
     @FXML
     public void decrementProgress() {
         pet.setHealth(pet.getHealth() - 1);
@@ -152,20 +166,6 @@ public class gameScreenController {
         stage.setTitle("Main Menu");
         stage.show();  // Show the main menu scene
         stopDecrementTimer();
-    }
-
-    public void setStage(Stage stage) {
-        this.stage = stage;
-    }
-
-    public void findselected() {
-        if (pet instanceof Cat) {
-            setSelectedPet("Cat");
-        } else if (pet instanceof Dog) {
-            setSelectedPet("Dog");
-        } else {
-            setSelectedPet("Unknown");
-        }
     }
 
     // Handle other button presses (achievements, feed, play, etc.)
