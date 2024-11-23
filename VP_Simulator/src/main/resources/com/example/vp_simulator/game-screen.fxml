@@ -14,8 +14,8 @@
 
 <GridPane fx:id="mainpane" hgap="10.0" stylesheets="@styles/styles.css" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: #d9b99b;" xmlns="http://javafx.com/javafx/22.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.vp_simulator.gameScreenController">
     <columnConstraints>
-        <ColumnConstraints hgrow="ALWAYS" maxWidth="200" minWidth="150" prefWidth="119.33333079020181" />
-        <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="481.0000025431316" />
+        <ColumnConstraints hgrow="ALWAYS" percentWidth="20" minWidth="150" prefWidth="119.33333079020181" />
+        <ColumnConstraints hgrow="ALWAYS" percentWidth="80" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="481.0000025431316" />
     </columnConstraints>
     <rowConstraints>
         <RowConstraints percentHeight="15" vgrow="ALWAYS" />
