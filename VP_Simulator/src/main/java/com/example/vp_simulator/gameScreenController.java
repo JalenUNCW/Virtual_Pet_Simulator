@@ -22,6 +22,7 @@ import javafx.util.Duration;
 
 import java.io.IOException;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 public class gameScreenController {
@@ -102,23 +103,14 @@ public class gameScreenController {
 
     // Update the pet image and related UI elements based on the selected pet
     private void updatePetDetails() {
-        if (selectedPet.equals("Dog")) {
-            if (pet.breedToString().equals("Shepherd")) {
-                Image image = new Image(getClass().getResourceAsStream("file:images/german_shep_dog.png"));
-                petImage.setImage(image);
-            } else {
-                Image image = new Image(getClass().getResourceAsStream("file:images/lab_dog_image.png"));
-                petImage.setImage(image);
-            }
-        } else if (selectedPet.equals("Cat")) {
-            if (pet.breedToString().equals("Siamese")) {
-                Image image = new Image(getClass().getResourceAsStream("file:images/siamese_cat_image.png"));
-                petImage.setImage(image);
-            } else {
-                Image image = new Image(getClass().getResourceAsStream("file:images/ragdoll_cat_image.png"));
-                petImage.setImage(image);
-            }
-        }
+        if (pet.breedToString().equals("Shepherd")) {
+            petImage.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("images/german_shep_dog.png"))));}
+        if (pet.breedToString().equals("Lab")){
+            petImage.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("images/lab_dog_image.png"))));}
+        if (pet.breedToString().equals("Ragdoll")){
+            petImage.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("images/ragdoll_cat_image.png"))));}
+        if (pet.breedToString().equals("Siamese")){
+            petImage.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("images/siamese_cat_image.png"))));}
     }
 
     @FXML

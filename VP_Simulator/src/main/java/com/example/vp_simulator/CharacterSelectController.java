@@ -209,7 +209,6 @@ public class CharacterSelectController {
 
         game_screen_setup("Siamese");
 
-
         System.out.println("Scene switched to game screen with Siamese selected");
 
 
@@ -217,6 +216,7 @@ public class CharacterSelectController {
 
     public void game_screen_setup(String breed) {
         // Load the game screen scene
+
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("game-screen.fxml"));
             Parent root = loader.load();
