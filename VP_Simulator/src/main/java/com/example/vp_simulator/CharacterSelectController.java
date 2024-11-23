@@ -112,13 +112,23 @@ public class CharacterSelectController {
         });
     }
 
+    public String getInput() {
+        String name = petNameTextField.getText();
+
+        if (name.strip().isEmpty()) {
+            return "Jebidiah";
+        }
+
+        return name;
+    }
+
     // Handle Dog button action
     @FXML
     private void handleDogButtonAction1() throws IOException {
         // Print to confirm the action
         System.out.println("Shepherd button clicked");
 
-        name = petNameTextField.getText();
+        name = getInput();
 
         setPet(new Dog(name, Dog.DogBreed.Shepherd));
 
@@ -134,7 +144,7 @@ public class CharacterSelectController {
         // Print to confirm the action
         System.out.println("Lab button clicked");
 
-        name = petNameTextField.getText();
+        name = getInput();
 
         setPet(new Dog(name, Dog.DogBreed.Lab));
 
@@ -151,7 +161,7 @@ public class CharacterSelectController {
         // Print to confirm the action
         System.out.println("Cat button clicked");
 
-        name = petNameTextField.getText();
+        name = getInput();
 
         setPet(new Cat(name, Cat.CatBreed.Ragdoll));
 
@@ -169,7 +179,7 @@ public class CharacterSelectController {
         // Print to confirm the action
         System.out.println("Siamese button clicked");
 
-        name = petNameTextField.getText();
+        name = getInput();
 
         setPet(new Cat(name, Cat.CatBreed.Siamese));
 

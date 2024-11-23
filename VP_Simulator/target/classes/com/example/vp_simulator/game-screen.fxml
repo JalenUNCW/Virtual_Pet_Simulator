@@ -34,7 +34,11 @@
                     </image>
                 </ImageView>
                 <!-- Pet Image -->
-                <ImageView fx:id="petImage" fitHeight="150.0" fitWidth="200.0" layoutX="141.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true" />
+                <ImageView fx:id="petImage" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                    <AnchorPane.bottomAnchor>0.0</AnchorPane.bottomAnchor>
+                    <AnchorPane.leftAnchor>0.0</AnchorPane.leftAnchor>
+                    <AnchorPane.rightAnchor>0.0</AnchorPane.rightAnchor>
+                </ImageView>
             </children>
         </AnchorPane>
 
