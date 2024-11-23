@@ -18,7 +18,7 @@
       <!-- Background -->
       <ImageView fx:id="characterselectimage" styleClass="characterselect" fitHeight="400.0" fitWidth="650.0" preserveRatio="false">
          <image>
-            <Image url="@images/characterselect2-background.jpg" />
+            <Image url="@images/sunlight.jpg" />
          </image>
       </ImageView>
 
