@@ -34,7 +34,7 @@
                            <Image url="@images/german_shep_dog.png" />
                         </image>
                      </ImageView>
-                     <Button fx:id="dogButton1" text="SHEPARD" onAction="#handleDogButtonAction1" styleClass="dogButton" />
+                     <Button fx:id="dogButton1" text="SHEPHARD" onAction="#handleDogButtonAction1" styleClass="dogButton" />
                   </VBox>
                </children>
             </StackPane>

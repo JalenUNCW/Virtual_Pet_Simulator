@@ -109,29 +109,33 @@ public class CharacterSelectController {
         });
     }
 
+    // Handle Dog button action
+    @FXML
+    private void handleDogButtonAction1() throws IOException {
+        // Print to confirm the action
+        System.out.println("Shepherd button clicked");
+
+        game_screen_setup("Shepherd");
+
+        name = petNameTextField.getText();
+
+        System.out.println("Scene switched to game screen with Shepherd selected");
+
+        setPet(new Dog(name, Dog.DogBreed.Shepherd));
+
+    }
 
     // Handle Dog button action
     @FXML
-    private void handleDogButtonAction() throws IOException {
+    private void handleDogButtonAction2() throws IOException {
         // Print to confirm the action
-        System.out.println("Dog button clicked");
+        System.out.println("Lab button clicked");
 
-        // Load the game screen scene
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("game-screen.fxml"));
-            Parent root = loader.load();
-            gameScreenController controller = loader.getController();
-            controller.setSelectedPet("Dog");
-            Scene gameScene = new Scene(root, 2000, 1200);
-            stage.setScene(gameScene);
-            stage.setFullScreen(true);
-            stage.setTitle("Game Screen - Dog Selected ");
-        } catch (IOException e) {
-            e.printStackTrace();
-            System.err.println("Error loading the game screen.");
-        }
+        game_screen_setup("Lab");
 
-        System.out.println("Scene switched to game screen with Dog selected");
+        name = petNameTextField.getText();
+
+        System.out.println("Scene switched to game screen with Lab selected");
 
         setPet(new Dog(name, Dog.DogBreed.Lab));
 
@@ -139,10 +143,38 @@ public class CharacterSelectController {
 
     // Handle Cat button action
     @FXML
-    private void handleCatButtonAction() throws IOException {
+    private void handleCatButtonAction1() throws IOException {
         // Print to confirm the action
         System.out.println("Cat button clicked");
 
+        // Load the game screen scene
+        game_screen_setup("Ragdoll");
+
+        name = petNameTextField.getText();
+
+        System.out.println("Scene switched to game screen with Cat selected");
+
+        setPet(new Cat(name, Cat.CatBreed.Ragdoll));
+
+    }
+
+    // Handle Cat button action
+    @FXML
+    private void handleCatButtonAction2() throws IOException {
+        // Print to confirm the action
+        System.out.println("Siamese button clicked");
+
+        game_screen_setup("Siamese");
+
+        name = petNameTextField.getText();
+
+        System.out.println("Scene switched to game screen with Siamese selected");
+
+        setPet(new Cat(name, Cat.CatBreed.Siamese));
+
+    }
+
+    public void game_screen_setup(String breed) {
         // Load the game screen scene
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("game-screen.fxml"));
@@ -152,7 +184,8 @@ public class CharacterSelectController {
             Scene gameScene = new Scene(root, 1200, 800);
             stage.setScene(gameScene);
             stage.setFullScreen(true);
-            stage.setTitle("Game Screen - Cat Selected");
+            String title = new String("Game Screen - " + breed + " Selected");
+            stage.setTitle(title);
             // Disable the ESC key tooltip that appears in full-screen mode
             gameScene.setOnKeyPressed(event1 -> {
                 if (event1.getCode() == KeyCode.ESCAPE) {
@@ -164,24 +197,6 @@ public class CharacterSelectController {
             e.printStackTrace();
             System.err.println("Error loading the game screen.");
         }
-
-        System.out.println("Scene switched to game screen with Cat selected");
-
-        setPet(new Cat(name, Cat.CatBreed.Ragdoll));
-
-    }
-
-
-    public void handleCatButtonAction2(ActionEvent actionEvent) {
-    }
-
-    public void handleCatButtonAction1(ActionEvent actionEvent) {
-    }
-
-    public void handleDogButtonAction2(ActionEvent actionEvent) {
-    }
-
-    public void handleDogButtonAction1(ActionEvent actionEvent) {
     }
 
     public void handlePlayButtonAction(ActionEvent actionEvent) {

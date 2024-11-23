@@ -1,6 +1,5 @@
 /* General HBox styling */
 .root {
-    -fx-font-family: "Press Start 2P", sans-serif;
     -fx-background-color: #3E2723; /* Dark brown background */
     -fx-padding: 20;
     -fx-alignment: center;
