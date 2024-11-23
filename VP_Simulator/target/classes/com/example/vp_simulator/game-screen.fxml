@@ -60,6 +60,7 @@
                 <Label fx:id="nameLabel" text="NAME" styleClass="gslabel" GridPane.columnIndex="0" GridPane.rowIndex="1" />
                 <Label fx:id="typeLabel" text="TYPE" styleClass="gslabel" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                 <Label fx:id="breedLabel" text="BREED" styleClass="gslabel" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                <Label fx:id="unlockedLabel" styleClass="gslabel" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             </children>
         </GridPane>
 

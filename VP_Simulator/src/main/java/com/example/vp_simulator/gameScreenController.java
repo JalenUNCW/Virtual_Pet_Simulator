@@ -1,6 +1,7 @@
 package com.example.vp_simulator;
 
 import javafx.animation.KeyFrame;
+import javafx.animation.PauseTransition;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.scene.layout.GridPane;
@@ -22,6 +23,10 @@ import javafx.util.Duration;
 import java.io.IOException;
 
 public class gameScreenController {
+    private boolean isPressed = true;
+
+    @FXML
+    private Label unlockedLabel;
 
     @FXML
     private Button achievementButton;
@@ -226,7 +231,15 @@ public class gameScreenController {
     void walkPressed(ActionEvent event) {
         pet.outing();
         handleProgressEvent();
+        if (isPressed){
 
+            isPressed = false;
+            unlockedLabel.setText("Achievement Unlocked: ");
+
+            PauseTransition pauseTransition = new PauseTransition(Duration.seconds(3));
+            pauseTransition.setOnFinished(event1 -> unlockedLabel.setText(""));
+            pauseTransition.play();
+        }
     }
 
     @FXML
