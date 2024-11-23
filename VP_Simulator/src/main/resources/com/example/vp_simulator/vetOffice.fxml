@@ -53,7 +53,7 @@
                     onAction="#vetEnters" GridPane.rowIndex="3" GridPane.columnIndex="0"
                     maxWidth="Infinity" maxHeight="Infinity" />
             <Button fx:id="groomButton" styleClass="button" text="Groom"
-                    onAction="#vetEnters" GridPane.rowIndex="4" GridPane.columnIndex="0"
+                    onAction="#groomButtonPressed" GridPane.rowIndex="4" GridPane.columnIndex="0"
                     maxWidth="Infinity" maxHeight="Infinity" />
 
             <!-- Vet Image -->

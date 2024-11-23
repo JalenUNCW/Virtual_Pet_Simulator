@@ -1,5 +1,6 @@
 package com.example.vp_simulator;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -19,6 +20,8 @@ import java.util.ResourceBundle;
 
 
 public class vetOfficeController {
+
+    private Stage stage;
 
     @FXML
     private ImageView petImageView;
@@ -44,8 +47,6 @@ public class vetOfficeController {
     @FXML
     private Button groomButton;
 
-    private Stage stage;
-
     @FXML
     public void setStage(Stage stage){ this.stage = stage; }
 
@@ -66,6 +67,7 @@ public class vetOfficeController {
 
     @FXML
     public void initialize() {
+
         // Bind background image to resize with the window
         backgroundImageView.fitWidthProperty().bind(rootPane.widthProperty());
         backgroundImageView.fitHeightProperty().bind(rootPane.heightProperty());
@@ -147,6 +149,7 @@ public class vetOfficeController {
         stage.setTitle("Main Menu");
         stage.show();
     }
+
     @FXML
     public void handleAchievementsButtonPressed() throws IOException{
         FXMLLoader loader = new FXMLLoader(getClass().getResource("finalAchievements.fxml"));
@@ -164,4 +167,14 @@ public class vetOfficeController {
         stage.show();
     }
 
+    public void groomButtonPressed(ActionEvent actionEvent) {
+
+        int pethealth = gameScreenController.pet.getHealth();
+
+        if (pethealth < 60) {
+            gameScreenController.pet.setHealth(pethealth + 40);
+        } else {
+            gameScreenController.pet.setHealth(100);
+        }
+    }
 }

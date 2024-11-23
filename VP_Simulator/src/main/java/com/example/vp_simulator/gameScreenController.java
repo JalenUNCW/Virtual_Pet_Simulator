@@ -92,7 +92,7 @@ public class gameScreenController {
 
     private Stage stage;
 
-    private Pet pet;
+    public static Pet pet;
 
     private Timeline decrementTimer;
 
