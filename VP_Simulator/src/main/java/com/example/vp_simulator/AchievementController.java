@@ -53,7 +53,6 @@ public class AchievementController{
             }
         });
 
-
         Scene scene = new Scene(root);
         stage.setTitle("Pet Achievements");
         stage.setScene(scene);

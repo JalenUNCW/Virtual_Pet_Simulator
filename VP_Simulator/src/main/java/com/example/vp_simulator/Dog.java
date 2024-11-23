@@ -5,15 +5,13 @@ public class Dog extends Pet{
     private DogBreed breed;
 
     public enum DogBreed {
-        Pug,
-        Poodle,
         Lab,
         Shepherd;
     }
 
-    public Dog() {
-        super();
-        this.breed = DogBreed.Pug;
+    public Dog(String name, DogBreed breed) {
+        super(name);
+        this.breed = breed;
     }
 
     public void setBreed(DogBreed breed) {
@@ -27,10 +25,6 @@ public class Dog extends Pet{
     @Override
     public String breedToString() {
         switch (breed) {
-            case Pug:
-                return "Pug";
-            case Poodle:
-                return "Poodle";
             case Lab:
                 return "Lab";
             case Shepherd:

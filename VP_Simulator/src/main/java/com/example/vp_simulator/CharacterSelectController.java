@@ -117,7 +117,7 @@ public class CharacterSelectController {
 
         System.out.println("Scene switched to game screen with Dog selected");
 
-        setPet(new Dog());
+        setPet(new Dog(name, Dog.DogBreed.Lab));
 
     }
 
