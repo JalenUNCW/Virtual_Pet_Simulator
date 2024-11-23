@@ -252,8 +252,14 @@ public class gameScreenController {
 
     @FXML
     void walkPressed(ActionEvent event) {
-        // Set the background image to outing.jpg
-        Image outingBackground = new Image(getClass().getResource("images/outing.jpg").toExternalForm());
+        // Determine the appropriate background image based on Hardcore Mode
+        Image outingBackground;
+        if (AppState.isHardcoreMode()) {
+            outingBackground = new Image(getClass().getResource("images/hellish_landscape_walk.jpg").toExternalForm());
+        } else {
+            outingBackground = new Image(getClass().getResource("images/outing.jpg").toExternalForm());
+        }
+
         Image originalBackground = backgroundImage.getImage(); // Save the original background image
         backgroundImage.setImage(outingBackground);
 
