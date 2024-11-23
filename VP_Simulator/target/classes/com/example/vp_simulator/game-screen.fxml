@@ -96,7 +96,7 @@
         </GridPane>
 
         <!-- Buttons -->
-        <GridPane GridPane.valignment="TOP" vgap="20" hgap="10" minWidth="250" GridPane.columnIndex="0" GridPane.rowIndex="2">
+        <GridPane GridPane.valignment="TOP" vgap="20" hgap="10" minWidth="250">
             <columnConstraints>
                 <ColumnConstraints hgrow="ALWAYS" minWidth="250.0" prefWidth="250.0"/>
             </columnConstraints>
@@ -116,7 +116,7 @@
             </children>
         </GridPane>
 
-        <GridPane GridPane.rowIndex="2" GridPane.valignment="BOTTOM" vgap="10" hgap="10" minWidth="250">
+        <GridPane GridPane.rowIndex="2" GridPane.valignment="BOTTOM" vgap="10" hgap="10" minWidth="250" >
             <columnConstraints>
                 <ColumnConstraints  minWidth="250.0" prefWidth="250.0" hgrow="ALWAYS" />
             </columnConstraints>
