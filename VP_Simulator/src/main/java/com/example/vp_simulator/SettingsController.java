@@ -22,6 +22,7 @@ public class SettingsController {
     public Slider hardcoreModeSlider;
     public ImageView backgroundImage;
     public Button achievementButton;
+    public Label settingsLabel;
     private Stage stage;
     private boolean isTrack1Playing = true;
 
@@ -47,7 +48,7 @@ public class SettingsController {
     private void initialize() {
 
         // Load the background image
-        URL imageUrl = getClass().getResource("images/idkyet.jpg"); // Use absolute path from resources
+        URL imageUrl = getClass().getResource("images/grasslands.jpg"); // Use absolute path from resources
         if (imageUrl != null) {
             Image image = new Image(imageUrl.toExternalForm());
             backgroundImage.setImage(image);

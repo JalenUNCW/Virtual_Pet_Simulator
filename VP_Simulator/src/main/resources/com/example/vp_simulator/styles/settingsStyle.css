@@ -6,8 +6,19 @@
 
 }
 
+.title {
+    -fx-font-family: "Press Start 2P", sans-serif; /* Pixelated font */
+    -fx-font-size: 80px; /* Large font size */
+    -fx-text-fill: linear-gradient(to bottom, #FFD700, #FFA500); /* Gradient gold to orange */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.8), 15, 0.5, 2, 2),
+                 dropshadow(gaussian, rgba(255, 255, 255, 0.6), 10, 0.3, -2, -2);
+    -fx-alignment: center;
+    -fx-padding: 10;
+    letter-spacing: 10px; /* Adjust spacing for readability */
+}
+
 /* Label Styling */
-.label {
+.volumelabel {
     -fx-font-family: "Press Start 2P", sans-serif; /* Pixelated font */
     -fx-font-size: 14px;
     -fx-text-fill: gold; /* Gold font color */
@@ -16,12 +27,13 @@
 }
 
 /* Slider Styling */
+/* Slider Styling */
 .slider {
     -fx-padding: 15;
 }
 
 .slider .thumb {
-    -fx-background-color: #FF5722; /* Bright orange thumb */
+    -fx-background-color: #FFD700; /* Gold thumb */
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.8), 10, 0.7, 0, 2); /* Bigger shadow for pop */
     -fx-pref-width: 25px; /* Larger thumb size */
     -fx-pref-height: 25px;
@@ -61,6 +73,7 @@
     -fx-cursor: hand;
     -fx-padding: 15 30; /* Bigger padding for a larger feel */
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.8), 10, 0.7, 0, 2); /* More prominent shadow */
+    -fx-transition: background-color 0.3s ease; /* Smooth transition on toggle */
 }
 
 .toggle-button:hover {
@@ -72,6 +85,14 @@
     -fx-scale-x: 0.95;
     -fx-scale-y: 0.95;
 }
+
+/* Toggle Button On Styling */
+.toggle-button:selected {
+    -fx-background-color: #FFD700; /* Gold when toggled on */
+    -fx-text-fill: black; /* Black text for contrast */
+    -fx-border-color: #4E342E; /* Maintain dark border */
+}
+
 
 /* Button Styling */
 .button {
