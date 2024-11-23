@@ -234,7 +234,7 @@ public class gameScreenController {
         if (isPressed){
 
             isPressed = false;
-            unlockedLabel.setText("Achievement Unlocked: ");
+            unlockedLabel.setText("Achievement\nUnlocked: ");
 
             PauseTransition pauseTransition = new PauseTransition(Duration.seconds(3));
             pauseTransition.setOnFinished(event1 -> unlockedLabel.setText(""));

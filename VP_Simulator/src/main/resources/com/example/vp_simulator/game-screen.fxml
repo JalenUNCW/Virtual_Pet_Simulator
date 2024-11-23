@@ -47,13 +47,16 @@
         <!-- Top Section: Name, Type, Breed Labels -->
         <GridPane alignment="TOP_CENTER" GridPane.rowIndex="0" GridPane.columnIndex="1" vgap="15">
             <rowConstraints>
+                <RowConstraints minHeight="20" />
+                <RowConstraints minHeight="20" />
+                <RowConstraints minHeight="20" />
                 <RowConstraints minHeight="20" prefHeight="20" />
-                <RowConstraints vgrow="ALWAYS" />
+                <RowConstraints minHeight="20" vgrow="ALWAYS" />
             </rowConstraints>
             <columnConstraints>
-                <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" />
-                <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" />
-                <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" />
+                <ColumnConstraints percentWidth="30" halignment="CENTER" hgrow="ALWAYS" />
+                <ColumnConstraints percentWidth="30" halignment="CENTER" hgrow="ALWAYS" />
+                <ColumnConstraints percentWidth="30" halignment="CENTER" hgrow="ALWAYS" />
             </columnConstraints>
             <children>
                 <!-- Static Labels -->
@@ -61,10 +64,10 @@
                 <Label text="Type" styleClass="gstitlelabel" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                 <Label text="Breed" styleClass="gstitlelabel" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                 <!-- Dynamic Labels -->
-                <Label fx:id="nameLabel" text="NAME" styleClass="gslabel" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-                <Label fx:id="typeLabel" text="TYPE" styleClass="gslabel" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                <Label fx:id="breedLabel" text="BREED" styleClass="gslabel" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                <Label fx:id="unlockedLabel" styleClass="gslabel" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <Label fx:id="nameLabel" text="NAME" styleClass="gslabel" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <Label fx:id="typeLabel" text="TYPE" styleClass="gslabel" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <Label fx:id="breedLabel" text="BREED" styleClass="gslabel" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                <Label fx:id="unlockedLabel" styleClass="achievementlabel" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             </children>
         </GridPane>
 
