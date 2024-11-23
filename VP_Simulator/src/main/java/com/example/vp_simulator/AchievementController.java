@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.effect.DropShadow;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
@@ -25,40 +26,24 @@ public class AchievementController{
 
     enum isUnlocked {Locked, Unlocked};
 
-    public void start(Stage stage) throws IOException {
-        achievementGridPane.prefWidthProperty().bind(hbox.widthProperty());
-        achievementGridPane.prefHeightProperty().bind(hbox.heightProperty());
-
-        headerGridPane.prefHeightProperty().bind(hbox.heightProperty());
-        headerGridPane.prefWidthProperty().bind(hbox.widthProperty());
-
-        achievementLabel.prefHeightProperty().bind(hbox.heightProperty());
-        achievementLabel.prefWidthProperty().bind(hbox.widthProperty());
-
-        Parent root = FXMLLoader.load(getClass().getResource("finalAchievements.fxml"));
-
-        ScrollPane scrollpane = new ScrollPane();
-        scrollpane.setContent(root);
-
-        scrollpane.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
-        scrollpane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
-
-        int targetRow = achievementGridPane.getRowCount();
-        achievementGridPane.getChildren().forEach(node -> {
-            Integer rowIndex = GridPane.getRowIndex(node);
-
-            if (rowIndex == null) rowIndex = 0;
-            if (rowIndex == targetRow){
-                unlockAchivement(isUnlocked.Unlocked);
-            }
-        });
-
-
-        Scene scene = new Scene(root);
-        stage.setTitle("Pet Achievements");
-        stage.setScene(scene);
-        stage.show();
-    }
+    @FXML
+    private ImageView checkMark1;
+    @FXML
+    private ImageView checkMark2;
+    @FXML
+    private ImageView checkMark3;
+    @FXML
+    private ImageView checkMark4;
+    @FXML
+    private ImageView checkMark5;
+    @FXML
+    private ImageView checkMark6;
+    @FXML
+    private ImageView checkMark7;
+    @FXML
+    private ImageView checkMark8;
+    @FXML
+    private ImageView checkMark9;
 
     @FXML
     private ListView<String> achievementsList;
@@ -156,6 +141,22 @@ public class AchievementController{
                 }
             });
         }
+    }
+
+    public void start(Stage stage) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("finalAchievements.fxml"));
+
+        ScrollPane scrollpane = new ScrollPane();
+        scrollpane.setContent(root);
+
+        scrollpane.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
+        scrollpane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+
+
+        Scene scene = new Scene(root);
+        stage.setTitle("Pet Achievements");
+        stage.setScene(scene);
+        stage.show();
     }
 
 }

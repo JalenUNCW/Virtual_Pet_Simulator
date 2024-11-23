@@ -1,14 +1,14 @@
 package com.example.vp_simulator;
 
 public class Pet {
-    private String name;
+    private final String name;
     private int health;
     private int hunger;
     private int happiness;
     private int energy;
 
-    Pet() {
-        this.name = "Jimmy";
+    Pet(String name) {
+        this.name = name;
         this.health = 100;
         this.hunger = 100;
         this.happiness = 100;
@@ -22,7 +22,7 @@ public class Pet {
     public int getEnergy() { return energy; }
     public int getHappiness() { return happiness; }
 
-    public String breedToString() { return "Breed"; }
+    public String breedToString() { return "Breed not found"; }
 
 
     //mutators
