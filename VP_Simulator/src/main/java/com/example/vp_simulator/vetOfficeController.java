@@ -62,7 +62,7 @@ public class vetOfficeController {
     private Image vetImage = new Image(getClass().getResourceAsStream("images/pixil-frame-0.png"));
 
     // image of the selected pet will go here
-    private Image petImage = new Image(getClass().getResourceAsStream("images/cutedog.jpg"));
+    private Image petImage;
 
     @FXML
     public void initialize() {
@@ -82,21 +82,31 @@ public class vetOfficeController {
         vetImageView.setVisible(false);
 
         // add a way to set the pet image in the initializer so it will load with the selected pet
-        petImageView.setImage(petImage);
+        petImageView.setImage(getPetImage());
         petImageView.setVisible(true);
 
     }
 
-//    public Image getPetImage(){
-//        Image petImage =
-//        return petImage;
-//    }
+    // this method will find which pet is selected so it can place the image in the vet scene
+    public Image getPetImage(){
+        String pet_breed = CharacterSelectController.getPet().breedToString();
+        if (pet_breed.equals("Shepherd")) {
+            petImage = new Image(Objects.requireNonNull(getClass().getResourceAsStream("images/german_shep_dog.png")));}
+        if (pet_breed.equals("Lab")){
+            petImage = new Image(Objects.requireNonNull(getClass().getResourceAsStream("images/lab_dog_image.png")));}
+        if (pet_breed.equals("Ragdoll")){
+            petImage = new Image(Objects.requireNonNull(getClass().getResourceAsStream("images/ragdoll_cat_image.png")));}
+        if (pet_breed.equals("Siamese")){
+            petImage = new Image(Objects.requireNonNull(getClass().getResourceAsStream("images/siamese_cat_image.png")));}
+        return petImage;
+    }
 
     @FXML
     public void vetEnters() {
         // When the vet button is clicked, display the vet image
         vetImageView.setImage(vetImage);
         vetImageView.setVisible(true);
+
     }
 
     @FXML
