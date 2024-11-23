@@ -117,32 +117,6 @@ public class AchievementController{
         stage.show();  // Show the main menu scene
     }
 
-    public void unlockAchivement(isUnlocked status) {
-        if (status == isUnlocked.Unlocked) {
-            achievementGridPane.getChildren().forEach(node -> {
-                Integer rowIndex = GridPane.getRowIndex(node);
-                if (rowIndex != null && status == isUnlocked.Unlocked) {
-                    node.setEffect(new DropShadow(10, Color.WHITE));
-
-                    node.setStyle("-fx-background-color: brown;");
-                }
-            });
-
-        }
-    }
-    public void lockedAchievement(isUnlocked status){
-        if (status == isUnlocked.Locked){
-            achievementGridPane.getChildren().forEach(node -> {
-                Integer rowIndex = GridPane.getRowIndex(node);
-                if (rowIndex != null && status == isUnlocked.Locked){
-                    node.setEffect(new DropShadow(10, Color.WHITE));
-
-                    node.setStyle("-fx-background-color: grey;");
-                }
-            });
-        }
-    }
-
     public void start(Stage stage) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("finalAchievements.fxml"));
 
@@ -151,6 +125,8 @@ public class AchievementController{
 
         scrollpane.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
         scrollpane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+
+        checkMark1.setVisible(false);
 
 
         Scene scene = new Scene(root);

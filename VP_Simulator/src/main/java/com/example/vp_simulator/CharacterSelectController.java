@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.AnchorPane;
@@ -110,6 +111,39 @@ public class CharacterSelectController {
         anchorPane.heightProperty().addListener((_, _, _) -> {
             vbox.setLayoutY(anchorPane.getHeight() / 2 - vbox.getHeight() / 2);
         });
+
+        // Listen for changes in Hardcore Mode
+        AppState.hardcoreModeProperty().addListener((observable, oldValue, newValue) -> updateState(newValue));
+        updateState(AppState.isHardcoreMode());
+    }
+
+    public void updateState(boolean isHardcore) {
+        // Check if Hardcore Mode is on and set the background accordingly
+        if (isHardcore) {
+            // Set the hardcore background
+            Image hardcoreBackground = new Image(getClass().getResource("images/hell_intense_landscape.jpg").toExternalForm());
+            characterselectimage.setImage(hardcoreBackground);
+
+            // Optionally, you could also resume the music here if desired
+            MediaManager.playMusic("audio/05. BFG Division 2020.wav");
+        } else {
+            // Set normal background
+            Image normalBackground = new Image(getClass().getResource("images/sunlight.jpg").toExternalForm());
+            characterselectimage.setImage(normalBackground);
+
+            // Optionally, you could also play normal music here if desired
+            MediaManager.playMusic("audio/gentle-fields-194622.wav");
+        }
+    }
+
+    public String getInput() {
+        String name = petNameTextField.getText();
+
+        if (name.strip().isEmpty()) {
+            return "Jebidiah";
+        }
+
+        return name;
     }
 
     // Handle Dog button action
@@ -118,7 +152,7 @@ public class CharacterSelectController {
         // Print to confirm the action
         System.out.println("Shepherd button clicked");
 
-        name = petNameTextField.getText();
+        name = getInput();
 
         setPet(new Dog(name, Dog.DogBreed.Shepherd));
 
@@ -134,7 +168,7 @@ public class CharacterSelectController {
         // Print to confirm the action
         System.out.println("Lab button clicked");
 
-        name = petNameTextField.getText();
+        name = getInput();
 
         setPet(new Dog(name, Dog.DogBreed.Lab));
 
@@ -151,7 +185,7 @@ public class CharacterSelectController {
         // Print to confirm the action
         System.out.println("Cat button clicked");
 
-        name = petNameTextField.getText();
+        name = getInput();
 
         setPet(new Cat(name, Cat.CatBreed.Ragdoll));
 
@@ -169,7 +203,7 @@ public class CharacterSelectController {
         // Print to confirm the action
         System.out.println("Siamese button clicked");
 
-        name = petNameTextField.getText();
+        name = getInput();
 
         setPet(new Cat(name, Cat.CatBreed.Siamese));
 

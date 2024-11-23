@@ -15,33 +15,37 @@
             xmlns="http://javafx.com/javafx/22.0.1" xmlns:fx="http://javafx.com/fxml/1"
             prefHeight="400.0" prefWidth="600.0">
     <!-- Background Image -->
-    <ImageView fx:id="backgroundImage" fitHeight="400.0" fitWidth="600.0" preserveRatio="true"
-               AnchorPane.leftAnchor="400.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"
+    <ImageView fx:id="backgroundImage" fitHeight="1200.0" fitWidth="800.0" preserveRatio="true"
+               AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"
                AnchorPane.bottomAnchor="0.0"/>
 
     <!-- GridPane for Controls -->
     <GridPane alignment="CENTER" hgap="20.0" vgap="5.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0"
-              AnchorPane.topAnchor="20.0" AnchorPane.bottomAnchor="20.0">
+              AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="20.0">
         <columnConstraints>
-            <ColumnConstraints hgrow="ALWAYS" maxWidth="325.0" minWidth="270.0" prefWidth="279.0" />
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="600.0" minWidth="270.0" prefWidth="600.0" />
             <ColumnConstraints hgrow="ALWAYS" maxWidth="280.0" minWidth="225.0" prefWidth="271.0" />
         </columnConstraints>
         <rowConstraints>
-            <RowConstraints maxHeight="101.0" minHeight="34.0" prefHeight="34.0" vgrow="NEVER" />
-            <RowConstraints maxHeight="110.0" minHeight="0.0" prefHeight="91.0" vgrow="NEVER" />
-            <RowConstraints maxHeight="151.0" minHeight="29.0" prefHeight="48.0" vgrow="ALWAYS" />
-            <RowConstraints maxHeight="172.0" minHeight="106.0" prefHeight="172.0" />
-            <RowConstraints maxHeight="100.0" minHeight="50.0" prefHeight="50.0" />
+            <RowConstraints maxHeight="80.0" minHeight="80.0" prefHeight="80.0" vgrow="NEVER" />
+            <RowConstraints maxHeight="80.0" minHeight="80.0" prefHeight="80.0" vgrow="NEVER" />
+            <RowConstraints maxHeight="100.0" minHeight="40.0" prefHeight="40.0" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="172.0" minHeight="100.0" prefHeight="172.0" />
+            <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100.0" />
         </rowConstraints>
         <children>
-            <!-- Label -->
-            <Label fx:id="volumeLabel" styleClass="label" text="Volume" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="0" />
+            <!-- Settings Label -->
+            <Label fx:id="settingsLabel" text="Settings" styleClass="title" GridPane.columnSpan="2"
+                   GridPane.halignment="CENTER" GridPane.rowIndex="0" />
+
+            <!-- Volume Label -->
+            <Label fx:id="volumeLabel" styleClass="volumelabel" text="Volume" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
 
             <!-- Slider -->
             <Slider fx:id="volumeSlider" showTickLabels="true" showTickMarks="true"
                     snapToTicks="true" value="50.0" min="0" max="100"
                     majorTickUnit="25" minorTickCount="4" blockIncrement="10"
-                    GridPane.columnSpan="2" GridPane.rowIndex="1">
+                    GridPane.columnSpan="2" GridPane.rowIndex="2">
                 <GridPane.margin>
                     <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
                 </GridPane.margin>
@@ -50,17 +54,19 @@
             <!-- Hardcore Mode Toggle -->
             <ToggleButton fx:id="hardcoreModeToggle" onAction="#handleToggleMusic" prefHeight="90.0" prefWidth="358.0"
                           styleClass="toggle-button" text="HARDCORE MODE" GridPane.columnSpan="2"
-                          GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                          GridPane.halignment="CENTER" GridPane.rowIndex="3" />
 
             <!-- Main Menu Button -->
             <Button fx:id="mainmenuSettingsButton" onAction="#mainmenuSettingsButton" styleClass="button"
-                    text="Main Menu" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                    text="Main Menu" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
 
             <!-- Achievement Button -->
             <Button fx:id="achievementButton" onAction="#handleAchievementButton" styleClass="button"
-                    text="Achievements" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+                    text="Achievements" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
         </children>
     </GridPane>
 </AnchorPane>
+
+
 
 

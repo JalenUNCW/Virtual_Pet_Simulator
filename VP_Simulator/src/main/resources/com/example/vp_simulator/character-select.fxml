@@ -92,8 +92,6 @@
          <TextField fx:id="petNameTextField" promptText="Enter Pet's Name"
                     styleClass="petNameTextField" prefWidth="400.0" maxWidth="400.0" prefHeight="200.0"/>
 
-         <!-- Play Button -->
-         <Button fx:id="playButton" text="PLAY" onAction="#handlePlayButtonAction" styleClass="playButton"/>
       </VBox>
    </children>
 </AnchorPane>

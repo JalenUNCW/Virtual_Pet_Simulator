@@ -1,8 +1,10 @@
 package com.example.vp_simulator;
 
 import javafx.animation.KeyFrame;
+import javafx.animation.PauseTransition;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
+import javafx.scene.layout.GridPane;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -21,12 +23,19 @@ import javafx.util.Duration;
 import java.io.IOException;
 
 public class gameScreenController {
+    private boolean isPressed = true;
+
+    @FXML
+    private Label unlockedLabel;
 
     @FXML
     private Button achievementButton;
 
     @FXML
     private ProgressBar energyBar;
+
+    @FXML
+    private GridPane mainpane;
 
     @FXML
     private Button feedButton;
@@ -222,11 +231,27 @@ public class gameScreenController {
     void walkPressed(ActionEvent event) {
         pet.outing();
         handleProgressEvent();
+        if (isPressed){
 
+            isPressed = false;
+            unlockedLabel.setText("Achievement Unlocked: ");
+
+            PauseTransition pauseTransition = new PauseTransition(Duration.seconds(3));
+            pauseTransition.setOnFinished(event1 -> unlockedLabel.setText(""));
+            pauseTransition.play();
+        }
     }
 
     @FXML
     public void initialize() {
+
+        // Bind the background image to the Scene dimensions
+        mainpane.sceneProperty().addListener((obs, oldScene, newScene) -> {
+            if (newScene != null) {
+                backgroundImage.fitWidthProperty().bind(newScene.widthProperty());
+                backgroundImage.fitHeightProperty().bind(newScene.heightProperty());
+            }
+        });
 
         pet = CharacterSelectController.getPet();
 
@@ -240,9 +265,6 @@ public class gameScreenController {
 
         updatePetDetails();
 
-        backgroundImage.fitWidthProperty().bind(imageAnchor.widthProperty());
-        backgroundImage.fitHeightProperty().bind(imageAnchor.heightProperty());
-
         nameLabel.setText(pet.getName());
         typeLabel.setText(selectedPet);
         breedLabel.setText(pet.breedToString());
@@ -250,6 +272,29 @@ public class gameScreenController {
         // Start the background music when the main menu is initialized
         //MediaManager.playMusic("audio/pixel-dreams-259187.wav");
         startDecrementTimer();
+
+        // Listen for changes in Hardcore Mode
+        AppState.hardcoreModeProperty().addListener((observable, oldValue, newValue) -> updateState(newValue));
+        updateState(AppState.isHardcoreMode());
+    }
+
+    public void updateState(boolean isHardcore) {
+        // Check if Hardcore Mode is on and set the background accordingly
+        if (isHardcore) {
+            // Set the hardcore background
+            Image hardcoreBackground = new Image(getClass().getResource("images/dungeon.jpg").toExternalForm());
+            backgroundImage.setImage(hardcoreBackground);
+
+            // Optionally, you could also resume the music here if desired
+            MediaManager.playMusic("audio/05. BFG Division 2020.wav");
+        } else {
+            // Set normal background
+            Image normalBackground = new Image(getClass().getResource("images/mainmenu-backgroundimage.jpg").toExternalForm());
+            backgroundImage.setImage(normalBackground);
+
+            // Optionally, you could also play normal music here if desired
+            MediaManager.playMusic("audio/gentle-fields-194622.wav");
+        }
     }
 
     public void handleProgressEvent() {
