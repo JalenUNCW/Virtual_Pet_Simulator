@@ -13,7 +13,7 @@ public class Dog extends Pet{
 
     public Dog() {
         super();
-        // add random breed here
+        this.breed = DogBreed.Pug;
     }
 
     public void setBreed(DogBreed breed) {
@@ -22,6 +22,22 @@ public class Dog extends Pet{
 
     public DogBreed getBreed() {
         return breed;
+    }
+
+    @Override
+    public String breedToString() {
+        switch (breed) {
+            case Pug:
+                return "Pug";
+            case Poodle:
+                return "Poodle";
+            case Lab:
+                return "Lab";
+            case Shepherd:
+                return "Shepherd";
+            default:
+                return "Unknown Breed";
+        }
     }
 
     @Override

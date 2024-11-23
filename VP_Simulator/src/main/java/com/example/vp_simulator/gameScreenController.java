@@ -9,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.image.Image;
@@ -29,6 +30,15 @@ public class gameScreenController {
 
     @FXML
     private Button feedButton;
+
+    @FXML
+    private Label nameLabel;
+
+    @FXML
+    private Label typeLabel;
+
+    @FXML
+    private Label breedLabel;
 
     @FXML
     private ProgressBar happinessBar;
@@ -201,7 +211,9 @@ public class gameScreenController {
 
     @FXML
     void walkPressed(ActionEvent event) {
-        // Handle walk button press
+        pet.outing();
+        handleProgressEvent();
+
     }
 
     @FXML
@@ -209,8 +221,16 @@ public class gameScreenController {
 
         pet = CharacterSelectController.getPet();
 
+        System.out.printf("Here is your pet!: %s%n", pet.getName());
+
+        updatePetDetails();
+
         backgroundImage.fitWidthProperty().bind(imageAnchor.widthProperty());
         backgroundImage.fitHeightProperty().bind(imageAnchor.heightProperty());
+
+        nameLabel.setText(pet.getName());
+        typeLabel.setText(selectedPet);
+        breedLabel.setText(pet.breedToString());
 
         // Start the background music when the main menu is initialized
         //MediaManager.playMusic("audio/pixel-dreams-259187.wav");
