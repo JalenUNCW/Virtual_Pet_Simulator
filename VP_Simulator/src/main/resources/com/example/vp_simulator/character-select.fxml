@@ -4,56 +4,94 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.StackPane?>
 
-<?import java.net.URL?>
-<AnchorPane xmlns="http://javafx.com/javafx/22.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.vp_simulator.CharacterSelectController" fx:id="anchorPane" stylesheets="@styles/styles.css">
+<AnchorPane xmlns="http://javafx.com/javafx/22.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.vp_simulator.CharacterSelectController"
+            fx:id="anchorPane"
+            stylesheets="@styles/csstyle.css">
 
    <children>
       <!-- Background -->
-      <ImageView fx:id="characterselectimage" styleClass="characterselect" fitHeight="400.0" fitWidth="600.0" preserveRatio="false">
+      <ImageView fx:id="characterselectimage" styleClass="characterselect" fitHeight="400.0" fitWidth="650.0" preserveRatio="false">
          <image>
             <Image url="@images/characterselect2-background.jpg" />
          </image>
       </ImageView>
 
-      <!-- Character Selection VBox for centering the content -->
-      <VBox fx:id="vbox" styleClass="vbox" alignment="CENTER" spacing="200">
-         <!-- HBox to align images side by side -->
-         <HBox fx:id="imageHBox" alignment="CENTER" spacing="200">
-            <!-- Dog Image and Button -->
-            <StackPane fx:id="dogPane" styleClass="dogPane" alignment="CENTER">
+      <!-- Character Selection VBox -->
+      <VBox fx:id="vbox" styleClass="vbox" alignment="CENTER" spacing="40" AnchorPane.topAnchor="50.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
+         <!-- HBox for Characters -->
+         <HBox fx:id="imageHBox" styleClass="imageHBox" alignment="CENTER" spacing="50">
+
+            <!-- Dog Option 1 -->
+            <StackPane fx:id="dogPane1" styleClass="dogPane">
                <children>
-                  <!-- VBox to align Image and Button vertically -->
-                  <VBox alignment="CENTER" spacing="100">
-                     <ImageView fx:id="dogImageView" fitHeight="400.0" fitWidth="400.0">
+                  <VBox alignment="CENTER" spacing="20">
+                     <ImageView fx:id="dogImageView1" fitHeight="200.0" fitWidth="200.0">
                         <image>
-                           <Image url="@images/cutedog.jpg" />
+                           <Image url="@images/german_shep_dog.png" />
                         </image>
                      </ImageView>
-                     <Button fx:id="dogButton" onAction="#handleDogButtonAction" text="DOG" stylesheets="@styles/styles.css" styleClass="dogButton" />
+                     <Button fx:id="dogButton1" text="SHEPARD" onAction="#handleDogButtonAction1" styleClass="dogButton" />
                   </VBox>
                </children>
             </StackPane>
 
-            <!-- Cat Image and Button -->
-            <StackPane fx:id="catPane" styleClass="catPane" alignment="CENTER">
+            <!-- Dog Option 2 -->
+            <StackPane fx:id="dogPane2" styleClass="dogPane">
                <children>
-                  <!-- VBox to align Image and Button vertically -->
-                  <VBox alignment="CENTER" spacing="100">
-                     <ImageView fx:id="catImageView" fitHeight="400.0" fitWidth="400.0">
+                  <VBox alignment="CENTER" spacing="20">
+                     <ImageView fx:id="dogImageView2" styleClass="dogImageView" fitHeight="200.0" fitWidth="200.0">
                         <image>
-                           <Image url="@images/cutecat.png" />
+                           <Image url="@images/lab_dog_image.png" />
                         </image>
                      </ImageView>
-                     <Button fx:id="catButton" onAction="#handleCatButtonAction" text="CAT" stylesheets="@styles/styles.css" styleClass="catButton" />
+                     <Button fx:id="dogButton2" text="LAB" onAction="#handleDogButtonAction2" styleClass="dogButton" />
+                  </VBox>
+               </children>
+            </StackPane>
+
+            <!-- Cat Option 1 -->
+            <StackPane fx:id="catPane1" styleClass="catPane">
+               <children>
+                  <VBox alignment="CENTER" spacing="20">
+                     <ImageView fx:id="catImageView1" styleClass="dogImageView" fitHeight="200.0" fitWidth="200.0">
+                        <image>
+                           <Image url="@images/ragdoll_cat_image.png" />
+                        </image>
+                     </ImageView>
+                     <Button fx:id="catButton1" text="RAGDOLL" onAction="#handleCatButtonAction1" styleClass="catButton" />
+                  </VBox>
+               </children>
+            </StackPane>
+
+            <!-- Cat Option 2 -->
+            <StackPane fx:id="catPane2" styleClass="catPane">
+               <children>
+                  <VBox alignment="CENTER" spacing="20">
+                     <ImageView fx:id="catImageView2" styleClass="catImageView" fitHeight="200.0" fitWidth="200.0">
+                        <image>
+                           <Image url="@images/siamese_cat_image.png" />
+                        </image>
+                     </ImageView>
+                     <Button fx:id="catButton2" text="SIAMESE" onAction="#handleCatButtonAction2" styleClass="catButton" />
                   </VBox>
                </children>
             </StackPane>
          </HBox>
+
+         <!-- Pet Name Input -->
+         <TextField fx:id="petNameTextField" promptText="Enter Pet's Name"
+                    styleClass="petNameTextField" prefWidth="400.0" maxWidth="400.0" prefHeight="200.0"/>
+
+         <!-- Play Button -->
+         <Button fx:id="playButton" text="PLAY" onAction="#handlePlayButtonAction" styleClass="playButton" />
       </VBox>
    </children>
 </AnchorPane>
+
 
 
 

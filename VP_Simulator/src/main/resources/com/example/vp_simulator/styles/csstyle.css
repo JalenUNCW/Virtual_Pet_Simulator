@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* General Scene Setup */
+.characterselect-root {
+    -fx-background-color: #1B2631; /* Dark blue background for contrast */
+}
+
+/* Backgrounds */
+.characterselect {
+    -fx-background-image: url("/com/example/vp_simulator/images/characterselect-background.jpg");
+    -fx-background-size: cover;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+}
+
+/* Buttons for Selecting Characters */
+.charButton {
+    -fx-background-color: #34495E; /* Deep slate blue */
+    -fx-text-fill: linear-gradient(to bottom, #FFA500, #FFD700); /* Gold gradient text */
+    -fx-font-size: 18px;
+    -fx-font-family: "Press Start 2P", sans-serif;
+    -fx-padding: 10 20;
+    -fx-border-radius: 15;
+    -fx-border-color: #5D6D7E; /* Subtle gray border */
+    -fx-border-width: 2;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, #000000, 10, 0.5, 0, 0);
+}
+
+.charButton:hover {
+    -fx-background-color: #2E4053; /* Darker blue on hover */
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+    -fx-text-fill: linear-gradient(to bottom, #FFD700, #FFA500); /* Reverse gradient */
+}
+
+.charButton:pressed {
+    -fx-background-color: #283747; /* Even darker blue for pressed effect */
+    -fx-text-fill: #FFD700;
+}
+
+/* Selected Character Highlight */
+.selectedChar {
+    -fx-border-color: linear-gradient(to bottom, #FFD700, #FFA500); /* Bright gold border */
+    -fx-border-width: 4;
+    -fx-border-radius: 20;
+    -fx-effect: dropshadow(gaussian, rgba(255, 215, 0, 0.8), 20, 0.5, 0, 0);
+}
+
+/* Character Icon Styling */
+.charImage {
+    -fx-effect: dropshadow(gaussian, rgba(255, 215, 0, 0.6), 10, 0.4, 0, 0); /* Subtle glow */
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-preserve-ratio: true;
+    -fx-fit-height: 150px;
+    -fx-fit-width: 150px;
+}
+
+/* Title Styling */
+.characterselect-title {
+    -fx-font-family: "Press Start 2P", sans-serif;
+    -fx-font-size: 60px;
+    -fx-text-fill: linear-gradient(to bottom, #FFD700, #FFA500);
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.8), 15, 0.5, 2, 2);
+    -fx-alignment: center;
+    letter-spacing: 8px;
+    -fx-padding: 20;
+}
+
+/* Layout for Character Selection Screen */
+.characterselect-vbox {
+    -fx-alignment: center;
+    -fx-spacing: 25;
+    -fx-padding: 20;
+}
+
+.characterselect-hbox {
+    -fx-alignment: center;
+    -fx-spacing: 30;
+    -fx-padding: 50;
+}
+
+/* Glow Effect for the Selected Button */
+.startGameButton {
+    -fx-background-color: #6D4C41;
+    -fx-text-fill: linear-gradient(to bottom, #FFD700, #FFA500);
+    -fx-font-size: 24px;
+    -fx-font-family: "Press Start 2P", sans-serif;
+    -fx-padding: 15 35;
+    -fx-effect: dropshadow(gaussian, rgba(255, 215, 0, 0.8), 20, 0.5, 0, 0);
+    -fx-border-radius: 20;
+    -fx-border-color: linear-gradient(to bottom, #FFD700, #FFA500);
+    -fx-border-width: 4;
+    -fx-cursor: hand;
+}
+
+.startGameButton:hover {
+    -fx-scale-x: 1.15;
+    -fx-scale-y: 1.15;
+    -fx-background-color: #5D4037;
+}
+
+.startGameButton:pressed {
+    -fx-background-color: #3E2723;
+    -fx-text-fill: white;
+}
+
+/* TextField Styling */
+.petNameTextField {
+    -fx-background-color: #3E2723; /* Match the root background color */
+    -fx-text-fill: white; /* White text */
+    -fx-font-family: "Press Start 2P", sans-serif; /* Pixelated font */
+    -fx-font-size: 20px; /* Adjust font size */
+    -fx-padding: 5 10; /* Padding for inside spacing */
+    -fx-border-color: #FFD700; /* Gold border */
+    -fx-border-width: 2; /* Border thickness */
+    -fx-border-radius: 10; /* Rounded corners */
+    -fx-background-radius: 10; /* Rounded background */
+    -fx-pref-width: 650; /* Adjust width to make it smaller */
+    -fx-pref-height: 100;
+    -fx-alignment: center;
+}
+
+.petNameTextField:focused {
+    -fx-border-color: #FFA500; /* Orange border on focus */
+    -fx-background-color: #5D4037; /* Slightly lighter brown background */
+
+}
+
+.petNameTextField:disabled {
+    -fx-opacity: 0.5; /* Dimmed when disabled */
+}
+
+/* Hover effect for the pet button (button remains the same) */
+.dogButton:hover, .catButton:hover {
+    -fx-background-color: #8D6E63; /* Light brown hover effect */
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+    -fx-text-fill: linear-gradient(to bottom, #FFA500, #FFD700); /* Reversed gradient */
+    -fx-transform: translateY(-10px);
+}
+
+/* Apply the translateY to the pet image */
+.dogPane:hover .dogImageView, .catPane:hover .catImageView {
+    -fx-transform: translateY(-10px); /* Moves the pet image up by 10 pixels */
+}
+
+
+

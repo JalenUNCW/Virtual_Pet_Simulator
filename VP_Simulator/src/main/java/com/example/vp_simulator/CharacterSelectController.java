@@ -1,10 +1,12 @@
 package com.example.vp_simulator;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.AnchorPane;
@@ -23,6 +25,20 @@ public class CharacterSelectController {
     public StackPane catPane;
     public VBox vbox;
     public HBox imageHBox;
+    public StackPane dogPane1;
+    public ImageView dogImageView1;
+    public Button dogButton1;
+    public StackPane dogPane2;
+    public ImageView dogImageView2;
+    public Button dogButton2;
+    public StackPane catPane1;
+    public ImageView catImageView1;
+    public Button catButton1;
+    public StackPane catPane2;
+    public ImageView catImageView2;
+    public Button catButton2;
+    public TextField petNameTextField;
+    public Button playButton;
     private VP_Simulator vpSimulator;
 
     public void setVpSimulator(VP_Simulator vpSimulator) { this.vpSimulator = vpSimulator; }
@@ -154,6 +170,20 @@ public class CharacterSelectController {
     }
 
 
+    public void handleCatButtonAction2(ActionEvent actionEvent) {
+    }
+
+    public void handleCatButtonAction1(ActionEvent actionEvent) {
+    }
+
+    public void handleDogButtonAction2(ActionEvent actionEvent) {
+    }
+
+    public void handleDogButtonAction1(ActionEvent actionEvent) {
+    }
+
+    public void handlePlayButtonAction(ActionEvent actionEvent) {
+    }
 }
 
 
