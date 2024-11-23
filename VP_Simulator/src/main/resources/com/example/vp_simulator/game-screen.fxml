@@ -19,8 +19,8 @@
     </columnConstraints>
     <rowConstraints>
         <RowConstraints percentHeight="15" vgrow="ALWAYS" />
-        <RowConstraints percentHeight="70" vgrow="ALWAYS" />
-        <RowConstraints percentHeight="15" vgrow="ALWAYS" />
+        <RowConstraints percentHeight="65" vgrow="ALWAYS" />
+        <RowConstraints percentHeight="20" vgrow="ALWAYS" />
     </rowConstraints>
     <children>
 
@@ -68,7 +68,7 @@
         </GridPane>
 
         <!-- UI Elements: ProgressBars and Labels -->
-        <GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.valignment="BOTTOM" vgap="10">
+        <GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="2" vgap="10" hgap="20">
             <columnConstraints>
                 <ColumnConstraints minWidth="150" prefWidth="200" hgrow="SOMETIMES" />
                 <ColumnConstraints minWidth="400" prefWidth="600" hgrow="ALWAYS" />
