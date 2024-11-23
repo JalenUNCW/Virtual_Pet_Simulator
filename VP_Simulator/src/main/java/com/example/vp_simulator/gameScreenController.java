@@ -254,7 +254,6 @@ public class gameScreenController {
 
     public void handleProgressEvent() {
 
-
         healthBar.setProgress((double) pet.getHealth() /100);
         hungerBar.setProgress((double) pet.getHunger() /100);
         happinessBar.setProgress((double) pet.getHappiness() /100);
