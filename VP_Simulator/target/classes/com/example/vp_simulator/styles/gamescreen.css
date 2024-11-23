@@ -11,7 +11,17 @@
 }
 
 .progress-bar {
-    -fx-accent: #5cb85c;
+    -fx-accent: #5cb85c; /* Progress bar fill color */
+    -fx-control-inner-background: #6D4C41; /* Rich brown base for the background */
+    -fx-background-color: #6D4C41; /* Rich brown base */
+    -fx-text-fill: linear-gradient(to bottom, #FFD700, #FFA500); /* Gold gradient text */
+    -fx-font-size: 16px;
+    -fx-font-family: "Press Start 2P", sans-serif; /* Pixelated font */
+    -fx-border-radius: 15; /* Rounded corners for a polished look */
+    -fx-background-radius: 15; /* Matching the border radius */
+    -fx-border-color: linear-gradient(to bottom, #FFD700, #FFA500); /* Gold gradient border */
+    -fx-border-width: 3;
+    -fx-transition: all 0.3s ease-in-out; /* Smooth transition */
 }
 
 .image-anchor {

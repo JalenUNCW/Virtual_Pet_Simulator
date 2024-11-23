@@ -88,16 +88,16 @@
             <children>
                 <!-- Health -->
                 <Label text="Health" styleClass="gslabel" GridPane.rowIndex="0" GridPane.columnIndex="0" />
-                <ProgressBar fx:id="healthBar" maxWidth="1.7976931348623157E308" prefHeight="50.0" progress="1.0" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+                <ProgressBar fx:id="healthBar" styleClass="progress-bar" maxWidth="1.7976931348623157E308" prefHeight="50.0" progress="1.0" GridPane.rowIndex="0" GridPane.columnIndex="1" />
                 <!-- Hunger -->
                 <Label text="Hunger" styleClass="gslabel" GridPane.rowIndex="1" GridPane.columnIndex="0" />
-                <ProgressBar fx:id="hungerBar" maxWidth="1.7976931348623157E308" prefHeight="50.0" progress="1.0" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+                <ProgressBar fx:id="hungerBar" styleClass="progress-bar" maxWidth="1.7976931348623157E308" prefHeight="50.0" progress="1.0" GridPane.rowIndex="1" GridPane.columnIndex="1" />
                 <!-- Energy -->
                 <Label text="Energy" styleClass="gslabel" GridPane.rowIndex="2" GridPane.columnIndex="0" />
-                <ProgressBar fx:id="energyBar" maxWidth="1.7976931348623157E308" prefHeight="50.0" progress="1.0" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+                <ProgressBar fx:id="energyBar" styleClass="progress-bar" maxWidth="1.7976931348623157E308" prefHeight="50.0" progress="1.0" GridPane.rowIndex="2" GridPane.columnIndex="1" />
                 <!-- Happiness -->
                 <Label text="Happiness" styleClass="gslabel" GridPane.rowIndex="3" GridPane.columnIndex="0" />
-                <ProgressBar fx:id="happinessBar" maxWidth="1.7976931348623157E308" prefHeight="50.0" progress="1.0" GridPane.rowIndex="3" GridPane.columnIndex="1" />
+                <ProgressBar fx:id="happinessBar" styleClass="progress-bar" maxWidth="1.7976931348623157E308" prefHeight="50.0" progress="1.0" GridPane.rowIndex="3" GridPane.columnIndex="1" />
             </children>
         </GridPane>
 

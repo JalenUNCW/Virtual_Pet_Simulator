@@ -115,7 +115,6 @@
     -fx-fit-width: 200px;
 }
 
-
 .mainVbox{
     -fx-alignment: center;
     -fx-spacing: 45;
@@ -175,3 +174,25 @@
     -fx-text-fill: linear-gradient(to bottom, #FFD700, #FFA500); /* Gold gradient text */
 }
 
+.progress-bar {
+    -fx-accent: #5cb85c; /* Progress bar fill color */
+    -fx-control-inner-background: #6D4C41; /* Rich brown base for the unfilled part */
+    -fx-background-color: #6D4C41; /* Rich brown base */
+    -fx-text-fill: linear-gradient(to bottom, #FFD700, #FFA500); /* Gold gradient text */
+    -fx-font-size: 16px;
+    -fx-font-family: "Press Start 2P", sans-serif; /* Pixelated font */
+    -fx-border-radius: 15; /* Rounded corners for a polished look */
+    -fx-background-radius: 15; /* Matching the border radius */
+    -fx-border-width: 0; /* Removes the border */
+    -fx-transition: all 0.3s ease-in-out; /* Smooth transition */
+}
+
+.image-anchor {
+    -fx-padding: 20px;
+}
+
+#petImage {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0, 4, 4);
+    -fx-border-color: #333;
+    -fx-border-width: 2;
+}

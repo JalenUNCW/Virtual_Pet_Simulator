@@ -324,11 +324,30 @@ public class gameScreenController {
     }
 
     public void handleProgressEvent() {
+        double healthProgress = pet.getHealth() / 100.0;
+        double hungerProgress = pet.getHunger() / 100.0;
+        double happinessProgress = pet.getHappiness() / 100.0;
+        double energyProgress = pet.getEnergy() / 100.0;
 
-        healthBar.setProgress((double) pet.getHealth() /100);
-        hungerBar.setProgress((double) pet.getHunger() /100);
-        happinessBar.setProgress((double) pet.getHappiness() /100);
-        energyBar.setProgress((double) pet.getEnergy() /100);
+        healthBar.setProgress(healthProgress);
+        hungerBar.setProgress(hungerProgress);
+        happinessBar.setProgress(happinessProgress);
+        energyBar.setProgress(energyProgress);
+
+        updateProgressBarStyle(healthBar, healthProgress);
+        updateProgressBarStyle(hungerBar, hungerProgress);
+        updateProgressBarStyle(happinessBar, happinessProgress);
+        updateProgressBarStyle(energyBar, energyProgress);
+    }
+
+    private void updateProgressBarStyle(ProgressBar progressBar, double value) {
+        if (value > 0.75) {
+            progressBar.setStyle("-fx-accent: green;");
+        } else if (value > 0.25) {
+            progressBar.setStyle("-fx-accent: yellow;");
+        } else {
+            progressBar.setStyle("-fx-accent: red;");
+        }
     }
 
     private void startDecrementTimer() {
