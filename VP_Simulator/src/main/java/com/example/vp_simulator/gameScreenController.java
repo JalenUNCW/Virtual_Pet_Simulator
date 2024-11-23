@@ -21,10 +21,13 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.IOException;
+import java.util.HashSet;
+import java.util.Set;
 
 public class gameScreenController {
-    private boolean isPressed = true;
-
+    PauseTransition pauseTransition = new PauseTransition(Duration.seconds(3));
+    private boolean messageDisplay = false;
+    private Set<String> triggeredActions = new HashSet<>();
     @FXML
     private Label unlockedLabel;
 
@@ -186,22 +189,37 @@ public class gameScreenController {
 
     @FXML
     void feedPressed(ActionEvent event) {
+        boolean isPressed = true;
         pet.feed();
         handleProgressEvent();
+        if (isPressed) {
+            showMessage(isPressed, unlockedLabel, pauseTransition);
+            isPressed = false;
+        }
 
     }
 
     @FXML
     void playPressed(ActionEvent event) {
+        boolean isPressed = true;
         pet.play();
         handleProgressEvent();
+        if (isPressed ) {
+            showMessage(isPressed, unlockedLabel, pauseTransition);
+            isPressed = false;
+        }
     }
 
     @FXML
     void trainPressed(ActionEvent event) {
+        boolean isPressed = true;
         // Handle train button press
         pet.train();
         handleProgressEvent();
+        if (isPressed) {
+            showMessage(true, unlockedLabel, pauseTransition);
+            isPressed = false;
+        }
     }
 
     @FXML
@@ -229,17 +247,22 @@ public class gameScreenController {
 
     @FXML
     void walkPressed(ActionEvent event) {
+        boolean isPressed = true;
         pet.outing();
         handleProgressEvent();
-        if (isPressed){
+        if (isPressed) {
+            showMessage(isPressed, unlockedLabel, pauseTransition);
+            isPressed = false;
+        }
 
+       /* if (isPressed && !messageDisplay){
             isPressed = false;
             unlockedLabel.setText("Achievement\nUnlocked: ");
 
-            PauseTransition pauseTransition = new PauseTransition(Duration.seconds(3));
             pauseTransition.setOnFinished(event1 -> unlockedLabel.setText(""));
             pauseTransition.play();
-        }
+            messageDisplay = true;
+        }*/
     }
 
     @FXML
@@ -315,6 +338,18 @@ public class gameScreenController {
     public void stopDecrementTimer() {
         if (decrementTimer != null) {
             decrementTimer.stop();
+        }
+    }
+    // Method to display the message only once for a given action
+    public void showMessage(boolean isPressed, Label label, PauseTransition pauseTransition) {
+        if (!triggeredActions.contains(isPressed)) { // Check if the action has not been triggered
+            triggeredActions.contains(isPressed);// Mark this action as triggered
+
+            label.setText("Achievement\nUnlocked: " + isPressed);
+
+            pauseTransition.setOnFinished(event -> label.setText(""));
+            pauseTransition.play();
+
         }
     }
 
