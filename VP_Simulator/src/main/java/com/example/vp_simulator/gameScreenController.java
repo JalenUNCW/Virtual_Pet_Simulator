@@ -121,8 +121,10 @@ public class gameScreenController {
     public void findselected() {
         if (pet instanceof Cat) {
             setSelectedPet("Cat");
+
         } else if (pet instanceof Dog) {
             setSelectedPet("Dog");
+
         } else {
             setSelectedPet("Unknown");
         }
@@ -250,7 +252,27 @@ public class gameScreenController {
 
     @FXML
     void walkPressed(ActionEvent event) {
-        boolean isPressed = true;
+        // Set the background image to outing.jpg
+        Image outingBackground = new Image(getClass().getResource("images/outing.jpg").toExternalForm());
+        Image originalBackground = backgroundImage.getImage(); // Save the original background image
+        backgroundImage.setImage(outingBackground);
+
+        // Start a PauseTransition to revert back after 2 seconds
+        PauseTransition pause = new PauseTransition(Duration.seconds(2));
+        pause.setOnFinished(e -> {
+            backgroundImage.setImage(originalBackground);
+            System.out.println("Reverted to the original background.");
+        });
+        pause.play();
+
+        // Code below runs immediately without waiting for the PauseTransition
+        pet.outing();
+        handleProgressEvent();
+        System.out.println("Walk action completed!");
+
+        // The rest of the UI is still responsive
+
+    boolean isPressed = true;
         pet.outing();
         handleProgressEvent();
         if (isPressed) {
