@@ -51,7 +51,7 @@
                 <RowConstraints minHeight="20" />
                 <RowConstraints minHeight="20" />
                 <RowConstraints minHeight="20" prefHeight="20" />
-                <RowConstraints minHeight="20" vgrow="ALWAYS" />
+                <RowConstraints minHeight="40" vgrow="ALWAYS" />
             </rowConstraints>
             <columnConstraints>
                 <ColumnConstraints percentWidth="30" halignment="CENTER" hgrow="ALWAYS" />

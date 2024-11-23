@@ -100,11 +100,21 @@ public class gameScreenController {
     // Update the pet image and related UI elements based on the selected pet
     private void updatePetDetails() {
         if (selectedPet.equals("Dog")) {
-            Image dogImage = new Image("file:images/cutedog.jpg");  // Adjust path as needed
-            petImage.setImage(dogImage);
+            if (pet.breedToString().equals("Shepherd")) {
+                Image image = new Image(getClass().getResource("file:images/german_shep_dog.png").toExternalForm());
+                petImage.setImage(image);
+            } else {
+                Image image = new Image(getClass().getResource("file:images/lab_dog_image.png").toExternalForm());
+                petImage.setImage(image);
+            }
         } else if (selectedPet.equals("Cat")) {
-            Image catImage = new Image("file:images/cutecat.png");  // Adjust path as needed
-            petImage.setImage(catImage);
+            if (pet.breedToString().equals("Siamese")) {
+                Image image = new Image(getClass().getResource("file:images/siamese_cat_image.png").toExternalForm());
+                petImage.setImage(image);
+            } else {
+                Image image = new Image(getClass().getResource("file:images/ragdoll_cat_image.png").toExternalForm());
+                petImage.setImage(image);
+            }
         }
     }
 
@@ -121,7 +131,7 @@ public class gameScreenController {
         //if (pet.getHealth() <= 0 || pet.getEnergy() <= 0 || pet.getHunger() <= 0 || pet.getHappiness() <= 0) {
             ;
             // You can add additional logic here, e.g., pause the decrementTimer or notify the user.
-        //}
+        //
     }
 
     // Handle Menu button press (Go back to Main Menu)
