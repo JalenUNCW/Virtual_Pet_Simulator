@@ -5,36 +5,38 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.image.Image?>
 
-<GridPane fx:id="mainpane" hgap="10.0" stylesheets="@styles/styles.css" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: #d9b99b;" vgap="-100.0" xmlns="http://javafx.com/javafx/22.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.vp_simulator.gameScreenController">
+<GridPane fx:id="mainpane" hgap="10.0" stylesheets="@styles/styles.css" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: #d9b99b;" vgap="10.0" xmlns="http://javafx.com/javafx/22.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.vp_simulator.gameScreenController">
     <columnConstraints>
         <ColumnConstraints hgrow="ALWAYS" maxWidth="200" minWidth="150" prefWidth="119.33333079020181" />
         <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="481.0000025431316" />
     </columnConstraints>
     <rowConstraints>
-        <RowConstraints percentHeight="15"  vgrow="ALWAYS" />
-        <RowConstraints percentHeight="60"  vgrow="ALWAYS" />
-        <RowConstraints percentHeight="25"  vgrow="ALWAYS" />
+        <RowConstraints percentHeight="15" vgrow="ALWAYS" />
+        <RowConstraints percentHeight="70" vgrow="ALWAYS" />
+        <RowConstraints percentHeight="15" vgrow="ALWAYS" />
     </rowConstraints>
     <children>
 
-        <!-- AnchorPane with background and pet images -->
+        <!-- Background Image -->
+        <ImageView fx:id="backgroundImage" pickOnBounds="true" preserveRatio="false" GridPane.rowSpan="3" GridPane.columnSpan="2">
+            <image>
+                <Image url="@images/home.jpg" />
+            </image>
+        </ImageView>
+
+        <!-- AnchorPane with pet images -->
         <AnchorPane fx:id="imageAnchor" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="1">
             <children>
-                <!-- Background Image -->
-                <ImageView fx:id="backgroundImage" pickOnBounds="true" preserveRatio="false">
-                    <image>
-                        <Image url="@images/home.jpg" />
-                    </image>
-                </ImageView>
                 <!-- Pet Image -->
                 <ImageView fx:id="petImage" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                    <AnchorPane.topAnchor>0.0</AnchorPane.topAnchor>
                     <AnchorPane.bottomAnchor>0.0</AnchorPane.bottomAnchor>
                     <AnchorPane.leftAnchor>0.0</AnchorPane.leftAnchor>
                     <AnchorPane.rightAnchor>0.0</AnchorPane.rightAnchor>
@@ -87,9 +89,6 @@
                 <Label text="Happiness" styleClass="gslabel" GridPane.rowIndex="3" GridPane.columnIndex="0" />
                 <ProgressBar fx:id="happinessBar" maxWidth="1.7976931348623157E308" prefHeight="50.0" progress="1.0" GridPane.rowIndex="3" GridPane.columnIndex="1" />
             </children>
-            <GridPane.margin>
-                <Insets bottom="10.0" right="5.0" />
-            </GridPane.margin>
         </GridPane>
 
         <!-- Buttons -->
@@ -99,10 +98,10 @@
             </columnConstraints>
             <rowConstraints>
                 <RowConstraints minHeight="100" prefHeight="120.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="100" prefHeight="120.0"  vgrow="SOMETIMES" />
-                <RowConstraints minHeight="100" prefHeight="120.0"  vgrow="SOMETIMES" />
-                <RowConstraints minHeight="100" prefHeight="120.0"  vgrow="SOMETIMES" />
-                <RowConstraints minHeight="100" prefHeight="120.0"  vgrow="SOMETIMES" />
+                <RowConstraints minHeight="100" prefHeight="120.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="100" prefHeight="120.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="100" prefHeight="120.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="100" prefHeight="120.0" vgrow="SOMETIMES" />
             </rowConstraints>
             <children>
                 <Button fx:id="feedButton" styleClass="button" maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" onAction="#feedPressed" text="Feed" />
@@ -119,7 +118,7 @@
             </columnConstraints>
             <rowConstraints>
                 <RowConstraints minHeight="75.0" prefHeight="75.0" vgrow="ALWAYS" />
-                <RowConstraints minHeight="75.0" prefHeight="75.0"  vgrow="ALWAYS" />
+                <RowConstraints minHeight="75.0" prefHeight="75.0" vgrow="ALWAYS" />
             </rowConstraints>
             <children>
                 <Button fx:id="menuButton" styleClass="button" maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" onAction="#menuPressed" text="Main Menu" />
@@ -128,4 +127,3 @@
         </GridPane>
     </children>
 </GridPane>
-

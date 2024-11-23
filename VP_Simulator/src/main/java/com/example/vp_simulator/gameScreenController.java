@@ -3,6 +3,7 @@ package com.example.vp_simulator;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
+import javafx.scene.layout.GridPane;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -27,6 +28,9 @@ public class gameScreenController {
 
     @FXML
     private ProgressBar energyBar;
+
+    @FXML
+    private GridPane mainpane;
 
     @FXML
     private Button feedButton;
@@ -228,6 +232,14 @@ public class gameScreenController {
     @FXML
     public void initialize() {
 
+        // Bind the background image to the Scene dimensions
+        mainpane.sceneProperty().addListener((obs, oldScene, newScene) -> {
+            if (newScene != null) {
+                backgroundImage.fitWidthProperty().bind(newScene.widthProperty());
+                backgroundImage.fitHeightProperty().bind(newScene.heightProperty());
+            }
+        });
+
         pet = CharacterSelectController.getPet();
 
         System.out.printf("Here is your pet!: %s%n", pet.getName());
@@ -239,9 +251,6 @@ public class gameScreenController {
         }
 
         updatePetDetails();
-
-        backgroundImage.fitWidthProperty().bind(imageAnchor.widthProperty());
-        backgroundImage.fitHeightProperty().bind(imageAnchor.heightProperty());
 
         nameLabel.setText(pet.getName());
         typeLabel.setText(selectedPet);
