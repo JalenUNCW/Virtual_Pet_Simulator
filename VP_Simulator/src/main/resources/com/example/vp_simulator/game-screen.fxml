@@ -61,16 +61,10 @@
                 <Label text="Type" styleClass="gstitlelabel" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                 <Label text="Breed" styleClass="gstitlelabel" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                 <!-- Dynamic Labels -->
-<<<<<<< HEAD
                 <Label fx:id="nameLabel" text="NAME" styleClass="gslabel" GridPane.columnIndex="0" GridPane.rowIndex="1" />
                 <Label fx:id="typeLabel" text="TYPE" styleClass="gslabel" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                 <Label fx:id="breedLabel" text="BREED" styleClass="gslabel" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                 <Label fx:id="unlockedLabel" styleClass="gslabel" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-=======
-                <Label fx:id="nameLabel" text="NAME" styleClass="gslabel" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-                <Label fx:id="typeLabel" text="TYPE" styleClass="gslabel" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                <Label fx:id="breedLabel" text="BREED" styleClass="gslabel" GridPane.columnIndex="2" GridPane.rowIndex="2" />
->>>>>>> 934100ceaf99709c2a2b56c9716c0be1fd79b90c
             </children>
         </GridPane>
 

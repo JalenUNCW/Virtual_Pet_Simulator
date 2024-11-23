@@ -289,7 +289,7 @@ public class gameScreenController {
             MediaManager.playMusic("audio/05. BFG Division 2020.wav");
         } else {
             // Set normal background
-            Image normalBackground = new Image(getClass().getResource("images/mainmenu-backgroundimage.jpg").toExternalForm());
+            Image normalBackground = new Image(getClass().getResource("images/home.jpg").toExternalForm());
             backgroundImage.setImage(normalBackground);
 
             // Optionally, you could also play normal music here if desired
