@@ -13,6 +13,18 @@
     -fx-background-repeat: no-repeat;
 }
 
+.title {
+    -fx-font-family: "Press Start 2P", sans-serif; /* Pixelated font */
+    -fx-font-size: 80px; /* Large font size */
+    -fx-text-fill: linear-gradient(to bottom, #FFD700, #FFA500); /* Gradient gold to orange */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.8), 15, 0.5, 2, 2),
+                 dropshadow(gaussian, rgba(255, 255, 255, 0.6), 10, 0.3, -2, -2);
+    -fx-alignment: center;
+    -fx-padding: 0 10 30 10;
+    letter-spacing: 10px; /* Adjust spacing for readability */
+}
+
+
 /* Buttons for Selecting Characters */
 .charButton {
     -fx-background-color: #34495E; /* Deep slate blue */
@@ -138,13 +150,10 @@
     -fx-scale-x: 1.1;
     -fx-scale-y: 1.1;
     -fx-text-fill: linear-gradient(to bottom, #FFA500, #FFD700); /* Reversed gradient */
-    -fx-transform: translateY(-10px);
 }
 
-/* Apply the translateY to the pet image */
-.dogPane:hover .dogImageView, .catPane:hover .catImageView {
-    -fx-transform: translateY(-10px); /* Moves the pet image up by 10 pixels */
-}
+
+
 
 
 

@@ -7,6 +7,8 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.StackPane?>
 
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.Label?>
 <AnchorPane xmlns="http://javafx.com/javafx/22.0.1" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="com.example.vp_simulator.CharacterSelectController"
             fx:id="anchorPane"
@@ -21,9 +23,13 @@
       </ImageView>
 
       <!-- Character Selection VBox -->
-      <VBox fx:id="vbox" styleClass="vbox" alignment="CENTER" spacing="40" AnchorPane.topAnchor="50.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
+      <VBox fx:id="vbox" styleClass="vbox" alignment="CENTER" spacing="150" AnchorPane.topAnchor="0.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
+
+         <!-- Title Text -->
+         <Label fx:id="titleText" text="Character Selection" styleClass="title" />
+
          <!-- HBox for Characters -->
-         <HBox fx:id="imageHBox" styleClass="imageHBox" alignment="CENTER" spacing="50">
+         <HBox fx:id="imageHBox" styleClass="imageHBox" alignment="CENTER" spacing="100">
 
             <!-- Dog Option 1 -->
             <StackPane fx:id="dogPane1" styleClass="dogPane">
@@ -87,7 +93,7 @@
                     styleClass="petNameTextField" prefWidth="400.0" maxWidth="400.0" prefHeight="200.0"/>
 
          <!-- Play Button -->
-         <Button fx:id="playButton" text="PLAY" onAction="#handlePlayButtonAction" styleClass="playButton" />
+         <Button fx:id="playButton" text="PLAY" onAction="#handlePlayButtonAction" styleClass="playButton"/>
       </VBox>
    </children>
 </AnchorPane>
