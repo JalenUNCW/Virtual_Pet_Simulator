@@ -67,7 +67,7 @@ public class CharacterSelectController {
     public String name;
 
     public void setPet(Pet pet) {
-        this.pet = pet;
+        CharacterSelectController.pet = pet;
     }
 
     public static Pet getPet() {
@@ -115,13 +115,13 @@ public class CharacterSelectController {
         // Print to confirm the action
         System.out.println("Shepherd button clicked");
 
-        game_screen_setup("Shepherd");
-
         name = petNameTextField.getText();
 
-        System.out.println("Scene switched to game screen with Shepherd selected");
-
         setPet(new Dog(name, Dog.DogBreed.Shepherd));
+
+        game_screen_setup("Shepherd");
+
+        System.out.println("Scene switched to game screen with Shepherd selected");
 
     }
 
@@ -131,13 +131,14 @@ public class CharacterSelectController {
         // Print to confirm the action
         System.out.println("Lab button clicked");
 
-        game_screen_setup("Lab");
-
         name = petNameTextField.getText();
+
+        setPet(new Dog(name, Dog.DogBreed.Lab));
+
+        game_screen_setup("Lab");
 
         System.out.println("Scene switched to game screen with Lab selected");
 
-        setPet(new Dog(name, Dog.DogBreed.Lab));
 
     }
 
@@ -147,14 +148,15 @@ public class CharacterSelectController {
         // Print to confirm the action
         System.out.println("Cat button clicked");
 
+        name = petNameTextField.getText();
+
+        setPet(new Cat(name, Cat.CatBreed.Ragdoll));
+
         // Load the game screen scene
         game_screen_setup("Ragdoll");
 
-        name = petNameTextField.getText();
+        System.out.println("Scene switched to game screen with Ragdoll selected");
 
-        System.out.println("Scene switched to game screen with Cat selected");
-
-        setPet(new Cat(name, Cat.CatBreed.Ragdoll));
 
     }
 
@@ -164,13 +166,15 @@ public class CharacterSelectController {
         // Print to confirm the action
         System.out.println("Siamese button clicked");
 
+        name = petNameTextField.getText();
+
+        setPet(new Cat(name, Cat.CatBreed.Siamese));
+
         game_screen_setup("Siamese");
 
-        name = petNameTextField.getText();
 
         System.out.println("Scene switched to game screen with Siamese selected");
 
-        setPet(new Cat(name, Cat.CatBreed.Siamese));
 
     }
 

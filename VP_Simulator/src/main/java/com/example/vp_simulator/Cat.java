@@ -28,7 +28,7 @@ public class Cat extends Pet{
             case Siamese:
                 return "Siamese";
             case Ragdoll:
-                return "Calico";
+                return "Ragdoll";
             default:
                 return "Unknown Breed";
         }

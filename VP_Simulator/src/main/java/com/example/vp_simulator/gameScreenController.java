@@ -74,7 +74,7 @@ public class gameScreenController {
     @FXML
     private ToggleButton walkToggle;
 
-    private String selectedPet;
+    private static String selectedPet;
 
     private Stage stage;
 
@@ -84,7 +84,7 @@ public class gameScreenController {
 
     // Method to set the selected pet (called from CharacterSelectController)
     public void setSelectedPet(String pet) {
-        this.selectedPet = pet;
+        selectedPet = pet;
         updatePetDetails();
     }
 
@@ -145,11 +145,11 @@ public class gameScreenController {
 
     public void findselected() {
         if (pet instanceof Cat) {
-            selectedPet = "Cat";
+            setSelectedPet("Cat");
         } else if (pet instanceof Dog) {
-            selectedPet = "Dog";
+            setSelectedPet("Dog");
         } else {
-            selectedPet = "Unknown"; // Fallback in case the pet is of an unexpected type
+            setSelectedPet("Unknown");
         }
     }
 
