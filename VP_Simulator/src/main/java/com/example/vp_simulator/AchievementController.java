@@ -142,6 +142,7 @@ public class AchievementController{
             });
         }
     }
+
     public void start(Stage stage) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("finalAchievements.fxml"));
 
