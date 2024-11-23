@@ -104,18 +104,18 @@ public class gameScreenController {
     private void updatePetDetails() {
         if (selectedPet.equals("Dog")) {
             if (pet.breedToString().equals("Shepherd")) {
-                Image image = new Image(getClass().getResource("file:images/german_shep_dog.png").toExternalForm());
+                Image image = new Image(getClass().getResourceAsStream("file:images/german_shep_dog.png"));
                 petImage.setImage(image);
             } else {
-                Image image = new Image(getClass().getResource("file:images/lab_dog_image.png").toExternalForm());
+                Image image = new Image(getClass().getResourceAsStream("file:images/lab_dog_image.png"));
                 petImage.setImage(image);
             }
         } else if (selectedPet.equals("Cat")) {
             if (pet.breedToString().equals("Siamese")) {
-                Image image = new Image(getClass().getResource("file:images/siamese_cat_image.png").toExternalForm());
+                Image image = new Image(getClass().getResourceAsStream("file:images/siamese_cat_image.png"));
                 petImage.setImage(image);
             } else {
-                Image image = new Image(getClass().getResource("file:images/ragdoll_cat_image.png").toExternalForm());
+                Image image = new Image(getClass().getResourceAsStream("file:images/ragdoll_cat_image.png"));
                 petImage.setImage(image);
             }
         }
