@@ -325,18 +325,7 @@ public class gameScreenController {
             showMessage(isPressed, unlockedLabel, pauseTransition);
             walkCount++;
         }
-
-       /* if (isPressed && !messageDisplay){
-            isPressed = false;
-            unlockedLabel.setText("Achievement\nUnlocked: ");
-
-            pauseTransition.setOnFinished(event1 -> unlockedLabel.setText(""));
-            pauseTransition.play();
-            messageDisplay = true;
-        }*/
-
         AchievementController.setFirstWalk(true);
-
     }
 
     @FXML
