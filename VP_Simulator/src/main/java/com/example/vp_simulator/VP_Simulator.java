@@ -54,5 +54,3 @@ public class VP_Simulator extends Application {
         launch(args);
     }
 }
-
-

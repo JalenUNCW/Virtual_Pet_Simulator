@@ -202,6 +202,8 @@ public class gameScreenController {
             isPressed = false;
         }
 
+        AchievementController.setHungerGames(true);
+
     }
 
     @FXML
@@ -213,6 +215,7 @@ public class gameScreenController {
             showMessage(isPressed, unlockedLabel, pauseTransition);
             isPressed = false;
         }
+
     }
 
     @FXML
@@ -225,6 +228,9 @@ public class gameScreenController {
             showMessage(true, unlockedLabel, pauseTransition);
             isPressed = false;
         }
+
+        AchievementController.setTrain(true);
+
     }
 
     @FXML
@@ -248,6 +254,9 @@ public class gameScreenController {
         stage.setTitle("Vet Office");
         stage.show();  // Show the vet office scene
         stopDecrementTimer();
+
+        AchievementController.setVetVisit(true);
+
     }
 
     @FXML
@@ -294,6 +303,9 @@ public class gameScreenController {
             pauseTransition.play();
             messageDisplay = true;
         }*/
+
+        AchievementController.setFirstWalk(true);
+
     }
 
     @FXML
@@ -374,6 +386,7 @@ public class gameScreenController {
         } else if (value > 0.25) {
             progressBar.setStyle("-fx-accent: yellow;");
         } else {
+            AchievementController.setBadOwner(true);
             progressBar.setStyle("-fx-accent: red;");
         }
     }
