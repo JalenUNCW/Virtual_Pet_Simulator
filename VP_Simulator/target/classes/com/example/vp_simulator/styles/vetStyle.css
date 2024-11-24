@@ -11,7 +11,7 @@
 
 /* Button Styles */
 .button {
-    -fx-background-color: #3375de;
+    -fx-background-color: #ADD8E6;
     -fx-text-fill: white;
     -fx-font-size: 24px;
     -fx-font-family: "Press Start 2P", sans-serif;
@@ -21,6 +21,22 @@
     -fx-border-color: #4E342E;
     -fx-border-width: 3;
     -fx-cursor: hand;
+}
+.gslabel {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 20px;
+}
+.progress-bar {
+    -fx-accent: #6495ED; /* Progress bar fill color */
+    -fx-control-inner-background: #ADD8E6; /* background color */
+    -fx-background-color: #4682B4; /* Rich brown base */
+    -fx-font-size: 16px;
+    -fx-font-family: "Press Start 2P", sans-serif; /* Pixelated font */
+    -fx-border-radius: 15; /* Rounded corners for a polished look */
+    -fx-background-radius: 15; /* Matching the border radius */
+    -fx-border-width: 3;
+    -fx-transition: all 0.3s ease-in-out; /* Smooth transition */
 }
 
 /* Specific Button Effects for Vet Screen */

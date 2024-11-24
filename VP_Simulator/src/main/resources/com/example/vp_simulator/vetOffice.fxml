@@ -9,6 +9,9 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.Label?>
+
 <AnchorPane fx:id="rootPane" xmlns="http://javafx.com/javafx/22.0.1" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="com.example.vp_simulator.vetOfficeController" stylesheets="@styles/vetStyle.css">
     <!-- Background Image -->
@@ -21,6 +24,7 @@
         <AnchorPane.bottomAnchor>0.0</AnchorPane.bottomAnchor>
         <AnchorPane.rightAnchor>0.0</AnchorPane.rightAnchor>
     </ImageView>
+
 
 
     <GridPane fx:id="gridPane" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0"
@@ -53,7 +57,7 @@
                     onAction="#vetEnters" GridPane.rowIndex="3" GridPane.columnIndex="0"
                     maxWidth="Infinity" maxHeight="Infinity" />
             <Button fx:id="groomButton" styleClass="button" text="Groom"
-                    onAction="#vetEnters" GridPane.rowIndex="4" GridPane.columnIndex="0"
+                    onAction="#groomButtonPressed" GridPane.rowIndex="4" GridPane.columnIndex="0"
                     maxWidth="Infinity" maxHeight="Infinity" />
 
             <!-- Vet Image -->
@@ -69,8 +73,20 @@
                     <Insets top="400.0" right="20.0" bottom="10.0" left="400.00" />
                 </GridPane.margin>
             </ImageView>
-
         </children>
     </GridPane>
+    <!-- Progress Bar and Label at Bottom Right -->
+    <ProgressBar fx:id="checkUpProgressBar" styleClass="gslabel" prefWidth="500" visible="false" progress="0.0">
+        <AnchorPane.bottomAnchor>10.0</AnchorPane.bottomAnchor>
+        <AnchorPane.rightAnchor>100.0</AnchorPane.rightAnchor>
+    </ProgressBar>
+    <Label fx:id="checkUpProgressBarLabel" styleClass="gslabel" prefWidth="500" text="Check-up..." visible="false">
+        <AnchorPane.bottomAnchor>35.0</AnchorPane.bottomAnchor>
+        <AnchorPane.rightAnchor>50.0</AnchorPane.rightAnchor>
+    </Label>
+    <Label fx:id="groomProgressBarLabel" styleClass="gslabel" prefWidth="500" text="Groom..." visible="false">
+        <AnchorPane.bottomAnchor>35.0</AnchorPane.bottomAnchor>
+        <AnchorPane.rightAnchor>50.0</AnchorPane.rightAnchor>
+    </Label>
 </AnchorPane>
 

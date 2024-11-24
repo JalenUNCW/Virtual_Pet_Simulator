@@ -58,13 +58,14 @@ public class Cat extends Pet{
 
     @Override
     public void outing() {
+        setEnergy(getEnergy() - 10);
+
         if (getHappiness() < 80) {
             setHappiness(getHappiness() + 20);
         } else {
             setHappiness(100);
         }
 
-        setEnergy(getEnergy() - 10);
     }
 
     @Override
@@ -80,8 +81,13 @@ public class Cat extends Pet{
 
     @Override
     public void checkup() {
-        setHealth(getHealth() + 40);
-        setHappiness(getHappiness() - 10);
+        setHealth(100);
+        if (getHappiness() > 20) {
+            setHappiness(getHappiness() - 20);
+
+        } else {
+            setHappiness(0);
+        }
     }
 
 }

@@ -1,80 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
-<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="com.example.vp_simulator.AchievementController" stylesheets="@styles/achievementStyle.css">
-  <columnConstraints>
-    <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" />
+<?import javafx.scene.image.Image?>
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@styles/achievementStyle.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.vp_simulator.AchievementController">
+   <columnConstraints>
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" />
-    <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" />
-  </columnConstraints>
-  <rowConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" />
+   </columnConstraints>
+   <rowConstraints>
       <RowConstraints maxHeight="1.7976931348623157E308" vgrow="SOMETIMES" />
       <RowConstraints maxHeight="1.7976931348623157E308" prefHeight="30.0" vgrow="SOMETIMES" />
       <RowConstraints maxHeight="1.7976931348623157E308" prefHeight="30.0" vgrow="SOMETIMES" />
       <RowConstraints maxHeight="1.7976931348623157E308" prefHeight="30.0" vgrow="SOMETIMES" />
       <RowConstraints maxHeight="1.7976931348623157E308" prefHeight="30.0" vgrow="SOMETIMES" />
       <RowConstraints maxHeight="1.7976931348623157E308" prefHeight="30.0" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="1.7976931348623157E308" prefHeight="30.0" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="1.7976931348623157E308" prefHeight="30.0" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="1.7976931348623157E308" prefHeight="30.0" vgrow="SOMETIMES" />
       <RowConstraints maxHeight="1.7976931348623157E308" prefHeight="30.0" vgrow="SOMETIMES" />
-  </rowConstraints>
+   </rowConstraints>
    <children>
-      <Button fx:id="btgButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#btgButtonAction" text="Back to Game" GridPane.rowIndex="8">
-         <padding>
-            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-         </padding>
-      </Button>
-      <Button fx:id="bmmButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#bmmButtonAction" text="Main Menu" GridPane.rowIndex="9">
-         <padding>
-            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-         </padding>
-      </Button>
+      <Button fx:id="btgButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#btgButtonAction" text="Back to Game" GridPane.rowIndex="5" />
+      <Button fx:id="bmmButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#bmmButtonAction" text="Main Menu" GridPane.rowIndex="6" />
       <Label text="Achievement" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+      <Label fx:id="descriptionLabel" text="Description" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
       <Label fx:id="achievementLabelHunger" text="Hunger Games" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
       <Label fx:id="achievementLabelWalk" text="First Walk" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-      <Label fx:id="achievementLabelNight" text="Night Night" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
-      <Label fx:id="achievementLabelDog" text="Dog Days" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
-      <Label fx:id="achievementLabelTraining" text="Training Day" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
-      <Label fx:id="achievementLabelBano" text="el bano" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER" />
-      <Label fx:id="achievementLabelVet" text="Vet Visit" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.valignment="CENTER" />
-      <TextArea fx:id="achievementTextArea2" editable="false" prefHeight="200.0" prefWidth="200.0" text="First time feeding your pet " GridPane.columnIndex="2" GridPane.rowIndex="2" />
-      <TextArea fx:id="achievementTextArea3" editable="false" prefHeight="200.0" prefWidth="200.0" text="First time walking your pet " GridPane.columnIndex="2" GridPane.rowIndex="3" />
-      <TextArea fx:id="achievementTextArea4" editable="false" prefHeight="200.0" prefWidth="200.0" text="First time putting your pet to sleep " GridPane.columnIndex="2" GridPane.rowIndex="4" />
-      <TextArea fx:id="achievementTextArea5" editable="false" prefHeight="200.0" prefWidth="200.0" text="Pets first birthday" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-      <TextArea fx:id="achievementTextArea6" editable="false" prefHeight="200.0" prefWidth="200.0" text="First time training your pet " GridPane.columnIndex="2" GridPane.rowIndex="6" />
-      <TextArea fx:id="achievementTextArea7" editable="false" prefHeight="200.0" prefWidth="200.0" text="First time your pet uses the bathroom" GridPane.columnIndex="2" GridPane.rowIndex="7" />
-      <TextArea fx:id="achievementTextArea9" editable="false" prefHeight="200.0" prefWidth="200.0" text="First time taking your pet to the vet " GridPane.columnIndex="2" GridPane.rowIndex="8" />
-      <Label text="Description" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
-      <Label fx:id="achievementLabelPoor" text="Poor Owner" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="9" GridPane.valignment="CENTER" />
-      <TextArea fx:id="achievementTextArea10" editable="false" prefHeight="200.0" prefWidth="200.0" text="Pets health reached a critical low " GridPane.columnIndex="2" GridPane.rowIndex="9" />
-      <TextArea fx:id="achievementTextArea1" editable="false" prefHeight="200.0" prefWidth="200.0" text="Earned 5 achievements " GridPane.columnIndex="2" GridPane.rowIndex="1">
+      <Label fx:id="achievementLabelTraining" text="Training Day" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+      <Label fx:id="achievementLabelVet" text="Vet Visit" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
+      <Label fx:id="achievementLabelPoor" text="Poor Owner" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
+
+      <TextArea fx:id="achievementTextHunger" editable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="First time feeding your pet" GridPane.columnIndex="2" GridPane.rowIndex="2" GridPane.halignment="LEFT" GridPane.valignment="CENTER" />
+      <TextArea fx:id="achievementTextWalk" editable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="First time walking your pet" GridPane.columnIndex="2" GridPane.rowIndex="3" GridPane.halignment="LEFT" GridPane.valignment="CENTER" />
+      <TextArea fx:id="achievementTextTraining" editable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="First time training your pet" GridPane.columnIndex="2" GridPane.rowIndex="4" GridPane.halignment="LEFT" GridPane.valignment="CENTER" />
+      <TextArea fx:id="achievementTextVet" editable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="First time taking your pet to the vet" GridPane.columnIndex="2" GridPane.rowIndex="5" GridPane.halignment="LEFT" GridPane.valignment="CENTER" />
+      <TextArea fx:id="achievementTextPoor" editable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Pets health reached a critical low" GridPane.columnIndex="2" GridPane.rowIndex="6" GridPane.halignment="LEFT" GridPane.valignment="CENTER" />
+      <TextArea fx:id="achievementTextFive" editable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Earned 5 achievements" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.halignment="LEFT" GridPane.valignment="CENTER" >
          <cursor>
             <Cursor fx:constant="DEFAULT" />
          </cursor>
       </TextArea>
       <Label fx:id="achievementLabelShowman" text="Greatest Showman" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-      <ImageView fx:id="checkMark1" visible="false" fitHeight="45.0" fitWidth="114.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+      <ImageView fx:id="checkMark1" visible="false" fitHeight="45.0" fitWidth="114.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1"/>
+      <ImageView fx:id="checkfive" fitHeight="45.0" fitWidth="114.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1" >
          <image>
             <Image url="@images/checkmark.jpeg" />
          </image>
       </ImageView>
-      <ImageView fx:id="checkMark2" visible="false" fitHeight="45.0" fitWidth="114.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+      <ImageView fx:id="checkMark2" visible="false" fitHeight="45.0" fitWidth="114.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="2"/>
+      <ImageView fx:id="checkhunger" fitHeight="45.0" fitWidth="114.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
          <image>
             <Image url="@images/checkmark.jpeg" />
          </image>
       </ImageView>
-      <ImageView fx:id="checkMark3"  visible="false" fitHeight="47.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+      <ImageView fx:id="checkMark3"  visible="false" fitHeight="47.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="3"/>
+
+      <ImageView fx:id="checkwalk" fitHeight="47.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
          <image>
             <Image url="@images/checkmark.jpeg" />
          </image>
@@ -110,4 +97,19 @@
          </image>
       </ImageView>
    </children>
-</GridPane>
+      <ImageView fx:id="checktrain" fitHeight="42.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+         <image>
+            <Image url="@images/checkmark.jpeg" />
+         </image>
+        </ImageView>
+      <ImageView fx:id="checkvet" fitHeight="44.0" fitWidth="137.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="5">
+         <image>
+            <Image url="@images/checkmark.jpeg" />
+         </image>
+     </ImageView>
+      <ImageView fx:id="checkpoor" fitHeight="38.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="6">
+         <image>
+            <Image url="@images/checkmark.jpeg" />
+         </image>
+     </ImageView>
+  </GridPane>

@@ -17,11 +17,13 @@ import javafx.scene.control.ToggleButton;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.IOException;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 public class gameScreenController {
@@ -78,7 +80,7 @@ public class gameScreenController {
     private ToggleButton playToggle;
 
     @FXML
-    private AnchorPane imageAnchor;
+    private StackPane imageAnchor;
 
 
     @FXML
@@ -97,7 +99,7 @@ public class gameScreenController {
 
     private Stage stage;
 
-    private Pet pet;
+    public static Pet pet;
 
     private Timeline decrementTimer;
 
@@ -109,12 +111,29 @@ public class gameScreenController {
 
     // Update the pet image and related UI elements based on the selected pet
     private void updatePetDetails() {
-        if (selectedPet.equals("Dog")) {
-            Image dogImage = new Image("file:images/cutedog.jpg");  // Adjust path as needed
-            petImage.setImage(dogImage);
-        } else if (selectedPet.equals("Cat")) {
-            Image catImage = new Image("file:images/cutecat.png");  // Adjust path as needed
-            petImage.setImage(catImage);
+        if (pet.breedToString().equals("Shepherd")) {
+            petImage.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("images/german_shep_dog.png"))));}
+        if (pet.breedToString().equals("Lab")){
+            petImage.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("images/lab_dog_image.png"))));}
+        if (pet.breedToString().equals("Ragdoll")){
+            petImage.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("images/ragdoll_cat_image.png"))));}
+        if (pet.breedToString().equals("Siamese")){
+            petImage.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("images/siamese_cat_image.png"))));}
+    }
+
+    public void setStage(Stage stage) {
+        this.stage = stage;
+    }
+
+    public void findselected() {
+        if (pet instanceof Cat) {
+            setSelectedPet("Cat");
+
+        } else if (pet instanceof Dog) {
+            setSelectedPet("Dog");
+
+        } else {
+            setSelectedPet("Unknown");
         }
     }
 
@@ -130,6 +149,11 @@ public class gameScreenController {
         if (pet.getHealth() <= 0 || pet.getEnergy() <= 0 || pet.getHunger() <= 0 || pet.getHappiness() <= 0) {
             showMessage(false, unlockedLabel, pauseTransition);
         }
+
+        //if (pet.getHealth() <= 0 || pet.getEnergy() <= 0 || pet.getHunger() <= 0 || pet.getHappiness() <= 0) {
+            ;
+            // You can add additional logic here, e.g., pause the decrementTimer or notify the user.
+        //
     }
 
     // Handle Menu button press (Go back to Main Menu)
@@ -154,20 +178,6 @@ public class gameScreenController {
         stage.setTitle("Main Menu");
         stage.show();  // Show the main menu scene
         stopDecrementTimer();
-    }
-
-    public void setStage(Stage stage) {
-        this.stage = stage;
-    }
-
-    public void findselected() {
-        if (pet instanceof Cat) {
-            setSelectedPet("Cat");
-        } else if (pet instanceof Dog) {
-            setSelectedPet("Dog");
-        } else {
-            setSelectedPet("Unknown");
-        }
     }
 
     // Handle other button presses (achievements, feed, play, etc.)
@@ -201,6 +211,9 @@ public class gameScreenController {
             showMessage(isPressed, unlockedLabel, pauseTransition);
             feedCount++;
         }
+
+        AchievementController.setHungerGames(true);
+
     }
 
     @FXML
@@ -212,6 +225,7 @@ public class gameScreenController {
             showMessage(isPressed, unlockedLabel, pauseTransition);
             playCount++;
         }
+
     }
 
     @FXML
@@ -224,6 +238,9 @@ public class gameScreenController {
             showMessage(true, unlockedLabel, pauseTransition);
             trainCount++;
         }
+
+        AchievementController.setTrain(true);
+
     }
 
     @FXML
@@ -253,17 +270,58 @@ public class gameScreenController {
         stage.setTitle("Vet Office");
         stage.show();  // Show the vet office scene
         stopDecrementTimer();
+
+        AchievementController.setVetVisit(true);
+
     }
 
     @FXML
     void walkPressed(ActionEvent event) {
-        boolean isPressed = true;
+        // Determine the appropriate background image based on Hardcore Mode
+        Image outingBackground;
+        if (AppState.isHardcoreMode()) {
+            outingBackground = new Image(getClass().getResource("images/hellish_landscape_walk.jpg").toExternalForm());
+        } else {
+            outingBackground = new Image(getClass().getResource("images/outing.jpg").toExternalForm());
+        }
+
+        Image originalBackground = backgroundImage.getImage(); // Save the original background image
+        backgroundImage.setImage(outingBackground);
+
+        // Start a PauseTransition to revert back after 2 seconds
+        PauseTransition pause = new PauseTransition(Duration.seconds(2));
+        pause.setOnFinished(e -> {
+            backgroundImage.setImage(originalBackground);
+            System.out.println("Reverted to the original background.");
+        });
+        pause.play();
+
+        // Code below runs immediately without waiting for the PauseTransition
+        pet.outing();
+        handleProgressEvent();
+        System.out.println("Walk action completed!");
+
+        // The rest of the UI is still responsive
+
+    boolean isPressed = true;
         pet.outing();
         handleProgressEvent();
         if (isPressed && walkCount == 0) {
             showMessage(isPressed, unlockedLabel, pauseTransition);
             walkCount++;
         }
+
+       /* if (isPressed && !messageDisplay){
+            isPressed = false;
+            unlockedLabel.setText("Achievement\nUnlocked: ");
+
+            pauseTransition.setOnFinished(event1 -> unlockedLabel.setText(""));
+            pauseTransition.play();
+            messageDisplay = true;
+        }*/
+
+        AchievementController.setFirstWalk(true);
+
     }
 
     @FXML
@@ -322,11 +380,31 @@ public class gameScreenController {
     }
 
     public void handleProgressEvent() {
+        double healthProgress = pet.getHealth() / 100.0;
+        double hungerProgress = pet.getHunger() / 100.0;
+        double happinessProgress = pet.getHappiness() / 100.0;
+        double energyProgress = pet.getEnergy() / 100.0;
 
-        healthBar.setProgress((double) pet.getHealth() /100);
-        hungerBar.setProgress((double) pet.getHunger() /100);
-        happinessBar.setProgress((double) pet.getHappiness() /100);
-        energyBar.setProgress((double) pet.getEnergy() /100);
+        healthBar.setProgress(healthProgress);
+        hungerBar.setProgress(hungerProgress);
+        happinessBar.setProgress(happinessProgress);
+        energyBar.setProgress(energyProgress);
+
+        updateProgressBarStyle(healthBar, healthProgress);
+        updateProgressBarStyle(hungerBar, hungerProgress);
+        updateProgressBarStyle(happinessBar, happinessProgress);
+        updateProgressBarStyle(energyBar, energyProgress);
+    }
+
+    private void updateProgressBarStyle(ProgressBar progressBar, double value) {
+        if (value > 0.75) {
+            progressBar.setStyle("-fx-accent: green;");
+        } else if (value > 0.25) {
+            progressBar.setStyle("-fx-accent: yellow;");
+        } else {
+            AchievementController.setBadOwner(true);
+            progressBar.setStyle("-fx-accent: red;");
+        }
     }
 
     private void startDecrementTimer() {

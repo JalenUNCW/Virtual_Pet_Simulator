@@ -38,31 +38,56 @@ public class Dog extends Pet{
     public void feed() {
         setHunger(100);
         setEnergy(100);
-        setHappiness(getHappiness() + 20);
+        if (getHappiness() < 80) {
+            setHappiness(getHappiness() + 20);
+        }
+        else {
+            setHappiness(100);
+        }
     }
 
     @Override
     public void train() {
         setEnergy(getEnergy() - 10);
-        setHappiness(getHappiness() + 20);
+        if (getHappiness() < 80) {
+            setHappiness(getHappiness() + 20);
+        } else {
+            setHappiness(100);
+        }
     }
 
     @Override
     public void outing() {
-        setHappiness(getHappiness() + 40);
         setEnergy(getEnergy() - 10);
+
+        if (getHappiness() < 80) {
+            setHappiness(getHappiness() + 20);
+        } else {
+            setHappiness(100);
+        }
+
     }
 
     @Override
     public void play() {
         setEnergy(getEnergy() - 10);
-        setHappiness(getHappiness() + 40);
+        if (getHappiness() < 80) {
+            setHappiness(getHappiness() + 20);
+
+        } else {
+            setHappiness(100);
+        }
     }
 
     @Override
     public void checkup() {
-        setHealth(getHealth() + 40);
-        setHappiness(getHappiness() - 10);
+        setHealth(100);
+        if (getHappiness() > 20) {
+            setHappiness(getHappiness() - 20);
+
+        } else {
+            setHappiness(0);
+        }
     }
 
 }

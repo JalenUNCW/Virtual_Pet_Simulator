@@ -21,5 +21,6 @@ public class AppState {
     private void handleToggleHardcoreModeAction() {
         AppState.setHardcoreMode(!AppState.isHardcoreMode());
     }
+
 }
 

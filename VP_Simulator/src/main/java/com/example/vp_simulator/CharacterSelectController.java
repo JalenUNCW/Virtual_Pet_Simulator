@@ -41,7 +41,6 @@ public class CharacterSelectController {
     public ImageView catImageView2;
     public Button catButton2;
     public TextField petNameTextField;
-    public Button playButton;
     public Label titleText;
     private VP_Simulator vpSimulator;
 
@@ -176,7 +175,6 @@ public class CharacterSelectController {
 
         System.out.println("Scene switched to game screen with Lab selected");
 
-
     }
 
     // Handle Cat button action
@@ -194,7 +192,6 @@ public class CharacterSelectController {
 
         System.out.println("Scene switched to game screen with Ragdoll selected");
 
-
     }
 
     // Handle Cat button action
@@ -209,14 +206,13 @@ public class CharacterSelectController {
 
         game_screen_setup("Siamese");
 
-
         System.out.println("Scene switched to game screen with Siamese selected");
-
 
     }
 
     public void game_screen_setup(String breed) {
         // Load the game screen scene
+
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("game-screen.fxml"));
             Parent root = loader.load();
@@ -238,10 +234,16 @@ public class CharacterSelectController {
             e.printStackTrace();
             System.err.println("Error loading the game screen.");
         }
+
+        AchievementController.setShowman(false);
+        AchievementController.setHungerGames(false);
+        AchievementController.setFirstWalk(false);
+        AchievementController.setTrain(false);
+        AchievementController.setVetVisit(false);
+        AchievementController.setBadOwner(false);
+
     }
 
-    public void handlePlayButtonAction(ActionEvent actionEvent) {
-    }
 }
 
 
