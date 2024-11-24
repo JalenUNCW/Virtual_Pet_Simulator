@@ -21,9 +21,6 @@
     -fx-text-fill: #FFD54F; /* Gold text for headers */
     -fx-effect: dropshadow(gaussian, #000000, 5, 0.8, 0, 0);
 }
-.header-GridPane{
-    -fx-border-size;
-}
 
 /* Achievement labels */
 .label {

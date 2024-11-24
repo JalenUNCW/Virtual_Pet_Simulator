@@ -234,6 +234,14 @@ public class CharacterSelectController {
             e.printStackTrace();
             System.err.println("Error loading the game screen.");
         }
+
+        AchievementController.setShowman(false);
+        AchievementController.setHungerGames(false);
+        AchievementController.setFirstWalk(false);
+        AchievementController.setTrain(false);
+        AchievementController.setVetVisit(false);
+        AchievementController.setBadOwner(false);
+
     }
 
     public void handlePlayButtonAction(ActionEvent actionEvent) {

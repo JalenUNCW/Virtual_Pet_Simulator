@@ -21,50 +21,54 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AchievementController{
+    public Label descriptionLabel;
+    public Label achievementLabelHunger;
+    public Label achievementLabelWalk;
+    public Label achievementLabelTraining;
+    public Label achievementLabelVet;
+    public Label achievementLabelPoor;
+    public TextArea achievementTextHunger;
+    public TextArea achievementTextWalk;
+    public TextArea achievementTextTraining;
+    public TextArea achievementTextVet;
+    public TextArea achievementTextPoor;
+    public TextArea achievementTextFive;
+    public Label achievementLabelShowman;
+    public ImageView checkfive;
+    public ImageView checkhunger;
+    public ImageView checkwalk;
+    public ImageView checktrain;
+    public ImageView checkvet;
+    public ImageView checkpoor;
     private Stage stage;
     public void setStage(Stage stage){this.stage = stage;};
 
     enum isUnlocked {Locked, Unlocked};
 
-    @FXML
-    private ImageView checkMark1;
-    @FXML
-    private ImageView checkMark2;
-    @FXML
-    private ImageView checkMark3;
-    @FXML
-    private ImageView checkMark4;
-    @FXML
-    private ImageView checkMark5;
-    @FXML
-    private ImageView checkMark6;
-    @FXML
-    private ImageView checkMark7;
-    @FXML
-    private ImageView checkMark8;
-    @FXML
-    private ImageView checkMark9;
+    // create achievement variables as well as accessors and mutators
+    private static boolean showman;
+    public static boolean getShowman() { return showman; }
+    public static void setShowman(boolean bool) { showman = bool; }
 
-    @FXML
-    private ListView<String> achievementsList;
+    private static boolean hungerGames;
+    public static boolean getHungerGames() { return hungerGames; }
+    public static void setHungerGames(boolean bool) { hungerGames = bool; }
 
-    @FXML
-    private GridPane achievementGridPane;
+    private static boolean firstWalk;
+    public static boolean getFirstWalk() { return firstWalk; }
+    public static void setFirstWalk(boolean bool) { firstWalk = bool; }
 
-    @FXML
-    private Label achievementLabel;
+    private static boolean train;
+    public static boolean getTrain() { return train; }
+    public static void setTrain(boolean bool) { train = bool; }
 
-    @FXML
-    private TextArea achievementTextArea;
+    private static boolean vetVisit;
+    public static boolean getVetVisit() { return vetVisit; }
+    public static void setVetVisit(boolean bool) { vetVisit = bool; }
 
-    @FXML
-    private GridPane headerGridPane;
-
-    @FXML
-    private HBox hbox;
-
-    @FXML
-    private ScrollPane scrollPane;
+    private static boolean badOwner;
+    public static boolean getBadOwner() { return badOwner; }
+    public static void setBadOwner(boolean bool) { badOwner = bool; }
 
     @FXML
     private Button btgButton;
@@ -126,7 +130,12 @@ public class AchievementController{
         scrollpane.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
         scrollpane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
 
-        checkMark1.setVisible(false);
+        checkfive.setVisible(false);
+        checkhunger.setVisible(false);
+        checkpoor.setVisible(false);
+        checkvet.setVisible(false);
+        checktrain.setVisible(false);
+        checkwalk.setVisible(false);
 
 
         Scene scene = new Scene(root);
