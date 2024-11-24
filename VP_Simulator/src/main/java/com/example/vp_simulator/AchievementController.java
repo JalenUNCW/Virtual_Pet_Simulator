@@ -72,6 +72,8 @@ public class AchievementController{
     @FXML
     private Button bmmButton;
 
+    private List<ImageView> checkmarks;
+
     @FXML
     private void btgButtonAction() throws IOException{
         System.out.println("Back to Game: ");
@@ -118,6 +120,12 @@ public class AchievementController{
     }
 
     public void start(Stage stage) throws IOException {
+        checkmarks = List.of(checkMark1,checkMark2,checkMark3, checkMark4,
+                checkMark5, checkMark6,checkMark7,checkMark8,checkMark9);
+
+        showCheckmarksBasedOnCondition();
+
+
         Parent root = FXMLLoader.load(getClass().getResource("finalAchievements.fxml"));
 
         ScrollPane scrollpane = new ScrollPane();
@@ -126,14 +134,19 @@ public class AchievementController{
         scrollpane.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
         scrollpane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
 
-        checkMark1.setVisible(false);
-
 
         Scene scene = new Scene(root);
         stage.setTitle("Pet Achievements");
         stage.setScene(scene);
         stage.show();
     }
+    public void showCheckmarksBasedOnCondition() {
+        boolean[] conditions = {true, false, true, false, true, false, true, false, true};
+        for (int i = 0; i < checkmarks.size(); i++) {
+            checkmarks.get(i).setVisible(conditions[i]); // Apply condition to each checkmark
+        }
+    }
+
 
 }
 

@@ -28,6 +28,12 @@ public class gameScreenController {
     PauseTransition pauseTransition = new PauseTransition(Duration.seconds(3));
     private boolean messageDisplay = false;
     private Set<String> triggeredActions = new HashSet<>();
+    private int feedCount = 0;
+    private int walkCount = 0;
+    private int trainCount = 0;
+    private int playCount = 0;
+    private int vetVisitCount = 0;
+
     @FXML
     private Label unlockedLabel;
 
@@ -120,11 +126,9 @@ public class gameScreenController {
 
         // Update the progress bars to reflect the new values
         handleProgressEvent();
-
-        //if (pet.getHealth() <= 0 || pet.getEnergy() <= 0 || pet.getHunger() <= 0 || pet.getHappiness() <= 0) {
-            ;
-            // You can add additional logic here, e.g., pause the decrementTimer or notify the user.
-        //}
+        if (pet.getHealth() <= 0 || pet.getEnergy() <= 0 || pet.getHunger() <= 0 || pet.getHappiness() <= 0) {
+            showMessage(false, unlockedLabel, pauseTransition);
+        }
     }
 
     // Handle Menu button press (Go back to Main Menu)
@@ -192,11 +196,10 @@ public class gameScreenController {
         boolean isPressed = true;
         pet.feed();
         handleProgressEvent();
-        if (isPressed) {
+        if (isPressed && feedCount == 0) {
             showMessage(isPressed, unlockedLabel, pauseTransition);
-            isPressed = false;
+            feedCount++;
         }
-
     }
 
     @FXML
@@ -204,9 +207,9 @@ public class gameScreenController {
         boolean isPressed = true;
         pet.play();
         handleProgressEvent();
-        if (isPressed ) {
+        if (isPressed && playCount == 0) {
             showMessage(isPressed, unlockedLabel, pauseTransition);
-            isPressed = false;
+            playCount++;
         }
     }
 
@@ -216,17 +219,23 @@ public class gameScreenController {
         // Handle train button press
         pet.train();
         handleProgressEvent();
-        if (isPressed) {
+        if (isPressed && trainCount == 0) {
             showMessage(true, unlockedLabel, pauseTransition);
-            isPressed = false;
+            trainCount++;
         }
     }
 
     @FXML
     void vetPressed(ActionEvent event) throws IOException {
+        boolean isPressed = true;
         // Load the vet office scene
         FXMLLoader loader = new FXMLLoader(getClass().getResource("vetOffice.fxml"));
         Parent root = loader.load();
+
+        if (isPressed && vetVisitCount == 0) {
+            showMessage(true, unlockedLabel, pauseTransition);
+            vetVisitCount++;
+        }
 
         // Get the controller for the vetOfficeController
         vetOfficeController vetController = loader.getController();
@@ -250,19 +259,10 @@ public class gameScreenController {
         boolean isPressed = true;
         pet.outing();
         handleProgressEvent();
-        if (isPressed) {
+        if (isPressed && walkCount == 0) {
             showMessage(isPressed, unlockedLabel, pauseTransition);
-            isPressed = false;
+            walkCount++;
         }
-
-       /* if (isPressed && !messageDisplay){
-            isPressed = false;
-            unlockedLabel.setText("Achievement\nUnlocked: ");
-
-            pauseTransition.setOnFinished(event1 -> unlockedLabel.setText(""));
-            pauseTransition.play();
-            messageDisplay = true;
-        }*/
     }
 
     @FXML
