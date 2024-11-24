@@ -8,7 +8,6 @@ Contributors:
 - Torin S.
 - Jalen A.
 - Haley G.
-- Hunter D.
 - Delsin E.
 
 ### Description ###
