@@ -17,6 +17,7 @@ In this game, players adopt a virtual pet that requires regular care to stay hap
 ### Functionality ###
 The pet has various status indicators (e.g., hunger, happiness, energy) that decrease over time or with certain actions. Players can perform different activities to keep these indicators balanced. For example, feeding the pet increases its hunger level, playing with the pet raises its happiness, and so on. Rewards or badges can be awarded for reaching milestones like keeping the pet happy for a certain period.
 
+
 ### Key Features ###
 #### Status Indicators ####
   - Hunger, Health, Happiness, Energy
@@ -31,7 +32,9 @@ The pet has various status indicators (e.g., hunger, happiness, energy) that dec
 #### Background Music ####
  - Implemented some background gaming, playful, pixalated music!
 #### HARDCORE MODE ####
-Toggle hardcore mode for different scenery and add little spice :)
+Toggle hardcore mode for different scenery and to add little spice :)
+
+
 ![Screenshot 2024-11-24 082755](https://github.com/user-attachments/assets/39eef138-c635-43c9-ba96-467e07170c16)
 ![Screenshot 2024-11-24 082803](https://github.com/user-attachments/assets/44e19ac9-9492-4995-a720-44c37e1bef8d)
 ![Screenshot 2024-11-24 082847](https://github.com/user-attachments/assets/d4a6e915-f15d-4192-80dc-255a47bfbf9c)
