@@ -1,14 +1,27 @@
 package com.example.vp_simulator;
 
+/**
+ * Represents a Cat, which is a subclass of Pet.
+ * This class extends the Pet class and includes specific attributes and behaviors for cats.
+ */
 public class Cat extends Pet{
 
     private CatBreed breed;
 
+    /**
+     * Enum representing the different cat breeds supported by this class.
+     */
     public enum CatBreed {
         Siamese,
         Ragdoll;
     }
 
+    /**
+     * Constructs a new Cat with the specified name and breed.
+     *
+     * @param name  the name of the cat
+     * @param breed the breed of the cat, as a {@link CatBreed} enum value
+     */
     public Cat(String name, CatBreed breed) {
         super(name);
         this.breed = breed;
@@ -22,6 +35,11 @@ public class Cat extends Pet{
         return breed;
     }
 
+    /**
+     * Converts the breed of the cat to a string representation.
+     *
+     * @return a string representation of the cat's breed
+     */
     @Override
     public String breedToString() {
         switch (breed) {
