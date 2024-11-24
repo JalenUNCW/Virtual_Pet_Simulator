@@ -9,10 +9,9 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-
 <?import javafx.scene.control.ProgressBar?>
-
 <?import javafx.scene.control.Label?>
+
 <AnchorPane fx:id="rootPane" xmlns="http://javafx.com/javafx/22.0.1" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="com.example.vp_simulator.vetOfficeController" stylesheets="@styles/vetStyle.css">
     <!-- Background Image -->
@@ -74,16 +73,18 @@
                     <Insets top="400.0" right="20.0" bottom="10.0" left="400.00" />
                 </GridPane.margin>
             </ImageView>
-
         </children>
     </GridPane>
-
     <!-- Progress Bar and Label at Bottom Right -->
-    <ProgressBar fx:id="checkUpProgressBar" styleClass="gslabel" prefWidth="500" visible="false">
+    <ProgressBar fx:id="checkUpProgressBar" styleClass="gslabel" prefWidth="500" visible="false" progress="0.0">
         <AnchorPane.bottomAnchor>10.0</AnchorPane.bottomAnchor>
         <AnchorPane.rightAnchor>100.0</AnchorPane.rightAnchor>
     </ProgressBar>
-    <Label fx:id="checkUpProgressBarLabel" prefWidth="500" text="Check-up..." visible="false">
+    <Label fx:id="checkUpProgressBarLabel" styleClass="gslabel" prefWidth="500" text="Check-up..." visible="false">
+        <AnchorPane.bottomAnchor>35.0</AnchorPane.bottomAnchor>
+        <AnchorPane.rightAnchor>50.0</AnchorPane.rightAnchor>
+    </Label>
+    <Label fx:id="groomProgressBarLabel" styleClass="gslabel" prefWidth="500" text="Groom..." visible="false">
         <AnchorPane.bottomAnchor>35.0</AnchorPane.bottomAnchor>
         <AnchorPane.rightAnchor>50.0</AnchorPane.rightAnchor>
     </Label>
