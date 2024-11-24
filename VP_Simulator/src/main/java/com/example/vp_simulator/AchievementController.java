@@ -121,6 +121,40 @@ public class AchievementController{
         stage.show();  // Show the main menu scene
     }
 
+    public void initialize() {
+
+        int count = 0;
+
+        if (showman) {
+            count++;
+        }
+        if (hungerGames) {
+            count++;
+        }
+        if (badOwner) {
+            count++;
+        }
+        if (vetVisit) {
+            count++;
+        }
+        if (train) {
+            count++;
+        }
+        if (firstWalk) {
+            count++;
+        }
+        if (count >= 5) {
+            setShowman(true);
+        }
+
+        checkfive.setVisible(showman);
+        checkhunger.setVisible(hungerGames);
+        checkpoor.setVisible(badOwner);
+        checkvet.setVisible(vetVisit);
+        checktrain.setVisible(train);
+        checkwalk.setVisible(firstWalk);
+    }
+
     public void start(Stage stage) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("finalAchievements.fxml"));
 
@@ -129,14 +163,6 @@ public class AchievementController{
 
         scrollpane.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
         scrollpane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
-
-        checkfive.setVisible(false);
-        checkhunger.setVisible(false);
-        checkpoor.setVisible(false);
-        checkvet.setVisible(false);
-        checktrain.setVisible(false);
-        checkwalk.setVisible(false);
-
 
         Scene scene = new Scene(root);
         stage.setTitle("Pet Achievements");

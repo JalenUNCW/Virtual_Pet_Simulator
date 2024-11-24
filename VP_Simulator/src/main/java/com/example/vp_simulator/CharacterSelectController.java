@@ -244,8 +244,6 @@ public class CharacterSelectController {
 
     }
 
-    public void handlePlayButtonAction(ActionEvent actionEvent) {
-    }
 }
 
 
