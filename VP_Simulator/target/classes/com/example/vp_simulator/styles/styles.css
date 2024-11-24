@@ -167,12 +167,6 @@
     -fx-effect: dropshadow(gaussian, #000000, 5, 0.5, 0, 0);
 }
 
-.achievementlabel {
-    -fx-font-family: "Press Start 2P", sans-serif;
-    -fx-font-size: 22px;
-    -fx-effect: dropshadow(gaussian, #000000, 5, 0.5, 0, 0);
-    -fx-text-fill: linear-gradient(to bottom, #FFD700, #FFA500); /* Gold gradient text */
-}
 
 .progress-bar {
     -fx-accent: #5cb85c; /* Progress bar fill color */

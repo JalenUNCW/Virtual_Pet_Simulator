@@ -27,15 +27,16 @@ import java.util.Objects;
 import java.util.Set;
 
 public class gameScreenController {
+    //way to set the duration timer to 3 seconds for the transition
     PauseTransition pauseTransition = new PauseTransition(Duration.seconds(3));
-    private boolean messageDisplay = false;
-    //Inititalizers for the popup achievements
+    //Initializer variable counters for the popup achievements
     private Set<String> triggeredActions = new HashSet<>();
     private int feedCount = 0;
     private int walkCount = 0;
     private int trainCount = 0;
     private int playCount = 0;
     private int vetVisitCount = 0;
+    private int poorOwnerCount = 0;
 
     @FXML
     private Label unlockedLabel;
@@ -146,8 +147,10 @@ public class gameScreenController {
 
         // Update the progress bars to reflect the new values
         handleProgressEvent();
-        if (pet.getHealth() <= 0 || pet.getEnergy() <= 0 || pet.getHunger() <= 0 || pet.getHappiness() <= 0) {
+        //If statement that determines whether any of the progress bars are empty
+        if (pet.getHealth() <= 0 || pet.getEnergy() <= 0 || pet.getHunger() <= 0 || pet.getHappiness() <= 0 && poorOwnerCount == 0) {
             showMessage(false, unlockedLabel, pauseTransition);
+            poorOwnerCount++;
         }
 
         //if (pet.getHealth() <= 0 || pet.getEnergy() <= 0 || pet.getHunger() <= 0 || pet.getHappiness() <= 0) {
@@ -221,8 +224,12 @@ public class gameScreenController {
         boolean isPressed = true;
         pet.play();
         handleProgressEvent();
+        //if statement that has a flag that is set to true initially and if it is pressed and the global
+        //varaible is 1 meaning they pressed it for the first time
         if (isPressed && playCount == 0) {
+            //show message appears with the action set to true shown label and pausetransition set to 3 seconds
             showMessage(isPressed, unlockedLabel, pauseTransition);
+            //playCount increments
             playCount++;
         }
 
@@ -234,8 +241,11 @@ public class gameScreenController {
         // Handle train button press
         pet.train();
         handleProgressEvent();
+        //if statement that has a flag that is set to true initially and if it is pressed and the global
+        //varaible is 1 meaning they pressed it for the first time
         if (isPressed && trainCount == 0) {
-            showMessage(true, unlockedLabel, pauseTransition);
+            //show message appears with the action set to true shown label and pausetransition set to 3 seconds
+            showMessage(isPressed, unlockedLabel, pauseTransition);
             trainCount++;
         }
 
@@ -249,9 +259,11 @@ public class gameScreenController {
         // Load the vet office scene
         FXMLLoader loader = new FXMLLoader(getClass().getResource("vetOffice.fxml"));
         Parent root = loader.load();
-
+        //if statement that has a flag that is set to true initially and if it is pressed and the global
+        //varaible is 1 meaning they pressed it for the first time
         if (isPressed && vetVisitCount == 0) {
-            showMessage(true, unlockedLabel, pauseTransition);
+            //show message appears with the action set to true shown label and pausetransition set to 3 seconds
+            showMessage(isPressed, unlockedLabel, pauseTransition);
             vetVisitCount++;
         }
 
@@ -306,7 +318,10 @@ public class gameScreenController {
     boolean isPressed = true;
         pet.outing();
         handleProgressEvent();
+        //if statement that has a flag that is set to true initially and if it is pressed and the global
+        //varaible is 1 meaning they pressed it for the first time
         if (isPressed && walkCount == 0) {
+            //show message appears with the action set to true shown label and pausetransition set to 3 seconds
             showMessage(isPressed, unlockedLabel, pauseTransition);
             walkCount++;
         }
@@ -421,12 +436,16 @@ public class gameScreenController {
     }
     // Method to display the message only once for a given action
     public void showMessage(boolean isPressed, Label label, PauseTransition pauseTransition) {
-        if (!triggeredActions.contains(isPressed)) { // Check if the action has not been triggered
-            triggeredActions.contains(isPressed);// Mark this action as triggered
+        // Check if the action has not been triggered
+        if (!triggeredActions.contains(isPressed)) {
+            triggeredActions.contains(isPressed);// Checks this action as triggered
+            //Sets the text for Achievement Unlocked and attaches it to the flag
+            label.setText("Achievement Unlocked: " + isPressed);
+            label.setWrapText(true);
 
-            label.setText("Achievement\nUnlocked: " + isPressed);
-
+            //resets the text to empty after the 3 seconds is up
             pauseTransition.setOnFinished(event -> label.setText(""));
+            //plays the pausetransition
             pauseTransition.play();
 
         }

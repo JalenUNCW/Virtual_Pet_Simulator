@@ -17,13 +17,13 @@
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" />
    </columnConstraints>
    <rowConstraints>
-      <RowConstraints maxHeight="1.7976931348623157E308" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="1.7976931348623157E308" prefHeight="30.0" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="1.7976931348623157E308" prefHeight="30.0" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="1.7976931348623157E308" prefHeight="30.0" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="1.7976931348623157E308" prefHeight="30.0" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="1.7976931348623157E308" prefHeight="30.0" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="1.7976931348623157E308" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="1.7976931348623157E308" vgrow="ALWAYS" />
+      <RowConstraints maxHeight="1.7976931348623157E308" prefHeight="-Infinity" vgrow="ALWAYS" />
+      <RowConstraints maxHeight="1.7976931348623157E308" prefHeight="-Infinity" vgrow="ALWAYS" />
+      <RowConstraints maxHeight="1.7976931348623157E308" prefHeight="-Infinity" vgrow="ALWAYS" />
+      <RowConstraints maxHeight="1.7976931348623157E308" prefHeight="-Infinity" vgrow="ALWAYS" />
+      <RowConstraints maxHeight="1.7976931348623157E308" prefHeight="-Infinity" vgrow="ALWAYS" />
+      <RowConstraints maxHeight="1.7976931348623157E308" prefHeight="-Infinity" vgrow="ALWAYS" />
    </rowConstraints>
    <children>
       <Button fx:id="btgButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#btgButtonAction" text="Back to Game" GridPane.rowIndex="5" />

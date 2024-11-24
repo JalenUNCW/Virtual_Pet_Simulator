@@ -1,23 +1,13 @@
 package com.example.vp_simulator;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.effect.DropShadow;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import org.w3c.dom.Node;
-import org.w3c.dom.Text;
-
-import javax.swing.*;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class AchievementController{
@@ -78,6 +68,7 @@ public class AchievementController{
 
     private List<ImageView> checkmarks;
 
+    //Creates a public method that goes back to the game screen
     @FXML
     private void btgButtonAction() throws IOException{
         System.out.println("Back to Game: ");
