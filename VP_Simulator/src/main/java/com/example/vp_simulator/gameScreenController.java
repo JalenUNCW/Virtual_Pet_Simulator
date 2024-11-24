@@ -27,6 +27,7 @@ import java.util.Set;
 public class gameScreenController {
     PauseTransition pauseTransition = new PauseTransition(Duration.seconds(3));
     private boolean messageDisplay = false;
+    //Inititalizers for the popup achievements
     private Set<String> triggeredActions = new HashSet<>();
     private int feedCount = 0;
     private int walkCount = 0;
