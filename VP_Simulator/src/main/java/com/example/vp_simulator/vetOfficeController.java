@@ -109,6 +109,14 @@ public class vetOfficeController {
         vetImageView.setImage(vetImage);
         vetImageView.setVisible(true);
 
+        int pethealth = gameScreenController.pet.getHealth();
+
+        if (pethealth < 60) {
+            gameScreenController.pet.setHealth(pethealth + 40);
+        } else {
+            gameScreenController.pet.setHealth(100);
+        }
+
     }
 
     @FXML
@@ -129,7 +137,7 @@ public class vetOfficeController {
 
         stage.setScene(gameScreen);
         stage.setFullScreen(true);
-        stage.setTitle("Main Menu");
+        stage.setTitle("Game Menu");
         stage.show();  // Show the game scene
 
     }
