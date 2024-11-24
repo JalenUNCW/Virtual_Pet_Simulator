@@ -24,11 +24,6 @@
          </image>
       </ImageView>
 
-      <!-- Pet Image -->
-      <ImageView fx:id="petImage" fitHeight="100.0" fitWidth="100.0" layoutX="0.0" layoutY="300.0" />
-      <!-- Pet Image -->
-      <ImageView fx:id="petImage2" fitHeight="100.0" fitWidth="100.0" layoutX="0.0" layoutY="300.0" />
-
       <!-- Title -->
       <Label fx:id="titleLabel" text="Virtual Pet Simulator" styleClass="title" AnchorPane.topAnchor="150.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
 

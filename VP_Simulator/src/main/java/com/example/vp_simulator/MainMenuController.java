@@ -17,13 +17,20 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainMenuController {
 
     public Label titleLabel;
     public VBox mainVBox;
     public ImageView petImage;
+    public ImageView petImage2;
+    public ImageView petImage3;
+    public ImageView petImage4;
     private Stage stage;
+    private final List<ImageView> pets = new ArrayList<>();
+
 
     // Method to set the stage for the controller
     public void setStage(Stage stage) {
@@ -45,85 +52,68 @@ public class MainMenuController {
     @FXML
     private ImageView mainmenuImage;
 
-    // Bind image dimensions to anchor pane
     @FXML
     public void initialize() {
-        // Bind image dimensions to anchor pane (if applicable)
+        // Bind main menu image dimensions to the anchor pane
         mainmenuImage.fitWidthProperty().bind(anchorPane.widthProperty());
         mainmenuImage.fitHeightProperty().bind(anchorPane.heightProperty());
 
-        // Initialize pet image
-        Image pet = new Image(getClass().getResource("images/lab_dog_image.png").toExternalForm());
-        petImage.setImage(pet);
-        petImage.setFitWidth(150); // Adjust size as needed
-        petImage.setFitHeight(150);
-        petImage.setLayoutX(20); // Starting X position
-        petImage.setLayoutY(anchorPane.getHeight() - (-850)); // Starting Y position, near the bottom
-
-        // Add animation
-        animatePet();
+        // Add pets and animations when the AnchorPane is ready
+        anchorPane.widthProperty().addListener((observable, oldValue, newValue) -> setupPets());
+        anchorPane.heightProperty().addListener((observable, oldValue, newValue) -> setupPets());
 
         // Listen for changes in Hardcore Mode
         AppState.hardcoreModeProperty().addListener((observable, oldValue, newValue) -> updateState(newValue));
         updateState(AppState.isHardcoreMode());
     }
 
-    private void animatePet() {
-        // First pet setup
-        Timeline timeline1 = new Timeline();
-        final int[] direction1 = {1}; // Direction for the first pet (1 = right, -1 = left)
+    private void setupPets() {
+        anchorPane.getChildren().removeAll(pets);
+        pets.clear();// Clear existing pets to avoid duplicates
 
-        KeyFrame moveFirstPet = new KeyFrame(
-                Duration.millis(50),
-                event -> {
-                    double newX1 = petImage.getLayoutX() + (5 * direction1[0]);
-
-                    // Reverse direction if pet hits the screen edges
-                    if (newX1 + petImage.getFitWidth() >= anchorPane.getWidth() || newX1 <= 0) {
-                        direction1[0] *= -1;
-                    }
-
-                    // Apply the new position
-                    petImage.setLayoutX(newX1);
-                }
-        );
-
-        timeline1.getKeyFrames().add(moveFirstPet);
-        timeline1.setCycleCount(Animation.INDEFINITE);
-        timeline1.play();
-
-        // Second pet setup
-        ImageView petImage2 = new ImageView(new Image(getClass().getResource("images/siamese_cat_image.png").toExternalForm()));
-        petImage2.setFitWidth(150); // Adjust size as needed
-        petImage2.setFitHeight(150);
-        petImage2.setLayoutX(350); // Start from the right edge
-        petImage2.setLayoutY(anchorPane.getHeight() - (-850)); // Align with the bottom of the screen
-
-        // Add the second pet to the AnchorPane
-        anchorPane.getChildren().add(petImage2);
-
-        Timeline timeline2 = new Timeline();
-        final int[] direction2 = {-1}; // Direction for the second pet (opposite to the first pet)
-
-        KeyFrame moveSecondPet = new KeyFrame(
-                Duration.millis(50),
-                event -> {
-                    double newX2 = petImage2.getLayoutX() + (5 * direction2[0]);
-
-                    // Reverse direction if pet hits the screen edges
-                    if (newX2 + petImage2.getFitWidth() >= anchorPane.getWidth() || newX2 <= 0) {
-                        direction2[0] *= -1;
-                    }
-
-                    // Apply the new position
-                    petImage2.setLayoutX(newX2);
-                }
-        );
-
-        timeline2.getKeyFrames().add(moveSecondPet);
-        timeline2.setCycleCount(Animation.INDEFINITE);
-        timeline2.play();
+        // Initialize and animate pets
+        addAndAnimatePet("images/lab_dog_image.png", 20, 5, 1); // Dog
+        addAndAnimatePet("images/siamese_cat_image.png", anchorPane.getWidth() - 170, 5, -1); // Siamese Cat
+        addAndAnimatePet("images/german_shep_dog.png", 200, 3, 1); // Golden Retriever
+        addAndAnimatePet("images/ragdoll_cat_image.png", anchorPane.getWidth() - 400, 3, -1); // Bengal Cat
     }
+
+    private void addAndAnimatePet(String imagePath, double startX, int speed, int initialDirection) {
+        ImageView pet = new ImageView(new Image(getClass().getResource(imagePath).toExternalForm()));
+        pet.setFitWidth(150);
+        pet.setFitHeight(150);
+        pet.setLayoutX(startX); // Starting position
+        pet.setLayoutY(anchorPane.getHeight() - 150); // Bottom of the screen
+        pets.add(pet);
+        anchorPane.getChildren().add(pet);
+
+        animateSinglePet(pet, speed, initialDirection);
+    }
+
+    private void animateSinglePet(ImageView pet, int speed, int initialDirection) {
+        Timeline timeline = new Timeline();
+        final int[] direction = {initialDirection};
+
+        KeyFrame movePet = new KeyFrame(
+                Duration.millis(50),
+                event -> {
+                    double newX = pet.getLayoutX() + (speed * direction[0]);
+
+                    // Reverse direction if pet hits the screen edges
+                    if (newX + pet.getFitWidth() >= anchorPane.getWidth() || newX <= 0) {
+                        direction[0] *= -1;
+                    }
+
+                    // Apply the new position
+                    pet.setLayoutX(newX);
+                }
+        );
+
+        timeline.getKeyFrames().add(movePet);
+        timeline.setCycleCount(Animation.INDEFINITE);
+        timeline.play();
+    }
+
 
     public void updateState(boolean isHardcore) {
         // Check if Hardcore Mode is on and set the background accordingly
